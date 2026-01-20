@@ -5,7 +5,7 @@ project:
 book:
   title: "JP_LearningDiary"
   author: "Julia Pieza"
-  date: "20/01/2026"
+  date: today
   chapters:
     - index.qmd
     - intro.qmd
