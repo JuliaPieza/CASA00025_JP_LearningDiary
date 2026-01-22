@@ -1,9 +1,9 @@
-# Introduction
+# About me
 
-This is a book created from markdown and executable code.
+After graduating with a History & Politics degree I began working at Brent first completing the NGDP Graduate Scheme and then joining the Data & Insight team.
 
-See @knuth84 for additional discussion of literate programming.
+My journey with GIS started at Brent where as an analyst I got the opportunity to learn how to work with geospatial data. Since then I've enjoyed the ability to work data analysis projects that help frontline services operate and make a difference to the lives of local residents.
 
-```{r}
-1 + 1
-```
+At the moment I’m exploring the uses satellite data has in local government, for example addressing challenges like climate change the risks that more extreme weather events pose to urban settings.
+
+I'm looking forward to sharing my learning throughout this module and being able to share my thoughts on new ways of utilising remotely sensed data to make a difference on a local level.

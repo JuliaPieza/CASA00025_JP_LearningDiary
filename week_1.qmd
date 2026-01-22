@@ -45,7 +45,7 @@ We can also think about it in simpler terms, the cameras that exist on our mobil
 There are 4 resolutions in remote sensed imagery
 
 | Resolution | Definition | Use |
-|--------------|-----------------------------------|------------------------|
+|------------------|--------------------------------|-----------------------|
 | Spatial | The size of each pixel in an image corresponds to an area of the Earth's surface, e.g. one pixel can correspond to as little as a few centimetres (high resolution) to 10km. | Images of the Earth can be used to detect objects such as buildings. A high spatial resolution allows us to see more detail. |
 | Spectral | Senors which can distinguish between more closely spaced waves are said to measure more Bands of imagery i.e. more wavelengths. | A high spectral resolution allows us to identify particular types of minerals, vegetation or other features because each object has a unique spectral signature. |
 | Temporal | The time it takes for a satellite to make an orbit and end at the same observation area. Satellites can have orbits as short as 1 day, or much longer. | Allows us to see change over time for a particular area of observation. |
@@ -55,6 +55,18 @@ There are 4 resolutions in remote sensed imagery
 
 Different surfaces such as concrete or grassland will reflect EM waves in different ways, creating unique 'signatures' that help us identify the type of surface. These signatures reflect various characteristics such as differences between dry and moist ground.
 
-For example vegetation tends to absorb visible light (blue and red light specifically used for photosynthesis) and reflects near-infrared energy which can be captured and summarised in a chart. The health of vegetation can be measured in this way as unhealthy plants with less chrolophyll will reflect differently to healthy plants.
+For example vegetation tends to absorb visible light (blue and red light specifically used for photosynthesis) and reflects near-infrared energy which can be captured and summarised in a chart. The health of vegetation can be measured in this way as unhealthy plants with less chlorophyll will reflect differently to healthy plants.
 
-![Spectral signatures, Source:NASA] ()
+![Spectral signatures, Source:NASA](Images/near_infrared_4-jpg.webp)
+
+# Applications
+
+## Open source data - Landsat and Sentinel 
+
+## SNAP
+
+# Reflections
+
+The use of both multispectral and SAR imagery to extract information about the natural and urban environments across the world is a powerful tool that has many applications. The environmental monitoring examples for applied ecologists outlined by Yifang Ban (2014) in order to classify crops and observe their growth was interesting to read about, and I can imagine how valuable this data is during unprecedented weather events that can exacerbate food shortages in vulnerable regions. 
+
+Personally, working at a Local Council I would be interested to read more about the urban applications of these techniques for monitoring smaller areas of vegetation such as urban farms, or looking at the impact to infrastructure under extreme weather events. Combined with studies of how environmental changes impact citizens and their health outcomes would provide an insightful avenue for using satellite data alongside geodemographic data.

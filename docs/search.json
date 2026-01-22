@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Julia Pieza’s Remote Sensing Learning Diary",
+    "title": "Remote Sensing Learning Diary",
     "section": "",
-    "text": "Julia Pieza Learning Diary\nThis is Julia Pieza’s Learning Diary.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "text": "Julia Pieza Learning Diary\nHello, I’m Julia and this is my CASA0025 Remote Sensing Learning Diary. I’m currently completing the MSc in Urban Spatial Science at UCL whilst also working as a Senior Research and Intelligence officer at Brent Council.",
     "crumbs": [
       "Julia Pieza Learning Diary"
     ]
@@ -12,11 +12,11 @@
   {
     "objectID": "intro.html",
     "href": "intro.html",
-    "title": "1  Introduction",
+    "title": "1  About me",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "After graduating with a History & Politics degree I began working at Brent first completing the NGDP Graduate Scheme and then joining the Data & Insight team.\nMy journey with GIS started at Brent where as an analyst I got the opportunity to learn how to work with geospatial data. Since then I’ve enjoyed the ability to work data analysis projects that help frontline services operate and make a difference to the lives of local residents.\nAt the moment I’m exploring the uses satellite data has in local government, for example addressing challenges like climate change the risks that more extreme weather events pose to urban settings.\nI’m looking forward to sharing my learning throughout this module and being able to share my thoughts on new ways of utilising remotely sensed data to make a difference on a local level.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>About me</span>"
     ]
   },
   {
@@ -32,11 +32,11 @@
   {
     "objectID": "week_1.html",
     "href": "week_1.html",
-    "title": "3  Week 1",
+    "title": "3  Week 1: What is Remote Sensing?",
     "section": "",
-    "text": "#Week 1 Learning Diary",
+    "text": "4 Summary\nIn week 1 we were introduced to the basic concepts of Remote Sensing which I’ll cover briefly below.\nTo start with some definitions:",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 1</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 1: What is Remote Sensing?</span>"
     ]
   },
   {
@@ -47,6 +47,56 @@
     "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
     "crumbs": [
       "References"
+    ]
+  },
+  {
+    "objectID": "week_1.html#electromagnetic-waves",
+    "href": "week_1.html#electromagnetic-waves",
+    "title": "3  Week 1: What is Remote Sensing?",
+    "section": "4.1 Electromagnetic Waves",
+    "text": "4.1 Electromagnetic Waves\nThe electromagnetic spectrum is essentially the energy that makes remote sensing work.\nAll matter that is above absolute zero temperatures (-273.15°C) radiates EM energy due to molecules moving against one another, and there are several complex processes which can change how much EM energy is radiated, such as temperature. Essentially all natural objects receive and re-emit energy, and we can measure and use this data to identify the material the light is reflecting off of such as vegetation.\n\n\n\nElectromagnetic Spectrum, Source: Wikipedia\n\n\nSource: Wikipedia",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 1: What is Remote Sensing?</span>"
+    ]
+  },
+  {
+    "objectID": "week_1.html#sensors",
+    "href": "week_1.html#sensors",
+    "title": "3  Week 1: What is Remote Sensing?",
+    "section": "4.2 Sensors",
+    "text": "4.2 Sensors\n\n4.2.1 Active and Passive Sensors\n\n\n\nSensors, Source: Wikipedia\n\n\nPassive sensing refers to using an external source of EM energy to operate. Commonly the EM energy emitted by the Sun is used to measure the reflection and absorption of light by objects and this data is collected by Satellites which produce images of the Earth.\nFor passive sensors it is important to remember that weather such as clouds or particles in the atmosphere can interfere with the EM energy and cause scattering which can interfere with the image produced. One example of this is Rayleigh scattering where nitrogen and oxygen particles in the air interact with the Sun’s emitted EM waves to create the sunset effect.\nWays in which this can be corrected will be expanded upon in Week X.\nActive sensors rely on a source of EM to emit and receive electromagnetic waves and measure the backscatter of said wave. For example LiDAR emits rapid laser pulses to collect information about the object or surface based on the return time of the laser pulse.\nAs such active sensors such as Synthetic Aperture Radar (SAR) sends electromagnetic waves that are not on the light spectrum to the Earth which are not interfered with by clouds or atmospheric particles allowing the sensor to capture information at night.\nWe can also think about it in simpler terms, the cameras that exist on our mobile phones are light sensors, allowing us to take images of the environment around us without necessarily making physical contact with it.\n\n\n4.2.2 Resolutions\nThere are 4 resolutions in remote sensed imagery\n\n\n\n\n\n\n\n\nResolution\nDefinition\nUse\n\n\n\n\nSpatial\nThe size of each pixel in an image corresponds to an area of the Earth’s surface, e.g. one pixel can correspond to as little as a few centimetres (high resolution) to 10km.\nImages of the Earth can be used to detect objects such as buildings. A high spatial resolution allows us to see more detail.\n\n\nSpectral\nSenors which can distinguish between more closely spaced waves are said to measure more Bands of imagery i.e. more wavelengths.\nA high spectral resolution allows us to identify particular types of minerals, vegetation or other features because each object has a unique spectral signature.\n\n\nTemporal\nThe time it takes for a satellite to make an orbit and end at the same observation area. Satellites can have orbits as short as 1 day, or much longer.\nAllows us to see change over time for a particular area of observation.\n\n\nRadiometric\nInformation in each pixel of the image, measured by the number of bits. A 4-bit image indicates there are 16 digital values (grayscale shades) in an image. The more bits the more subtle information can be discerned from the image.\nCan create really detailed images when being able to detect very slight differences in energy, can detect very subtle changes in environments or land use.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 1: What is Remote Sensing?</span>"
+    ]
+  },
+  {
+    "objectID": "week_1.html#spectral-signatures",
+    "href": "week_1.html#spectral-signatures",
+    "title": "3  Week 1: What is Remote Sensing?",
+    "section": "4.3 Spectral signatures",
+    "text": "4.3 Spectral signatures\nDifferent surfaces such as concrete or grassland will reflect EM waves in different ways, creating unique ‘signatures’ that help us identify the type of surface. These signatures reflect various characteristics such as differences between dry and moist ground.\nFor example vegetation tends to absorb visible light (blue and red light specifically used for photosynthesis) and reflects near-infrared energy which can be captured and summarised in a chart. The health of vegetation can be measured in this way as unhealthy plants with less chlorophyll will reflect differently to healthy plants.\n\n\n\nSpectral signatures, Source:NASA",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 1: What is Remote Sensing?</span>"
+    ]
+  },
+  {
+    "objectID": "week_1.html#open-source-data---landsat-and-sentinel",
+    "href": "week_1.html#open-source-data---landsat-and-sentinel",
+    "title": "3  Week 1: What is Remote Sensing?",
+    "section": "5.1 Open source data - Landsat and Sentinel",
+    "text": "5.1 Open source data - Landsat and Sentinel",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 1: What is Remote Sensing?</span>"
+    ]
+  },
+  {
+    "objectID": "week_1.html#snap",
+    "href": "week_1.html#snap",
+    "title": "3  Week 1: What is Remote Sensing?",
+    "section": "5.2 SNAP",
+    "text": "5.2 SNAP",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 1: What is Remote Sensing?</span>"
     ]
   }
 ]
