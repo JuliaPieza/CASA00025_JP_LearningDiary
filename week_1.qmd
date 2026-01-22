@@ -1,5 +1,60 @@
 ---
-title: "Week 1"
+title: "Week 1: What is Remote Sensing?"
 ---
 
-#Week 1 Learning Diary
+# Summary
+
+In week 1 we were introduced to the basic concepts of Remote Sensing which I'll cover briefly below.
+
+To start with some definitions:
+
+-   Remote sensing is the collection of data about the Earth from the atmosphere with various technologies that utilise electromagnetic (EM) waves.
+
+-   Electromagnetic waves are sources of EM energy used in remote sensing can come from sources like the Sun, or sensors such as LiDAR sending out their own light from a laser and then measuring the the return time for those laser pulses to identify information about the surface of the Earth.
+
+## Electromagnetic Waves
+
+The electromagnetic spectrum is essentially the energy that makes remote sensing work.
+
+All matter that is above absolute zero temperatures (-273.15°C) radiates EM energy due to molecules moving against one another, and there are several complex processes which can change how much EM energy is radiated, such as temperature. Essentially all natural objects receive and re-emit energy, and we can measure and use this data to identify the material the light is reflecting off of such as vegetation.
+
+![Electromagnetic Spectrum, Source: Wikipedia](https://upload.wikimedia.org/wikipedia/commons/1/14/EM_Spectrum_Properties_%28Amplitude_Corrected%2C_Bitmap%29.png)
+
+Source: Wikipedia
+
+## Sensors
+
+### Active and Passive Sensors
+
+![Sensors, Source: Wikipedia](https://upload.wikimedia.org/wikipedia/commons/6/61/Remote_Sensing_Illustration.jpg){fig-alt="Source:Wikipedia"}
+
+**Passive sensing** refers to using an external source of EM energy to operate. Commonly the EM energy emitted by the Sun is used to measure the reflection and absorption of light by objects and this data is collected by Satellites which produce images of the Earth.
+
+For passive sensors it is important to remember that weather such as clouds or particles in the atmosphere can interfere with the EM energy and cause scattering which can interfere with the image produced. One example of this is **Rayleigh scattering** where nitrogen and oxygen particles in the air interact with the Sun's emitted EM waves to create the sunset effect.
+
+Ways in which this can be corrected will be expanded upon in Week X.
+
+**Active sensors** rely on a source of EM to emit and receive electromagnetic waves and measure the backscatter of said wave. For example LiDAR emits rapid laser pulses to collect information about the object or surface based on the return time of the laser pulse.
+
+As such active sensors such as Synthetic Aperture Radar (SAR) sends electromagnetic waves that are not on the light spectrum to the Earth which are not interfered with by clouds or atmospheric particles allowing the sensor to capture information at night.
+
+We can also think about it in simpler terms, the cameras that exist on our mobile phones are light sensors, allowing us to take images of the environment around us without necessarily making physical contact with it.
+
+### Resolutions
+
+There are 4 resolutions in remote sensed imagery
+
+| Resolution | Definition | Use |
+|--------------|-----------------------------------|------------------------|
+| Spatial | The size of each pixel in an image corresponds to an area of the Earth's surface, e.g. one pixel can correspond to as little as a few centimetres (high resolution) to 10km. | Images of the Earth can be used to detect objects such as buildings. A high spatial resolution allows us to see more detail. |
+| Spectral | Senors which can distinguish between more closely spaced waves are said to measure more Bands of imagery i.e. more wavelengths. | A high spectral resolution allows us to identify particular types of minerals, vegetation or other features because each object has a unique spectral signature. |
+| Temporal | The time it takes for a satellite to make an orbit and end at the same observation area. Satellites can have orbits as short as 1 day, or much longer. | Allows us to see change over time for a particular area of observation. |
+| Radiometric | Information in each pixel of the image, measured by the number of bits. A 4-bit image indicates there are 16 digital values (grayscale shades) in an image. The more bits the more subtle information can be discerned from the image. | Can create really detailed images when being able to detect very slight differences in energy, can detect very subtle changes in environments or land use. |
+
+## Spectral signatures
+
+Different surfaces such as concrete or grassland will reflect EM waves in different ways, creating unique 'signatures' that help us identify the type of surface. These signatures reflect various characteristics such as differences between dry and moist ground.
+
+For example vegetation tends to absorb visible light (blue and red light specifically used for photosynthesis) and reflects near-infrared energy which can be captured and summarised in a chart. The health of vegetation can be measured in this way as unhealthy plants with less chrolophyll will reflect differently to healthy plants.
+
+![Spectral signatures, Source:NASA] ()
