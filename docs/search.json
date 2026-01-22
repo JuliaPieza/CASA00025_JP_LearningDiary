@@ -84,7 +84,7 @@
     "href": "week_1.html#open-source-data---landsat-and-sentinel",
     "title": "3  Week 1: What is Remote Sensing?",
     "section": "5.1 Open source data - Landsat and Sentinel",
-    "text": "5.1 Open source data - Landsat and Sentinel",
+    "text": "5.1 Open source data - Landsat and Sentinel\nThis week we started working with some open satellite data from the Sentinel and Landsat satellites. Sentinel satellites are run by the Copernicus Programme at the European Space Agency and provide high spatial resolution imagery (10-60m per pixel).\nThe Landsat program started by NASA and the US Geological Survey in 1972 has provided imagery across the world.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 1: What is Remote Sensing?</span>"
     ]
@@ -94,7 +94,7 @@
     "href": "week_1.html#snap",
     "title": "3  Week 1: What is Remote Sensing?",
     "section": "5.2 SNAP",
-    "text": "5.2 SNAP",
+    "text": "5.2 SNAP\nDuring the practical I used SNAP to interact with Sentinel satellite imagery learning how to render these in true colour (RGB) and extract statistics from the data such as the nature of vegetation, e.g. whether the soil is wet or dry.\n\n\n\nGdansk, Source:Sentinel2b\n\n\nI started the practical by looking at recent satellite imagery of Gdansk in January 2026 where large snowfall was reflected in the scatter plot I produced. In order to compute this using the near-infared and green light that plant matter reflects I had to understand the RGB bands used to produce the scatter plot from B4 - B8. In the image for Gdansk and the surrounding areas we can see a lot of wet bare soil which makes sense. \n\n\n\nGdansk SNAP scatter plot, Source: Sentinel2b\n\n\n\n5.2.1 Scatter plot\nThe scatter plot above shows the Band 4 (x axis) and Band 8 (y axis), which are the red and near-infrared bands, so here the lower values of Band 8 and Band 4 are indicating wet bare soil which makes sense given the winter period.\n\n\n5.2.2 Tasseled Cap Transformation\nThe Tasseled Cap Transformation is a method used to analyse the spectral data from multiple bands into a standardised image which incorporates information about surface brightness, vegetation greenness and moisture content.\nBrightness is associated with bare soil or manmade surface helping to identify urban areas. Greeness is associated with green vegetation and wetness with moisture.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 1: What is Remote Sensing?</span>"
     ]

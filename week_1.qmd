@@ -45,7 +45,7 @@ We can also think about it in simpler terms, the cameras that exist on our mobil
 There are 4 resolutions in remote sensed imagery
 
 | Resolution | Definition | Use |
-|------------------|--------------------------------|-----------------------|
+|------------------|-------------------------------|-----------------------|
 | Spatial | The size of each pixel in an image corresponds to an area of the Earth's surface, e.g. one pixel can correspond to as little as a few centimetres (high resolution) to 10km. | Images of the Earth can be used to detect objects such as buildings. A high spatial resolution allows us to see more detail. |
 | Spectral | Senors which can distinguish between more closely spaced waves are said to measure more Bands of imagery i.e. more wavelengths. | A high spectral resolution allows us to identify particular types of minerals, vegetation or other features because each object has a unique spectral signature. |
 | Temporal | The time it takes for a satellite to make an orbit and end at the same observation area. Satellites can have orbits as short as 1 day, or much longer. | Allows us to see change over time for a particular area of observation. |
@@ -61,9 +61,31 @@ For example vegetation tends to absorb visible light (blue and red light specifi
 
 # Applications
 
-## Open source data - Landsat and Sentinel 
+## Open source data - Landsat and Sentinel
+
+This week we started working with some open satellite data from the Sentinel and Landsat satellites. Sentinel satellites are run by the Copernicus Programme at the European Space Agency and provide high spatial resolution imagery (10-60m per pixel).
+
+The Landsat program started by NASA and the US Geological Survey in 1972 has provided imagery across the world.
 
 ## SNAP
+
+During the practical I used SNAP to interact with Sentinel satellite imagery learning how to render these in true colour (RGB) and extract statistics from the data such as the nature of vegetation, e.g. whether the soil is wet or dry.
+
+![Gdansk, Source:Sentinel2b](docs/Images/snap_gdansk.png)
+
+I started the practical by looking at recent satellite imagery of Gdansk in January 2026 where large snowfall was reflected in the scatter plot I produced. In order to compute this using the near-infared and green light that plant matter reflects I had to understand the RGB bands used to produce the scatter plot from B4 - B8. In the image for Gdansk and the surrounding areas we can see a lot of wet bare soil which makes sense. 
+
+![Gdansk SNAP scatter plot, Source: Sentinel2b](docs/Images/snap_tct.png)
+
+### Scatter plot
+
+The scatter plot above shows the Band 4 (x axis) and Band 8 (y axis), which are the red and near-infrared bands, so here the lower values of Band 8 and Band 4 are indicating wet bare soil which makes sense given the winter period.
+
+### Tasseled Cap Transformation 
+
+The Tasseled Cap Transformation is a method used to analyse the spectral data from multiple bands into a standardised image which incorporates information about surface brightness, vegetation greenness and moisture content.
+
+Brightness is associated with bare soil or manmade surface helping to identify urban areas. Greeness is associated with green vegetation and wetness with moisture.
 
 # Reflections
 
