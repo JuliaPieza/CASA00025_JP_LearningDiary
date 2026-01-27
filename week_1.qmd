@@ -71,7 +71,7 @@ The Landsat program started by NASA and the US Geological Survey in 1972 has pro
 
 During the practical I used SNAP to interact with Sentinel satellite imagery learning how to render these in true colour (RGB) and extract statistics from the data such as the nature of vegetation, e.g. whether the soil is wet or dry.
 
-![Gdansk, Source:Sentinel2b](docs/Images/snap_gdansk.png)
+![Gdansk, Source:Sentinel2b](Images/snap_gdansk.png)
 
 I started the practical by looking at recent satellite imagery of Gdansk in January 2026 where large snowfall was reflected in the scatter plot I produced. In order to compute this using the near-infared and green light that plant matter reflects I had to understand the RGB bands used to produce the scatter plot from B4 - B8. In the image for Gdansk and the surrounding areas we can see a lot of wet bare soil which makes sense. 
 
@@ -81,7 +81,7 @@ I started the practical by looking at recent satellite imagery of Gdansk in Janu
 
 The scatter plot above shows the Band 4 (x axis) and Band 8 (y axis), which are the red and near-infrared bands, so here the lower values of Band 8 and Band 4 are indicating wet bare soil which makes sense given the winter period.
 
-### Tasseled Cap Transformation 
+### Tasseled Cap Transformation
 
 The Tasseled Cap Transformation is a method used to analyse the spectral data from multiple bands into a standardised image which incorporates information about surface brightness, vegetation greenness and moisture content.
 
