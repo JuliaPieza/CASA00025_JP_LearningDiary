@@ -2,7 +2,7 @@
 title: "Week 1: What is Remote Sensing?"
 ---
 
-# Summary
+## Summary
 
 In week 1 we were introduced to the basic concepts of Remote Sensing which I'll cover briefly below.
 
@@ -22,8 +22,6 @@ All matter that is above absolute zero temperatures (-273.15°C) radiates EM ene
 
 Source: Wikipedia
 
-## Sensors
-
 ### Active and Passive Sensors
 
 ![Sensors, Source: Wikipedia](https://upload.wikimedia.org/wikipedia/commons/6/61/Remote_Sensing_Illustration.jpg){fig-alt="Source:Wikipedia"}
@@ -32,7 +30,7 @@ Source: Wikipedia
 
 For passive sensors it is important to remember that weather such as clouds or particles in the atmosphere can interfere with the EM energy and cause scattering which can interfere with the image produced. One example of this is **Rayleigh scattering** where nitrogen and oxygen particles in the air interact with the Sun's emitted EM waves to create the sunset effect.
 
-Ways in which this can be corrected will be expanded upon in Week X.
+Ways in which this can be corrected will be expanded upon in Week 3.
 
 **Active sensors** rely on a source of EM to emit and receive electromagnetic waves and measure the backscatter of said wave. For example LiDAR emits rapid laser pulses to collect information about the object or surface based on the return time of the laser pulse.
 
@@ -42,10 +40,10 @@ We can also think about it in simpler terms, the cameras that exist on our mobil
 
 ### Resolutions
 
-There are 4 resolutions in remote sensed imagery
+There are 4 resolutions in remote sensed imagery.
 
 | Resolution | Definition | Use |
-|------------------|-------------------------------|-----------------------|
+|------------------------|------------------------|------------------------|
 | Spatial | The size of each pixel in an image corresponds to an area of the Earth's surface, e.g. one pixel can correspond to as little as a few centimetres (high resolution) to 10km. | Images of the Earth can be used to detect objects such as buildings. A high spatial resolution allows us to see more detail. |
 | Spectral | Senors which can distinguish between more closely spaced waves are said to measure more Bands of imagery i.e. more wavelengths. | A high spectral resolution allows us to identify particular types of minerals, vegetation or other features because each object has a unique spectral signature. |
 | Temporal | The time it takes for a satellite to make an orbit and end at the same observation area. Satellites can have orbits as short as 1 day, or much longer. | Allows us to see change over time for a particular area of observation. |
@@ -59,25 +57,25 @@ For example vegetation tends to absorb visible light (blue and red light specifi
 
 ![Spectral signatures, Source:NASA](Images/near_infrared_4-jpg.webp)
 
-# Applications
+## Applications
 
-## Open source data - Landsat and Sentinel
+### Open Source Data - Sentinel and Landsat
 
-This week we started working with some open satellite data from the Sentinel and Landsat satellites. Sentinel satellites are run by the Copernicus Programme at the European Space Agency and provide high spatial resolution imagery (10-60m per pixel).
+This week we started working with some open satellite data from the Sentinel and Landsat satellites. Sentinel satellites are run by the Copernicus Programme at the European Space Agency and provide high spatial resolution imagery, 10m, 20, and 60m per pixel resolution depending on the Band used.
 
-The Landsat program started by NASA and the US Geological Survey in 1972 has provided imagery across the world.
+The Landsat program started by NASA and the US Geological Survey in 1972 has provided imagery across the world. The latest operational Landsat satellites are Landsat 8 and 9 providing 15m, 30m and 100m resolution depending on the Band used.
 
-## SNAP
+### SNAP Case study: Gdansk
 
-During the practical I used SNAP to interact with Sentinel satellite imagery learning how to render these in true colour (RGB) and extract statistics from the data such as the nature of vegetation, e.g. whether the soil is wet or dry.
+During the practical I used SNAP to interact with Sentinel satellite imagery for the Polish city of Gdansk, learning how to render these in true colour (RGB) and extract statistics from the data such as the nature of vegetation, e.g. whether the soil is wet or dry.
 
 ![Gdansk, Source:Sentinel2b](Images/snap_gdansk.png)
 
-I started the practical by looking at recent satellite imagery of Gdansk in January 2026 where large snowfall was reflected in the scatter plot I produced. In order to compute this using the near-infared and green light that plant matter reflects I had to understand the RGB bands used to produce the scatter plot from B4 - B8. In the image for Gdansk and the surrounding areas we can see a lot of wet bare soil which makes sense. 
-
-![Gdansk SNAP scatter plot, Source: Sentinel2b](docs/Images/snap_tct.png)
-
 ### Scatter plot
+
+I started the practical by looking at recent satellite imagery of Gdansk in January 2026 where large snowfall was reflected in the scatter plot I produced. In order to compute this using the near-infrared and green light that plant matter reflects I had to understand the RGB bands used to produce the scatter plot from B4 - B8. In the image for Gdansk and the surrounding areas we can see a lot of wet bare soil which makes sense. 
+
+![Gdansk SNAP scatter plot, Source: Sentinel2b](/Images/snap_scatter.png)
 
 The scatter plot above shows the Band 4 (x axis) and Band 8 (y axis), which are the red and near-infrared bands, so here the lower values of Band 8 and Band 4 are indicating wet bare soil which makes sense given the winter period.
 
@@ -85,9 +83,27 @@ The scatter plot above shows the Band 4 (x axis) and Band 8 (y axis), which are 
 
 The Tasseled Cap Transformation is a method used to analyse the spectral data from multiple bands into a standardised image which incorporates information about surface brightness, vegetation greenness and moisture content.
 
-Brightness is associated with bare soil or manmade surface helping to identify urban areas. Greeness is associated with green vegetation and wetness with moisture.
+To start this process I managed to clip the city boundaries for my raster image importing a shapefile into SNAP and masking it.
 
-# Reflections
+![Gdansk Clipped SNAP, Source: Sentinel2b](/Images/gdansk_clipped.png)
+
+I struggled with following the practical and computing the brightness, greenness and wetness bands in SNAP but managed to produce an image attempting to represent the Tasseled Cap function which is a part of Principal Component analysis. Perhaps due to the presence of snow the result is being distorted somehow, but more likely that I computed this image wrong.
+
+Brightness is associated with bare soil or manmade surfaces helping to identify urban areas. Greeness is associated with green vegetation and wetness with moisture. The green pictured below is correctly identifying the large forest area in the northwest of the clipped boundary. In general there is a lot of vegetation across the city and we cannot see any water bodies as the sea has been clipped out.
+
+What is displayed in pink usually shows man-made surface like concrete and generally reflects built up areas. This accurately reflects the airport in the west of the map, and areas of the city centre, but I would have expected to see more of this around the city centre and it is picking up some bare soil fields in the eastern part of the map.
+
+I was also expecting the outer fields to show up more brightly given the presence of snow as visible in the image above.
+
+![Gdansk TCT, Source: Sentinel2b](/Images/tct_pca_gdansk1.png)
+
+To check this further I computed a false composite image using Bands B8, B4 and B3 to check how the near-infrared reflecting plant matter shows up. This does largely match the PCA tasseled cap transformation above with the greenness and the near-infrared reflection captured in red matching well. However I assume due to the presence of snow around the fields in the eastern part of the map is mostly bare soil which is why it appears pink in the PCA and white in the false composite image.
+
+![Gdansk False Colour, Source: Sentinel2b](/Images/gdansk_false_colour.png)
+
+### R-Studio application
+
+## Reflections
 
 The use of both multispectral and SAR imagery to extract information about the natural and urban environments across the world is a powerful tool that has many applications. The environmental monitoring examples for applied ecologists outlined by Yifang Ban (2014) in order to classify crops and observe their growth was interesting to read about, and I can imagine how valuable this data is during unprecedented weather events that can exacerbate food shortages in vulnerable regions. 
 

@@ -160,14 +160,15 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">5</span> Applications</a>
   <ul class="collapse">
-  <li><a href="#open-source-data---landsat-and-sentinel" id="toc-open-source-data---landsat-and-sentinel" class="nav-link" data-scroll-target="#open-source-data---landsat-and-sentinel"><span class="header-section-number">5.1</span> Open source data - Landsat and Sentinel</a></li>
-  <li><a href="#snap" id="toc-snap" class="nav-link" data-scroll-target="#snap"><span class="header-section-number">5.2</span> SNAP</a>
+  <li><a href="#open-source-data---sentinel-and-landsat" id="toc-open-source-data---sentinel-and-landsat" class="nav-link" data-scroll-target="#open-source-data---sentinel-and-landsat"><span class="header-section-number">5.1</span> Open source data - Sentinel and Landsat</a></li>
+  <li><a href="#snap-case-study-gdansk" id="toc-snap-case-study-gdansk" class="nav-link" data-scroll-target="#snap-case-study-gdansk"><span class="header-section-number">5.2</span> SNAP Case study: Gdansk</a>
   <ul class="collapse">
   <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot"><span class="header-section-number">5.2.1</span> Scatter plot</a></li>
   <li><a href="#tasseled-cap-transformation" id="toc-tasseled-cap-transformation" class="nav-link" data-scroll-target="#tasseled-cap-transformation"><span class="header-section-number">5.2.2</span> Tasseled Cap Transformation</a></li>
+  <li><a href="#r-studio-application" id="toc-r-studio-application" class="nav-link" data-scroll-target="#r-studio-application"><span class="header-section-number">5.2.3</span> R-Studio application</a></li>
   </ul></li>
+  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">5.3</span> Reflections</a></li>
   </ul></li>
-  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">6</span> Reflections</a></li>
   </ul>
 </nav>
     </div>
@@ -225,19 +226,19 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p><strong>Passive sensing</strong> refers to using an external source of EM energy to operate. Commonly the EM energy emitted by the Sun is used to measure the reflection and absorption of light by objects and this data is collected by Satellites which produce images of the Earth.</p>
 <p>For passive sensors it is important to remember that weather such as clouds or particles in the atmosphere can interfere with the EM energy and cause scattering which can interfere with the image produced. One example of this is <strong>Rayleigh scattering</strong> where nitrogen and oxygen particles in the air interact with the Sun’s emitted EM waves to create the sunset effect.</p>
-<p>Ways in which this can be corrected will be expanded upon in Week X.</p>
+<p>Ways in which this can be corrected will be expanded upon in Week 3.</p>
 <p><strong>Active sensors</strong> rely on a source of EM to emit and receive electromagnetic waves and measure the backscatter of said wave. For example LiDAR emits rapid laser pulses to collect information about the object or surface based on the return time of the laser pulse.</p>
 <p>As such active sensors such as Synthetic Aperture Radar (SAR) sends electromagnetic waves that are not on the light spectrum to the Earth which are not interfered with by clouds or atmospheric particles allowing the sensor to capture information at night.</p>
 <p>We can also think about it in simpler terms, the cameras that exist on our mobile phones are light sensors, allowing us to take images of the environment around us without necessarily making physical contact with it.</p>
 </section>
 <section id="resolutions" class="level3" data-number="4.2.2">
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="resolutions"><span class="header-section-number">4.2.2</span> Resolutions</h3>
-<p>There are 4 resolutions in remote sensed imagery</p>
+<p>There are 4 resolutions in remote sensed imagery.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 43%">
-<col style="width: 31%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -285,44 +286,70 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="applications" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Applications</h1>
-<section id="open-source-data---landsat-and-sentinel" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="open-source-data---landsat-and-sentinel"><span class="header-section-number">5.1</span> Open source data - Landsat and Sentinel</h2>
-<p>This week we started working with some open satellite data from the Sentinel and Landsat satellites. Sentinel satellites are run by the Copernicus Programme at the European Space Agency and provide high spatial resolution imagery (10-60m per pixel).</p>
-<p>The Landsat program started by NASA and the US Geological Survey in 1972 has provided imagery across the world.</p>
+<section id="open-source-data---sentinel-and-landsat" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="open-source-data---sentinel-and-landsat"><span class="header-section-number">5.1</span> Open source data - Sentinel and Landsat</h2>
+<p>This week we started working with some open satellite data from the Sentinel and Landsat satellites. Sentinel satellites are run by the Copernicus Programme at the European Space Agency and provide high spatial resolution imagery, 10m, 20, and 60m per pixel resolution depending on the Band used.</p>
+<p>The Landsat program started by NASA and the US Geological Survey in 1972 has provided imagery across the world. The latest operational Landsat satellites are Landsat 8 and 9 providing 15m, 30m and 100m resolution depending on the Band used.</p>
 </section>
-<section id="snap" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="snap"><span class="header-section-number">5.2</span> SNAP</h2>
-<p>During the practical I used SNAP to interact with Sentinel satellite imagery learning how to render these in true colour (RGB) and extract statistics from the data such as the nature of vegetation, e.g.&nbsp;whether the soil is wet or dry.</p>
+<section id="snap-case-study-gdansk" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="snap-case-study-gdansk"><span class="header-section-number">5.2</span> SNAP Case study: Gdansk</h2>
+<p>During the practical I used SNAP to interact with Sentinel satellite imagery for the Polish city of Gdansk, learning how to render these in true colour (RGB) and extract statistics from the data such as the nature of vegetation, e.g.&nbsp;whether the soil is wet or dry.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Images/snap_gdansk.png" class="img-fluid figure-img"></p>
 <figcaption>Gdansk, Source:Sentinel2b</figcaption>
 </figure>
 </div>
-<p>I started the practical by looking at recent satellite imagery of Gdansk in January 2026 where large snowfall was reflected in the scatter plot I produced. In order to compute this using the near-infared and green light that plant matter reflects I had to understand the RGB bands used to produce the scatter plot from B4 - B8. In the image for Gdansk and the surrounding areas we can see a lot of wet bare soil which makes sense.&nbsp;</p>
+<section id="scatter-plot" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">5.2.1</span> Scatter plot</h3>
+<p>I started the practical by looking at recent satellite imagery of Gdansk in January 2026 where large snowfall was reflected in the scatter plot I produced. In order to compute this using the near-infrared and green light that plant matter reflects I had to understand the RGB bands used to produce the scatter plot from B4 - B8. In the image for Gdansk and the surrounding areas we can see a lot of wet bare soil which makes sense.&nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="docs/Images/snap_tct.png" class="img-fluid figure-img"></p>
+<p><img src=".\Images/snap_scatter.png" class="img-fluid figure-img"></p>
 <figcaption>Gdansk SNAP scatter plot, Source: Sentinel2b</figcaption>
 </figure>
 </div>
-<section id="scatter-plot" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">5.2.1</span> Scatter plot</h3>
 <p>The scatter plot above shows the Band 4 (x axis) and Band 8 (y axis), which are the red and near-infrared bands, so here the lower values of Band 8 and Band 4 are indicating wet bare soil which makes sense given the winter period.</p>
 </section>
 <section id="tasseled-cap-transformation" class="level3" data-number="5.2.2">
 <h3 data-number="5.2.2" class="anchored" data-anchor-id="tasseled-cap-transformation"><span class="header-section-number">5.2.2</span> Tasseled Cap Transformation</h3>
 <p>The Tasseled Cap Transformation is a method used to analyse the spectral data from multiple bands into a standardised image which incorporates information about surface brightness, vegetation greenness and moisture content.</p>
-<p>Brightness is associated with bare soil or manmade surface helping to identify urban areas. Greeness is associated with green vegetation and wetness with moisture.</p>
+<p>To start this process I managed to clip the city boundaries for my raster image importing a shapefile into SNAP and masking it.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\Images/gdansk_clipped.png" class="img-fluid figure-img"></p>
+<figcaption>Gdansk Clipped SNAP, Source: Sentinel2b</figcaption>
+</figure>
+</div>
+<p>I struggled with following the practical and computing the brightness, greenness and wetness bands in SNAP but managed to produce an image attempting to represent the Tasseled Cap function which is a part of Principal Component analysis. Perhaps due to the presence of snow the result is being distorted somehow, but more likely that I computed this image wrong.</p>
+<p>Brightness is associated with bare soil or manmade surfaces helping to identify urban areas. Greeness is associated with green vegetation and wetness with moisture. The green pictured below is correctly identifying the large forest area in the northwest of the clipped boundary. In general there is a lot of vegetation across the city and we cannot see any water bodies as the sea has been clipped out.</p>
+<p>What is displayed in pink usually shows man-made surface like concrete and generally reflects built up areas. This accurately reflects the airport in the west of the map, and areas of the city centre, but I would have expected to see more of this around the city centre and it is picking up some bare soil fields in the eastern part of the map.</p>
+<p>I was also expecting the outer fields to show up more brightly given the presence of snow as visible in the image above.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\Images/tct_pca_gdansk1.png" class="img-fluid figure-img"></p>
+<figcaption>Gdansk TCT, Source: Sentinel2b</figcaption>
+</figure>
+</div>
+<p>To check this further I computed a false composite image using Bands B8, B4 and B3 to check how the near-infrared reflecting plant matter shows up. This does largely match the PCA tasseled cap transformation above with the greenness and the near-infrared reflection captured in red matching well. However I assume due to the presence of snow around the fields in the eastern part of the map is mostly bare soil which is why it appears pink in the PCA and white in the false composite image.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\Images/gdansk_false_colour.png" class="img-fluid figure-img"></p>
+<figcaption>Gdansk False Colour, Source: Sentinel2b</figcaption>
+</figure>
+</div>
+</section>
+<section id="r-studio-application" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="r-studio-application"><span class="header-section-number">5.2.3</span> R-Studio application</h3>
 </section>
 </section>
-</section>
-<section id="reflections" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Reflections</h1>
+<section id="reflections" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">5.3</span> Reflections</h2>
 <p>The use of both multispectral and SAR imagery to extract information about the natural and urban environments across the world is a powerful tool that has many applications. The environmental monitoring examples for applied ecologists outlined by Yifang Ban (2014) in order to classify crops and observe their growth was interesting to read about, and I can imagine how valuable this data is during unprecedented weather events that can exacerbate food shortages in vulnerable regions.&nbsp;</p>
 <p>Personally, working at a Local Council I would be interested to read more about the urban applications of these techniques for monitoring smaller areas of vegetation such as urban farms, or looking at the impact to infrastructure under extreme weather events. Combined with studies of how environmental changes impact citizens and their health outcomes would provide an insightful avenue for using satellite data alongside geodemographic data.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
