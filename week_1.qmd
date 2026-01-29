@@ -101,10 +101,19 @@ To check this further I computed a false composite image using Bands B8, B4 and 
 
 ![Gdansk False Colour, Source: Sentinel2b](/Images/gdansk_false_colour.png)
 
-### R-Studio application
+Unfortunately I was unable to compute the selected points of interest using SNAP as it simply took too long to export into a GeoTiff file. I did not manage to complete the R portion of this practical but I hope that in future weeks I can manage to do this.
+
+Despite this, the initial experimentation with SNAP allowed me to start to understand how multispectral sensors the Bands they use can be manipulated to produce interesting images to get a better interpretation of the vegetation and urban areas across the city.
+
+Ultimately, I think using data from January wasn't a great choice given the impact of snow but it definitely made me realise just how much goes into selecting appropriate satellite imagery given that atmospheric events like clouds, fog, snow can alter the usefulness of the images.
 
 ## Reflections
 
-The use of both multispectral and SAR imagery to extract information about the natural and urban environments across the world is a powerful tool that has many applications. The environmental monitoring examples for applied ecologists outlined by Yifang Ban (2014) in order to classify crops and observe their growth was interesting to read about, and I can imagine how valuable this data is during unprecedented weather events that can exacerbate food shortages in vulnerable regions. 
+I spent some time reading ahead for the upcoming weeks and was really interested to discover that both multispectral and SAR imagery can be combined to extract information about the natural and urban environments across the world. I found the visual explanation of how this can be done from [@Shulte2018] to be a good introduction and I enjoyed reading about the various examples of environmental monitoring. One of these was outlined by [@Ban2003] exploring how to classify crops such as wheat and corn under good and bad growth conditions to demonstrate how combining Landsat data with SAR gave them the most accurate classification of crop health.
+I can imagine how valuable this data is during unprecedented weather events that can exacerbate food shortages in vulnerable regions.
 
 Personally, working at a Local Council I would be interested to read more about the urban applications of these techniques for monitoring smaller areas of vegetation such as urban farms, or looking at the impact to infrastructure under extreme weather events. Combined with studies of how environmental changes impact citizens and their health outcomes would provide an insightful avenue for using satellite data alongside geodemographic data.
+
+As I was looking at various research which utilised satellite imagery around the Gdansk area I found an article [@Tysiac2026] which used multispectral imagery and LiDAR technology for heritage mapping purposes. As an ex-history graduate this grabbed my interest and I found that high resolution imagery (1m), historical maps and machine learning classification to perform analysis in Google Earth Engine to attempt to digitally locate the remnants of a fortification from the 17th century called Gdanska Glowa.
+
+
