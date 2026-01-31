@@ -9,8 +9,8 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - summary.qmd
     - week_1.qmd
+    - week_3.qmd
     - references.qmd
 
 bibliography: references.bib
