@@ -15,11 +15,13 @@ In this chapter I’ll summarise:
 -   Orthorectification/topographic correction
 -   Radiometric calibration
 
+Before moving onto the applications where I look at NVDI and Texture analysis in Gdansk and my reflections.
+
 ### Radiative transfer and atmospheric correction
 
 Going back to concepts from Week 1 radiative transfer was helpful to recap in the context of understanding why atmospheric correction is needed for remotely sensed data.
 
-I enjoyed the video from Karen Joyce explaining this concept in an accessible way using the example of emitted sunlight (Top of Atmosphere irradiance) which is reflected off of a surface and into a sensor (also referred to as At Sensor Radiance). However, some light from the sun will end up being scattered in the atmosphere (diffuse irradiance) and will also get recorded by the sensor.
+I enjoyed the video from [Karen Joyce](https://www.youtube.com/watch?v=qb4yFwzsnU8&t) explaining this concept in an accessible way using the example of emitted sunlight (Top of Atmosphere irradiance) which is reflected off of a surface and into a sensor (also referred to as At Sensor Radiance). However, some light from the sun will end up being scattered in the atmosphere (diffuse irradiance) and will also get recorded by the sensor.
 
 Whereas, ground scanners measure total radiance i.e. all light reflected off the sun, sensors in the atmosphere or in space will measure At Sensor Radiance. To get an accurate image of the ground the atmospheric component (additive path radiance) needs to be subtracted from the At Sensor Radiance i.e. the sensor produced image.
 
@@ -63,7 +65,7 @@ The most common way to correct for geometric distortions is by having Ground Con
 
 -   Or another satellite image
 
-Here we look for points that wouldn’t have changed, potentially natural features like rivers although these can change so sometimes manmade features can work better.
+Here we look for points that wouldn’t have changed, potentially natural features like rivers although these can change so sometimes man-made features can work better.
 
 ### Orthorectification /topographic correction
 
@@ -87,29 +89,37 @@ This is necessary when collecting images across time, which will be influenced b
 
 ### Image enhancements: NVDI
 
-Using a technique called ratioing I was able to calculate the Normalised Difference Vegetation Index which works by comparing near-infrared bands to red light wavelengths to reflect healthy and less healthy vegetation.
+Using a technique called ratioing I was able to calculate the Normalised Difference Vegetation Index (NDVI) which works by comparing near-infrared bands to red light wavelengths to reflect healthy and less healthy vegetation.
 
 ![NVDI, Source: [GeoPard Agriculture](https://geopard.tech/blog/what-is-ndvi-normalized-difference-vegetation-index/)](https://i0.wp.com/geopard.tech/wp-content/uploads/2022/07/74.3-min-1.jpg?resize=1536%2C832&ssl=1)
 
-I was able to calculate NVDI by using Landsat 8 images for Gdansk using the following formula and subtracting the near-infrared band (Band 5) from red light wavelenght (Band 4), and then dividing by the sum of both.
+I was able to calculate NDVI by using Landsat 8 images for Gdansk using the following formula and subtracting the near-infrared band (Band 5) from red light wavelength (Band 4), and then dividing by the sum of both.
 
 ![Gdansk NVDI, Source: Landsat 8](Images/gdansk_nvdi1.png)
 
-The image above reflects vegetation in August 2025, where we can see dense vegetation across the forest area of Lasy Oliwskie. Nevertheless it is actually more difficult to assess the health of vegetation without more comparison over time as the lower NVDI figures reflect water and built up areas of sparse vegetation, hence for future analysis it might make more sense to subset this area and compare the NVDI for more dense vegetation areas across time to look at plant health. As this imagery is from August 2025 there may be areas where plant health is worse due to heat which last year was between 25-31 degrees Celsius.
+The image above reflects vegetation in August 2025, where we can see dense vegetation across the forest area of Lasy Oliwskie. Nevertheless it is actually more difficult to assess the health of vegetation without more comparison over time as the lower NDVI figures reflect water and built up areas of sparse vegetation, hence for future analysis it might make more sense to subset this area and compare the NDVI for more dense vegetation areas across time to look at plant health. As this imagery is from August 2025 there may be areas where plant health is worse due to heat which last year was between 25-31 degrees Celsius.
 
 ### Filtering
 
-I was also able to filter the image to show everything above NVDI 0.2, this can be used to mask out vegetation from built up areas which can be useful for further monitoring.
+I was also able to filter the image to show everything above NDVI 0.2, this can be used to mask out vegetation from built up areas which can be useful for further monitoring.
 
-![Gdansk NVDI, Source: Landsat 8](Images/gdansk_nvdi_02.png) As before there are some caveats with using this to accurately assert the health of vegetation as more monitoring over time would be needed.
+![Gdansk NVDI, Source: Landsat 8](Images/gdansk_nvdi_02.png)
+
+As mentioned above there are some caveats with the NDVI index that I wanted to understand more, especially when filtering NDVI and making sense of what increasing by 0.1 meant and whether it was useful for reflecting the health of vegetation.
+
+I found reading @Martinez2023 helped to this into context, as they focus on Greater Manchester to identify how NDVI values can be "sensitive to certain vegetation types and quantities at different spatial scales". This means that an change between NDVI 0.2 to 0.3 may be associated with a greater increase in greenspace % compared to an increase from 0.5 to 0.6 and thus may tell us where greening policies can have the highest impact for communities.
+
+However, this also varies depending on the area we're looking at so their results aren't necessarily replicable in different cities, so working with NDVI may require first understanding how vegetation types like trees, shurbs and grass affect the index.
 
 ### Texture analysis
 
-Next I wanted to look at potentially extracting more of the built up areas of the city using the [GLCMTextures](https://cran.r-project.org/web/packages/GLCMTextures/vignettes/README.html) library to calculate the more 'jagged' texture of man-made materials like concrete by comparing variance to the adjacent pixels.
+Next I wanted to look at potentially extracting more of the built up areas of the city using the Gray Level Co-occurence Matrix [GLCMTextures](https://cran.r-project.org/web/packages/GLCMTextures/vignettes/README.html) package to calculate the more 'jagged' texture of man-made materials like concrete by comparing variance to the adjacent pixels.
 
 I played around with the settings and looked at the GLCM_entropy metric to look at low entropy areas such as calm water or smooth surfaces and higher entropy for areas like urban settings.
 
 ![Gdansk GLCM_Textures, Source: Landsat 8](Images/gdansk_textures.png)
+
+I think another way to improve on this would be to select a smaller neighbourhood to look at textures within the city centre urban area and see if we can identify differences between dense built up areas or industrial areas vs residential areas.
 
 ### Data fusion - PCA
 
@@ -127,4 +137,6 @@ In the image above PCA1 captures most of the variance between the vegetation and
 
 I think the analysis I was able to produce could be better to show more distinction between the built-up areas and vegetation but for a first go with texture and raster PCA I am glad it generally worked.
 
-As I was looking at various research which utilised satellite imagery around the Gdansk area I found an article [@Tysiac2026] which used multispectral imagery and LiDAR technology for heritage mapping purposes. As an ex-history graduate this grabbed my interest and I found that high resolution imagery (1m), historical maps and machine learning classification to perform analysis in Google Earth Engine to attempt to digitally locate the remnants of a fortification from the 17th century called Gdanska Glowa.
+Working with texture analysis was useful for separating some of the natural environment from built environment, and I think in the future working with a smaller area could be really useful for my work, for example mapping neighbourhood level green spaces, or underutilised sites and see where in the brough there are opportunities for redevelopment.
+
+As I was looking at various research which used satellite imagery around the Gdansk area I found an article [@Tysiac2026] which used multispectral imagery and LiDAR technology for heritage mapping purposes. As an ex-history graduate this grabbed my interest and I found that high resolution imagery (1m), historical maps and machine learning classification to perform analysis in Google Earth Engine to attempt to digitally locate the remnants of a fortification from the 17th century called Gdanska Glowa.

@@ -219,10 +219,11 @@ div.csl-indent {
 <li>Orthorectification/topographic correction</li>
 <li>Radiometric calibration</li>
 </ul>
+<p>Before moving onto the applications where I look at NVDI and Texture analysis in Gdansk and my reflections.</p>
 <section id="radiative-transfer-and-atmospheric-correction" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="radiative-transfer-and-atmospheric-correction"><span class="header-section-number">3.1.1</span> Radiative transfer and atmospheric correction</h3>
 <p>Going back to concepts from Week 1 radiative transfer was helpful to recap in the context of understanding why atmospheric correction is needed for remotely sensed data.</p>
-<p>I enjoyed the video from Karen Joyce explaining this concept in an accessible way using the example of emitted sunlight (Top of Atmosphere irradiance) which is reflected off of a surface and into a sensor (also referred to as At Sensor Radiance). However, some light from the sun will end up being scattered in the atmosphere (diffuse irradiance) and will also get recorded by the sensor.</p>
+<p>I enjoyed the video from <a href="https://www.youtube.com/watch?v=qb4yFwzsnU8&amp;t">Karen Joyce</a> explaining this concept in an accessible way using the example of emitted sunlight (Top of Atmosphere irradiance) which is reflected off of a surface and into a sensor (also referred to as At Sensor Radiance). However, some light from the sun will end up being scattered in the atmosphere (diffuse irradiance) and will also get recorded by the sensor.</p>
 <p>Whereas, ground scanners measure total radiance i.e.&nbsp;all light reflected off the sun, sensors in the atmosphere or in space will measure At Sensor Radiance. To get an accurate image of the ground the atmospheric component (additive path radiance) needs to be subtracted from the At Sensor Radiance i.e.&nbsp;the sensor produced image.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -282,7 +283,7 @@ div.csl-indent {
 <li><p>GPS data from another device&nbsp;</p></li>
 <li><p>Or another satellite image</p></li>
 </ul>
-<p>Here we look for points that wouldn’t have changed, potentially natural features like rivers although these can change so sometimes manmade features can work better.</p>
+<p>Here we look for points that wouldn’t have changed, potentially natural features like rivers although these can change so sometimes man-made features can work better.</p>
 </section>
 <section id="orthorectification-topographic-correction" class="level3" data-number="3.1.3">
 <h3 data-number="3.1.3" class="anchored" data-anchor-id="orthorectification-topographic-correction"><span class="header-section-number">3.1.3</span> Orthorectification /topographic correction</h3>
@@ -302,30 +303,38 @@ div.csl-indent {
 <h2 data-number="3.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">3.2</span> <strong>Applications</strong></h2>
 <section id="image-enhancements-nvdi" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="image-enhancements-nvdi"><span class="header-section-number">3.2.1</span> Image enhancements: NVDI</h3>
-<p>Using a technique called ratioing I was able to calculate the Normalised Difference Vegetation Index which works by comparing near-infrared bands to red light wavelengths to reflect healthy and less healthy vegetation.</p>
+<p>Using a technique called ratioing I was able to calculate the Normalised Difference Vegetation Index (NDVI) which works by comparing near-infrared bands to red light wavelengths to reflect healthy and less healthy vegetation.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://i0.wp.com/geopard.tech/wp-content/uploads/2022/07/74.3-min-1.jpg?resize=1536%2C832&amp;ssl=1" class="img-fluid figure-img"></p>
 <figcaption>NVDI, Source: <a href="https://geopard.tech/blog/what-is-ndvi-normalized-difference-vegetation-index/">GeoPard Agriculture</a></figcaption>
 </figure>
 </div>
-<p>I was able to calculate NVDI by using Landsat 8 images for Gdansk using the following formula and subtracting the near-infrared band (Band 5) from red light wavelenght (Band 4), and then dividing by the sum of both.</p>
+<p>I was able to calculate NDVI by using Landsat 8 images for Gdansk using the following formula and subtracting the near-infrared band (Band 5) from red light wavelength (Band 4), and then dividing by the sum of both.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Images/gdansk_nvdi1.png" class="img-fluid figure-img"></p>
 <figcaption>Gdansk NVDI, Source: Landsat 8</figcaption>
 </figure>
 </div>
-<p>The image above reflects vegetation in August 2025, where we can see dense vegetation across the forest area of Lasy Oliwskie. Nevertheless it is actually more difficult to assess the health of vegetation without more comparison over time as the lower NVDI figures reflect water and built up areas of sparse vegetation, hence for future analysis it might make more sense to subset this area and compare the NVDI for more dense vegetation areas across time to look at plant health. As this imagery is from August 2025 there may be areas where plant health is worse due to heat which last year was between 25-31 degrees Celsius.</p>
+<p>The image above reflects vegetation in August 2025, where we can see dense vegetation across the forest area of Lasy Oliwskie. Nevertheless it is actually more difficult to assess the health of vegetation without more comparison over time as the lower NDVI figures reflect water and built up areas of sparse vegetation, hence for future analysis it might make more sense to subset this area and compare the NDVI for more dense vegetation areas across time to look at plant health. As this imagery is from August 2025 there may be areas where plant health is worse due to heat which last year was between 25-31 degrees Celsius.</p>
 </section>
 <section id="filtering" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="filtering"><span class="header-section-number">3.2.2</span> Filtering</h3>
-<p>I was also able to filter the image to show everything above NVDI 0.2, this can be used to mask out vegetation from built up areas which can be useful for further monitoring.</p>
-<p><img src="Images/gdansk_nvdi_02.png" class="img-fluid" alt="Gdansk NVDI, Source: Landsat 8"> As before there are some caveats with using this to accurately assert the health of vegetation as more monitoring over time would be needed.</p>
+<p>I was also able to filter the image to show everything above NDVI 0.2, this can be used to mask out vegetation from built up areas which can be useful for further monitoring.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/gdansk_nvdi_02.png" class="img-fluid figure-img"></p>
+<figcaption>Gdansk NVDI, Source: Landsat 8</figcaption>
+</figure>
+</div>
+<p>As mentioned above there are some caveats with the NDVI index that I wanted to understand more, especially when filtering NDVI and making sense of what increasing by 0.1 meant and whether it was useful for reflecting the health of vegetation.</p>
+<p>I found reading <span class="citation" data-cites="Martinez2023">Iglesia Martinez and Labib (<a href="references.html#ref-Martinez2023" role="doc-biblioref">2023</a>)</span> helped to this into context, as they focus on Greater Manchester to identify how NDVI values can be “sensitive to certain vegetation types and quantities at different spatial scales”. This means that an change between NDVI 0.2 to 0.3 may be associated with a greater increase in greenspace % compared to an increase from 0.5 to 0.6 and thus may tell us where greening policies can have the highest impact for communities.</p>
+<p>However, this also varies depending on the area we’re looking at so their results aren’t necessarily replicable in different cities, so working with NDVI may require first understanding how vegetation types like trees, shurbs and grass affect the index.</p>
 </section>
 <section id="texture-analysis" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="texture-analysis"><span class="header-section-number">3.2.3</span> Texture analysis</h3>
-<p>Next I wanted to look at potentially extracting more of the built up areas of the city using the <a href="https://cran.r-project.org/web/packages/GLCMTextures/vignettes/README.html">GLCMTextures</a> library to calculate the more ‘jagged’ texture of man-made materials like concrete by comparing variance to the adjacent pixels.</p>
+<p>Next I wanted to look at potentially extracting more of the built up areas of the city using the Gray Level Co-occurence Matrix <a href="https://cran.r-project.org/web/packages/GLCMTextures/vignettes/README.html">GLCMTextures</a> package to calculate the more ‘jagged’ texture of man-made materials like concrete by comparing variance to the adjacent pixels.</p>
 <p>I played around with the settings and looked at the GLCM_entropy metric to look at low entropy areas such as calm water or smooth surfaces and higher entropy for areas like urban settings.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -333,6 +342,7 @@ div.csl-indent {
 <figcaption>Gdansk GLCM_Textures, Source: Landsat 8</figcaption>
 </figure>
 </div>
+<p>I think another way to improve on this would be to select a smaller neighbourhood to look at textures within the city centre urban area and see if we can identify differences between dense built up areas or industrial areas vs residential areas.</p>
 </section>
 <section id="data-fusion---pca" class="level3" data-number="3.2.4">
 <h3 data-number="3.2.4" class="anchored" data-anchor-id="data-fusion---pca"><span class="header-section-number">3.2.4</span> Data fusion - PCA</h3>
@@ -351,10 +361,14 @@ div.csl-indent {
 <section id="reflections" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">3.3</span> Reflections</h2>
 <p>I think the analysis I was able to produce could be better to show more distinction between the built-up areas and vegetation but for a first go with texture and raster PCA I am glad it generally worked.</p>
-<p>As I was looking at various research which utilised satellite imagery around the Gdansk area I found an article <span class="citation" data-cites="Tysiac2026">(<a href="references.html#ref-Tysiac2026" role="doc-biblioref">Tysiac, Dąbal, and Widerski 2026</a>)</span> which used multispectral imagery and LiDAR technology for heritage mapping purposes. As an ex-history graduate this grabbed my interest and I found that high resolution imagery (1m), historical maps and machine learning classification to perform analysis in Google Earth Engine to attempt to digitally locate the remnants of a fortification from the 17th century called Gdanska Glowa.</p>
+<p>Working with texture analysis was useful for separating some of the natural environment from built environment, and I think in the future working with a smaller area could be really useful for my work, for example mapping neighbourhood level green spaces, or underutilised sites and see where in the brough there are opportunities for redevelopment.</p>
+<p>As I was looking at various research which used satellite imagery around the Gdansk area I found an article <span class="citation" data-cites="Tysiac2026">(<a href="references.html#ref-Tysiac2026" role="doc-biblioref">Tysiac, Dąbal, and Widerski 2026</a>)</span> which used multispectral imagery and LiDAR technology for heritage mapping purposes. As an ex-history graduate this grabbed my interest and I found that high resolution imagery (1m), historical maps and machine learning classification to perform analysis in Google Earth Engine to attempt to digitally locate the remnants of a fortification from the 17th century called Gdanska Glowa.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Martinez2023" class="csl-entry" role="listitem">
+Iglesia Martinez, Alex de la, and S. M. Labib. 2023. <span>“Demystifying Normalized Difference Vegetation Index (NDVI) for Greenness Exposure Assessments and Policy Interventions in Urban Greening.”</span> <em>Environmental Research</em> 220: 115155. https://doi.org/<a href="https://doi.org/10.1016/j.envres.2022.115155">https://doi.org/10.1016/j.envres.2022.115155</a>.
+</div>
 <div id="ref-Shulte2018" class="csl-entry" role="listitem">
 Schulte to Bühne, Henrike, and Nathalie Pettorelli. 2018. <span>“Better Together: <span>Integrating</span> and Fusing Multispectral and Radar Satellite Imagery to Inform Biodiversity Monitoring, Ecological Research and Conservation Science.”</span> <em>Methods in Ecology and Evolution</em> 9 (4): 849–65. <a href="https://doi.org/10.1111/2041-210X.12942">https://doi.org/10.1111/2041-210X.12942</a>.
 </div>

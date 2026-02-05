@@ -10,7 +10,7 @@ To start with some definitions:
 
 -   Remote sensing is the collection of data about the Earth from the atmosphere with various technologies that utilise electromagnetic (EM) waves.
 
--   Electromagnetic waves are sources of EM energy used in remote sensing can come from sources like the Sun, or sensors such as LiDAR sending out their own light from a laser and then measuring the the return time for those laser pulses to identify information about the surface of the Earth.
+-   Electromagnetic waves are sources of EM energy used in remote sensing can come from sources like the Sun, or sensors such as LiDAR sending out their own light and then measuring the the return time for the light pulses to identify information about the surface of the Earth.
 
 ## Electromagnetic Waves
 
@@ -93,8 +93,6 @@ Brightness is associated with bare soil or manmade surfaces helping to identify 
 
 What is displayed in pink usually shows man-made surface like concrete and generally reflects built up areas. This accurately reflects the airport in the west of the map, and areas of the city centre, but I would have expected to see more of this around the city centre and it is picking up some bare soil fields in the eastern part of the map.
 
-I was also expecting the outer fields to show up more brightly given the presence of snow as visible in the image above.
-
 ![Gdansk TCT, Source: Sentinel2b](/Images/tct_pca_gdansk1.png)
 
 To check this further I computed a false composite image using Bands B8, B4 and B3 to check how the near-infrared reflecting plant matter shows up. This does largely match the PCA tasseled cap transformation above with the greenness and the near-infrared reflection captured in red matching well. However I assume due to the presence of snow around the fields in the eastern part of the map is mostly bare soil which is why it appears pink in the PCA and white in the false composite image.
@@ -103,14 +101,18 @@ To check this further I computed a false composite image using Bands B8, B4 and 
 
 Unfortunately I was unable to compute the selected points of interest using SNAP as it simply took too long to export into a GeoTiff file. I did not manage to complete the R portion of this practical but I hope that in future weeks I can manage to do this.
 
-Despite this, the initial experimentation with SNAP allowed me to start to understand how multispectral sensors the Bands they use can be manipulated to produce interesting images to get a better interpretation of the vegetation and urban areas across the city.
+However, from the practical using the Cape Town example I can see how plotting the spectral values for various land cover areas can combine several spectral signatures to showcase distinctions between areas of forest or grass. The applications of this in areas of environmental monitoring, or urban planning e.g. looking at spectral signatures of certain chemicals in the atmosphere or in water could help expose illegal polluting activity.
+
+![Cape Town Spectral Signatures, Source: CASA0023 ](https://andrewmaclachlan.github.io/CASA0023/intro_files/figure-html/unnamed-chunk-38-1.png)
+
+Despite not being able to compute the points of interest for Gdansk, working with SNAP helped me understand how multispectral sensors the Bands they use can be manipulated to produce interesting images to get a better interpretation of the vegetation and urban areas across the city.
 
 Ultimately, I think using data from January wasn't a great choice given the impact of snow but it definitely made me realise just how much goes into selecting appropriate satellite imagery given that atmospheric events like clouds, fog, snow can alter the usefulness of the images.
 
 ## Reflections
 
+Although it was somewhat difficult to work with SNAP this week I have really enjoyed working with new types of data and getting to understand how remote sensing works.
+
 I spent some time reading ahead for the upcoming weeks and was really interested to discover that both multispectral and SAR imagery can be combined to extract information about the natural and urban environments across the world. I found the visual explanation of how this can be done from [@Shulte2018] to be a good introduction and I enjoyed reading about the various examples of environmental monitoring. One of these was outlined by [@Ban2003] exploring how to classify crops such as wheat and corn under good and bad growth conditions to demonstrate how combining Landsat data with SAR gave them the most accurate classification of crop health. I can imagine how valuable this data is during unprecedented weather events that can exacerbate food shortages in vulnerable regions.
 
-Personally, working at a Local Council I would be interested to read more about the urban applications of these techniques for monitoring smaller areas of vegetation such as urban farms, or looking at the impact to infrastructure under extreme weather events. Combined with studies of how environmental changes impact citizens and their health outcomes would provide an insightful avenue for using satellite data alongside geodemographic data.
-
-
+Personally, working at a Local Council I would be interested to read more about the urban applications of these techniques for monitoring smaller areas of vegetation such as urban farms, or looking at the impact to infrastructure under extreme weather events. Combined with studies of how environmental changes impact citizens and their health outcomes would provide an insightful avenue for using satellite data alongside geodemographic data. However, I can also imagine there are obstacles to getting high spectral and spatial resolution imagery due to costs, and the technical requirements to process really detailed spectral signatures.
