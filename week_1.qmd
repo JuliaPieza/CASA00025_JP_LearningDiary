@@ -43,7 +43,7 @@ We can also think about it in simpler terms, the cameras that exist on our mobil
 There are 4 resolutions in remote sensed imagery.
 
 | Resolution | Definition | Use |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | Spatial | The size of each pixel in an image corresponds to an area of the Earth's surface, e.g. one pixel can correspond to as little as a few centimetres (high resolution) to 10km. | Images of the Earth can be used to detect objects such as buildings. A high spatial resolution allows us to see more detail. |
 | Spectral | Senors which can distinguish between more closely spaced waves are said to measure more Bands of imagery i.e. more wavelengths. | A high spectral resolution allows us to identify particular types of minerals, vegetation or other features because each object has a unique spectral signature. |
 | Temporal | The time it takes for a satellite to make an orbit and end at the same observation area. Satellites can have orbits as short as 1 day, or much longer. | Allows us to see change over time for a particular area of observation. |
@@ -103,7 +103,7 @@ Unfortunately I was unable to compute the selected points of interest using SNAP
 
 However, from the practical using the Cape Town example I can see how plotting the spectral values for various land cover areas can combine several spectral signatures to showcase distinctions between areas of forest or grass. The applications of this in areas of environmental monitoring, or urban planning e.g. looking at spectral signatures of certain chemicals in the atmosphere or in water could help expose illegal polluting activity.
 
-![Cape Town Spectral Signatures, Source: CASA0023 ](https://andrewmaclachlan.github.io/CASA0023/intro_files/figure-html/unnamed-chunk-38-1.png)
+![Cape Town Spectral Signatures, Source: CASA0023](https://andrewmaclachlan.github.io/CASA0023/intro_files/figure-html/unnamed-chunk-38-1.png)
 
 Despite not being able to compute the points of interest for Gdansk, working with SNAP helped me understand how multispectral sensors the Bands they use can be manipulated to produce interesting images to get a better interpretation of the vegetation and urban areas across the city.
 

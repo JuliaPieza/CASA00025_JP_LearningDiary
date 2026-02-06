@@ -10,7 +10,34 @@ In this week I'll focus on Gdansk and the Gdansk 2030 Plus City Development Stra
 
 ## Summary
 
-Summarise City development strategy
+Although Poland does not have nation wide climate law it is bound by EU legislation to reduce greenhouse gas emissions.
+
+Nevertheless cities in Poland have increasingly chosen to implement their own strategies to ensure preparedness for the effects fo climate change. However the institutions responsible for maintaining the natural environment are often uncoordinated due to different responsibilities sitting with Regional Directors of environmental protection or being the responsibility of Voivodeship-level government.
+
+The City Development Strategy Gdansk 2030 Plus aims to help mitigate the climate-related risks due to it's coastal position and continued development of the city's infrastructure, by coordinating the policies of several environmental bodies towards key strategic priorities.
+
+To begin the process of drafting this strategy over 3 thousand people, and institutions such as universities and businesses were surveyed about their priorities for the City's development.
+
+Around 63% of those surveyed identified greenery and biodiversity as their key priority for the city, with policies such as adding 100 hectares of new parks, and 50,000 new trees being some of the most popular. @GdanskCityHall2024
+
+### Green City policies 
+
+| Greening solutions | Remote Sensed Data |
+|----|----|
+| Planting 50,000 trees |  |
+| Reduction of greenhouse gas C02 emissions by 30% |  |
+| Establishing a network of green belts along water courses |  |
+| Implementation of a Southern Park |  |
+
+### Building flooding resilience
+
+| Flooding policies | Remote sensed data |
+|------------------------------------|------------------------------------|
+| Maintaining sources of groundwater, and increasing the capacity of retention reservoirs from 0.76million m3 to 1 million m3 |  |
+| Monitoring risks and improving the city's defences against flooding from river, sea and stomrs |  |
+|  |  |
+
+-   Link to SDGs
 
 Applications
 
