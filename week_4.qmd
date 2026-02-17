@@ -20,7 +20,7 @@ To begin the process of drafting this strategy over 3 thousand people, and insti
 
 Around 63% of those surveyed identified greenery and biodiversity as their key priority for the city, with policies such as adding 100 hectares of new parks, and 50,000 new trees being some of the most popular. @GdanskCityHall2024
 
-### Green City policies 
+### Green City policies
 
 | Greening solutions | Remote Sensed Data |
 |----|----|
@@ -32,7 +32,7 @@ Around 63% of those surveyed identified greenery and biodiversity as their key p
 ### Building flooding resilience
 
 | Flooding policies | Remote sensed data |
-|------------------------------------|------------------------------------|
+|----|----|
 | Maintaining sources of groundwater, and increasing the capacity of retention reservoirs from 0.76million m3 to 1 million m3 |  |
 | Monitoring risks and improving the city's defences against flooding from river, sea and stomrs |  |
 |  |  |

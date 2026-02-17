@@ -1,0 +1,12 @@
+---
+title: "Week 2: LiDAR"
+---
+
+## Xaringan Presentation: LiDAR
+
+This week we worked on creating Xaringan presentations using R, below you'll find my short presentation on LiDAR, and specifically the European Space Agency EarthCARE satellite.
+
+```{r}
+xaringanExtra::embed_xaringan(url = "https://juliapieza.github.io/CASA00025_Xaringan/#1",
+                              ratio = "16:9")
+```
