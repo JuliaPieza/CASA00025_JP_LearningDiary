@@ -66,7 +66,7 @@ I found it interesting to look at the City of Gdansk and it's Development Strate
 
 I think the combination of NDVI and LULC measures at a high resolution of 10m can provide a good level of detail, and methods like time series can be used to monitor change.
 
-Reading about the advancements in using remotely sensed data for evidence-based policy making was really interesting. I think the summary presented in @kadhim2016 was extremely useful for understanding what is available, the tradeoffs between spatial and temporal resolutions, and the large number of studies cited as examples.
+Reading about the advancements in using remotely sensed data for evidence-based policy making was really interesting. I think the summary presented in @Kadhim2016 was extremely useful for understanding what is available, the tradeoffs between spatial and temporal resolutions, and the large number of studies cited as examples.
 
 I used this article as a starting point for understanding the current challenges for working with remotely sensed data to visualise and model dense urban landscapes. As this is an emerging area, most open source satellite data goes up to 10m resolution, but for these urban settings even higher resolutions may be needed.
 
