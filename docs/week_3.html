@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>4&nbsp; Week 3: Corrections – Remote Sensing Learning Diary</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./week_4.html" rel="next">
+<link href="./week_2.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week_3.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week 3: Corrections</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Remote Sensing Learning Diary</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Julia Pieza Learning Diary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About me</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 1: What is Remote Sensing?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 2: LiDAR</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week 3: Corrections</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 4: Policy</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">4.1</span> Summary</a>
+  <ul class="collapse">
+  <li><a href="#radiative-transfer-and-atmospheric-correction" id="toc-radiative-transfer-and-atmospheric-correction" class="nav-link" data-scroll-target="#radiative-transfer-and-atmospheric-correction"><span class="header-section-number">4.1.1</span> Radiative transfer and atmospheric correction</a></li>
+  <li><a href="#geometric-distortion-and-corrections" id="toc-geometric-distortion-and-corrections" class="nav-link" data-scroll-target="#geometric-distortion-and-corrections"><span class="header-section-number">4.1.2</span> Geometric distortion and corrections:&nbsp;</a></li>
+  <li><a href="#orthorectification-topographic-correction" id="toc-orthorectification-topographic-correction" class="nav-link" data-scroll-target="#orthorectification-topographic-correction"><span class="header-section-number">4.1.3</span> Orthorectification /topographic correction</a></li>
+  <li><a href="#radiometric-calibration" id="toc-radiometric-calibration" class="nav-link" data-scroll-target="#radiometric-calibration"><span class="header-section-number">4.1.4</span> Radiometric calibration</a></li>
+  </ul></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">4.2</span> <strong>Applications</strong></a>
+  <ul class="collapse">
+  <li><a href="#image-enhancements-nvdi" id="toc-image-enhancements-nvdi" class="nav-link" data-scroll-target="#image-enhancements-nvdi"><span class="header-section-number">4.2.1</span> Image enhancements: NVDI</a></li>
+  <li><a href="#filtering" id="toc-filtering" class="nav-link" data-scroll-target="#filtering"><span class="header-section-number">4.2.2</span> Filtering</a></li>
+  <li><a href="#texture-analysis" id="toc-texture-analysis" class="nav-link" data-scroll-target="#texture-analysis"><span class="header-section-number">4.2.3</span> Texture analysis</a></li>
+  <li><a href="#data-fusion---pca" id="toc-data-fusion---pca" class="nav-link" data-scroll-target="#data-fusion---pca"><span class="header-section-number">4.2.4</span> Data fusion - PCA</a></li>
+  </ul></li>
+  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">4.3</span> Reflections</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week 3: Corrections</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="summary" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">4.1</span> Summary</h2>
+<p>In Week 3 we covered the corrections that are often necessary to make remotely sensed data usable for analysis.</p>
+<p>Although most remotely sensed data nowadays comes ‘analysis ready’ it was interesting and useful to understand these concepts in more detail.</p>
+<p>In this chapter I’ll summarise:</p>
+<ul>
+<li>Radiative transfer and atmospheric correction</li>
+<li>Geometric distortions and corrections</li>
+<li>Orthorectification/topographic correction</li>
+<li>Radiometric calibration</li>
+</ul>
+<p>Before moving onto the applications where I look at NVDI and Texture analysis in Gdansk and my reflections.</p>
+<section id="radiative-transfer-and-atmospheric-correction" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="radiative-transfer-and-atmospheric-correction"><span class="header-section-number">4.1.1</span> Radiative transfer and atmospheric correction</h3>
+<p>Going back to concepts from Week 1 radiative transfer was helpful to recap in the context of understanding why atmospheric correction is needed for remotely sensed data.</p>
+<p>I enjoyed the video from <a href="https://www.youtube.com/watch?v=qb4yFwzsnU8&amp;t">Karen Joyce</a> explaining this concept in an accessible way using the example of emitted sunlight (Top of Atmosphere irradiance) which is reflected off of a surface and into a sensor (also referred to as At Sensor Radiance). However, some light from the sun will end up being scattered in the atmosphere (diffuse irradiance) and will also get recorded by the sensor.</p>
+<p>Whereas, ground scanners measure total radiance i.e.&nbsp;all light reflected off the sun, sensors in the atmosphere or in space will measure At Sensor Radiance. To get an accurate image of the ground the atmospheric component (additive path radiance) needs to be subtracted from the At Sensor Radiance i.e.&nbsp;the sensor produced image.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://ars.els-cdn.com/content/image/3-s2.0-B9780128158265000040-f04-09-9780128158265.jpg" class="img-fluid figure-img"></p>
+<figcaption>Atmospheric correction, Source: ESA</figcaption>
+</figure>
+</div>
+<p>There are several ways to correct for this haze-like effect, this is especially necessary when we want to extract accurate information about the biophysical nature of the image e.g.&nbsp;plant health or temperature as these will get distorted by the light interactions with particles in the atmosphere. The list below is not an exhaustive list of methods but a flavour of what’s available and how it works.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 59%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Correction</th>
+<th>Method</th>
+<th>Pros &amp; Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dark Object Substraction</td>
+<td>Find the darkest value from the image collected and subtract this value from each pixel. Works on the principle that some dark objects e.g.&nbsp;water bodies will have near zero reflectance, and these values can then be subtracted from all the pixels in the image to remove atmospheric haze.</td>
+<td><p><strong>Pros:</strong> relative normalisation to a reference image often not expensive</p>
+<p><strong>Cons:</strong> there may not be a dark object within an image to normalise to</p></td>
+</tr>
+<tr class="even">
+<td>Pseudo Invariant Features</td>
+<td>Takes features which do not change in an image e.g.&nbsp;a road or carpark, this will have a temporally stable spectral reflectance and can be used to normalise the imagery using linear regression to remove the atmospheric effects.</td>
+<td><p><strong>Pros:</strong> inexpensive if a reference image has a PIF</p>
+<p><strong>Cons:</strong> if there is no PIF feature it can be unreliable, assumes reference image atmospheric distortion will be similar across time</p></td>
+</tr>
+<tr class="odd">
+<td>FLAASH (Fast line of sight atmospheric analysis)</td>
+<td><p>Removes atmospheric effects by modelling the atmosphere using a technique called MODTRAN which simulates the atmospheric path and enables the estimation of light scattering between the ground and sensor.</p>
+<p>It requires more detailed information about the sensor and is a more expensive tool to use, however the calculations based on physics enable precise correction.</p></td>
+<td><p><strong>Pros</strong>: an absolute atmospheric correction is usually more precise</p>
+<p><strong>Cons:</strong> requires more detailed atmospheric data and often expensive models to model atmospheric condition at the time of the image taken</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="geometric-distortion-and-corrections" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="geometric-distortion-and-corrections"><span class="header-section-number">4.1.2</span> Geometric distortion and corrections:&nbsp;</h3>
+<p>Apart from light there are other ways in which the way the sensor collects an image can result in some need for correction, these are geometric distortions such as:</p>
+<ul>
+<li><p>View angle - whether the sensor collects data straight down or at a Nadir or at an angle</p></li>
+<li><p>Topography - hills vs flatlands</p></li>
+<li><p>Rotation of the earth - from satellite data, depending on the path of flight of the satellite</p></li>
+<li><p>Or things like wind if data is collected from a plane</p></li>
+</ul>
+<p>The most common way to correct for geometric distortions is by having Ground Control Points (GCPs) to match existing features from a reference picture. Examples of this are:</p>
+<ul>
+<li><p>Local maps&nbsp;</p></li>
+<li><p>GPS data from another device&nbsp;</p></li>
+<li><p>Or another satellite image</p></li>
+</ul>
+<p>Here we look for points that wouldn’t have changed, potentially natural features like rivers although these can change so sometimes man-made features can work better.</p>
+</section>
+<section id="orthorectification-topographic-correction" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="orthorectification-topographic-correction"><span class="header-section-number">4.1.3</span> Orthorectification /topographic correction</h3>
+<p>Georectification refers to adding coordinates to an image and orthorectification refers to removing the distortions to make an image at a nadir angle i.e.&nbsp;straight down.&nbsp;</p>
+<p>This is a subset of geometric correction.</p>
+<p>In order to make an orthorectified image the elevation needs to be known, as well as GCPs which then allow a correction algorithm to transform the raw data into an orthorectified image. There are various algorithms to do this often depending on the sensor, image resolution and the desired level of accuracy.</p>
+</section>
+<section id="radiometric-calibration" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="radiometric-calibration"><span class="header-section-number">4.1.4</span> Radiometric calibration</h3>
+<p>This is the process of converting the image brightness captured as Digital Numbers by sensors into spectral radiance.</p>
+<p>Digital Numbers refer to the brightness captured in a remotely sensed image, but they have no units.</p>
+<p>Spectral radiance is the amount of light within a band from a sensor, measured in Watts, per metre squared, per steradian (angle of view), per nanometre (wavelenght).</p>
+<p>This is necessary when collecting images across time, which will be influenced by atmospheric and geometric distortions so to compare these more accurately we need to calibrate the pixel values using information about the sensor (e.g.&nbsp;how it was calibrated).</p>
+</section>
+</section>
+<section id="applications" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">4.2</span> <strong>Applications</strong></h2>
+<section id="image-enhancements-nvdi" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="image-enhancements-nvdi"><span class="header-section-number">4.2.1</span> Image enhancements: NVDI</h3>
+<p>Using a technique called ratioing I was able to calculate the Normalised Difference Vegetation Index (NDVI) which works by comparing near-infrared bands to red light wavelengths to reflect healthy and less healthy vegetation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://i0.wp.com/geopard.tech/wp-content/uploads/2022/07/74.3-min-1.jpg?resize=1536%2C832&amp;ssl=1" class="img-fluid figure-img"></p>
+<figcaption>NVDI, Source: <a href="https://geopard.tech/blog/what-is-ndvi-normalized-difference-vegetation-index/">GeoPard Agriculture</a></figcaption>
+</figure>
+</div>
+<p>I was able to calculate NDVI by using Landsat 8 images for Gdansk using the following formula and subtracting the near-infrared band (Band 5) from red light wavelength (Band 4), and then dividing by the sum of both.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/gdansk_nvdi1.png" class="img-fluid figure-img"></p>
+<figcaption>Gdansk NVDI, Source: Landsat 8</figcaption>
+</figure>
+</div>
+<p>The image above reflects vegetation in August 2025, where we can see dense vegetation across the forest area of Lasy Oliwskie. Nevertheless it is actually more difficult to assess the health of vegetation without more comparison over time as the lower NDVI figures reflect water and built up areas of sparse vegetation, hence for future analysis it might make more sense to subset this area and compare the NDVI for more dense vegetation areas across time to look at plant health. As this imagery is from August 2025 there may be areas where plant health is worse due to heat which last year was between 25-31 degrees Celsius.</p>
+</section>
+<section id="filtering" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="filtering"><span class="header-section-number">4.2.2</span> Filtering</h3>
+<p>I was also able to filter the image to show everything above NDVI 0.2, this can be used to mask out vegetation from built up areas which can be useful for further monitoring.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/gdansk_nvdi_02.png" class="img-fluid figure-img"></p>
+<figcaption>Gdansk NVDI, Source: Landsat 8</figcaption>
+</figure>
+</div>
+<p>As mentioned above there are some caveats with the NDVI index that I wanted to understand more, especially when filtering NDVI and making sense of what increasing by 0.1 meant and whether it was useful for reflecting the health of vegetation.</p>
+<p>I found reading <span class="citation" data-cites="Martinez2023">Iglesia Martinez and Labib (<a href="references.html#ref-Martinez2023" role="doc-biblioref">2023</a>)</span> helped to this into context, as they focus on Greater Manchester to identify how NDVI values can be “sensitive to certain vegetation types and quantities at different spatial scales”. This means that an change between NDVI 0.2 to 0.3 may be associated with a greater increase in greenspace % compared to an increase from 0.5 to 0.6 and thus may tell us where greening policies can have the highest impact for communities.</p>
+<p>However, this also varies depending on the area we’re looking at so their results aren’t necessarily replicable in different cities, so working with NDVI may require first understanding how vegetation types like trees, shurbs and grass affect the index.</p>
+</section>
+<section id="texture-analysis" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="texture-analysis"><span class="header-section-number">4.2.3</span> Texture analysis</h3>
+<p>Next I wanted to look at potentially extracting more of the built up areas of the city using the Gray Level Co-occurence Matrix <a href="https://cran.r-project.org/web/packages/GLCMTextures/vignettes/README.html">GLCMTextures</a> package to calculate the more ‘jagged’ texture of man-made materials like concrete by comparing variance to the adjacent pixels.</p>
+<p>I played around with the settings and looked at the GLCM_entropy metric to look at low entropy areas such as calm water or smooth surfaces and higher entropy for areas like urban settings.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/gdansk_textures.png" class="img-fluid figure-img"></p>
+<figcaption>Gdansk GLCM_Textures, Source: Landsat 8</figcaption>
+</figure>
+</div>
+<p>I think another way to improve on this would be to select a smaller neighbourhood to look at textures within the city centre urban area and see if we can identify differences between dense built up areas or industrial areas vs residential areas.</p>
+</section>
+<section id="data-fusion---pca" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="data-fusion---pca"><span class="header-section-number">4.2.4</span> Data fusion - PCA</h3>
+<p>Data fusion was something I was really interested in after reading <span class="citation" data-cites="Shulte2018">Schulte to Bühne and Pettorelli (<a href="references.html#ref-Shulte2018" role="doc-biblioref">2018</a>)</span> and here it is applied in a slightly simpler sense, by taking the texture produced above as a new Band effectively appending it to our original raster dataset. Using this we can better see the differences between built up and vegetation across Gdansk, although as mentioned in the lecture this where remote sensing becomes more of an art, as there is a lot of room to transform the data in many different ways.</p>
+<p>Following on from Week 1, PCA is used to reduce the dimensionality of remotely sensed data, in this week’s practical I combined the texture data with the spectral reflectance Landsat 8 data for Gdansk.</p>
+<p>This was done to reduce the number of variables in my data helping to enhance my image whilst keeping the key patterns of the dataset e.g.&nbsp;my vegetation vs urban areas divide.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/gdansk_pca.png" class="img-fluid figure-img"></p>
+<figcaption>Gdansk PCA Source: Landsat 8</figcaption>
+</figure>
+</div>
+<p>In the image above PCA1 captures most of the variance between the vegetation and more built up areas and can be used by a machine learning algorithm to predict trends and patterns visible in the data.</p>
+</section>
+</section>
+<section id="reflections" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">4.3</span> Reflections</h2>
+<p>I think the analysis I was able to produce could be better to show more distinction between the built-up areas and vegetation but for a first go with texture and raster PCA I am glad it generally worked.</p>
+<p>Working with texture analysis was useful for separating some of the natural environment from built environment, and I think in the future working with a smaller area could be really useful for my work, for example mapping neighbourhood level green spaces, or underutilised sites and see where in the brough there are opportunities for redevelopment.</p>
+<p>As I was looking at various research which used satellite imagery around the Gdansk area I found an article <span class="citation" data-cites="Tysiac2026">(<a href="references.html#ref-Tysiac2026" role="doc-biblioref">Tysiac, Dąbal, and Widerski 2026</a>)</span> which used multispectral imagery and LiDAR technology for heritage mapping purposes. As an ex-history graduate this grabbed my interest and I found that high resolution imagery (1m), historical maps and machine learning classification to perform analysis in Google Earth Engine to attempt to digitally locate the remnants of a fortification from the 17th century called Gdanska Glowa.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Martinez2023" class="csl-entry" role="listitem">
+Iglesia Martinez, Alex de la, and S. M. Labib. 2023. <span>“Demystifying Normalized Difference Vegetation Index (NDVI) for Greenness Exposure Assessments and Policy Interventions in Urban Greening.”</span> <em>Environmental Research</em> 220: 115155. https://doi.org/<a href="https://doi.org/10.1016/j.envres.2022.115155">https://doi.org/10.1016/j.envres.2022.115155</a>.
+</div>
+<div id="ref-Shulte2018" class="csl-entry" role="listitem">
+Schulte to Bühne, Henrike, and Nathalie Pettorelli. 2018. <span>“Better Together: <span>Integrating</span> and Fusing Multispectral and Radar Satellite Imagery to Inform Biodiversity Monitoring, Ecological Research and Conservation Science.”</span> <em>Methods in Ecology and Evolution</em> 9 (4): 849–65. <a href="https://doi.org/10.1111/2041-210X.12942">https://doi.org/10.1111/2041-210X.12942</a>.
+</div>
+<div id="ref-Tysiac2026" class="csl-entry" role="listitem">
+Tysiac, Pawel, Joanna Dąbal, and Tadeusz Widerski. 2026. <span>“Multispectral Data and <span>LiDAR</span> for Enhanced Georeferencing of Gdanska Glowa’s 17th-Century Fortifications.”</span> <em>Archaeometry: Bulletin of the Research Laboratory for Archaeology and the History of Art, Oxford University</em> 68 (1): 94–106. <a href="https://doi.org/10.1111/arcm.70032">https://doi.org/10.1111/arcm.70032</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./week_2.html" class="pagination-link" aria-label="Week 2: LiDAR">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 2: LiDAR</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./week_4.html" class="pagination-link" aria-label="Week 4: Policy">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 4: Policy</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
