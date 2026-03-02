@@ -1,0 +1,101 @@
+---
+title: "Week 6: Introduction to Google Earth Engine"
+---
+
+## Summary
+
+This week we started working with Google Earth Engine (GEE), first getting a general understanding of how the software works and what makes it so useful for geospatial analysts.
+
+I'll briefly summarise the way GEE works before looking at the many applications it has had in geospatial research, and my personal reflection from the first week of using it.
+
+### GEE Data catalog
+
+Arguably one of the most impressive things about GEE is the extensive data catalog of satellite imagery that users can pull into their workspaces and see visualised within seconds.
+
+The GEE catalog of satellite data makes over 40 years of historical imagery and scientific datasets such as climate models available for its users. The key satellites available for users to browse are:
+
+-   Landsat 1-9 (data from 1982-Present)
+
+-   Sentinel 1(A/B), 2(A/B), 3 & 5P (data from 2014-Present)
+
+-   US National Agriculture Imagery Program (NAIP) (data from 2003-Present)
+
+-   Moderate Resolution Imaging Spectroradiometer (MODIS) (data from 1999-present)
+
+In addition to this satellite data, GEE brings together environmental and scientific datasets such as climate projections available alongside terrain and land cover data.
+
+Having this one-stop-shop for satellite and environmental data has proven to be invaluable to researchers across the world which is evident given GEE's exponential growth in academia, despite only being published in 2015. Unlike click and point software like QGIS, GEE enables fully reproducible analysis as users can create spatial applications using open-source code which can be easily shared.
+
+![](https://oballinger.github.io/CASA0025/images/WoS%20Articles.png)
+
+### How does GEE work?
+
+In terms of how GEE works, it's essentially hosted on Google's cloud servers which allows for more efficient querying of data.
+
+As a user you access Earth Engine through an API, you have a library of over 800 functions to run on the datasets available from the GEE catalog or private datasets which you can import. (@Gorelick2017) What would normally take hours in other software can be achieved in minutes and seconds in GEE simply because of the computational infrastructure that shifts the intensive queries across servers.
+
+To write queries in GEE you use JavaScript which again works well because there is no requirement to install Java on your personal machine. Only basic Java language is required to write the queries which can apply mathematical, geospatial or machine learning to satellite imagery and other datasets.
+
+### Data in GEE
+
+There are some things to get used to when using GEE to explore satellite data, and a couple of key terms to define.
+
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Term                        | Definition                                                                                                                                                            |
++=============================+=======================================================================================================================================================================+
+| Object                      | The basic building block of GEE, it can be a raster, vector, string, number.                                                                                          |
+|                             |                                                                                                                                                                       |
+|                             | Each object has a class                                                                                                                                               |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Class                       | A group of objects to which specific functions (or methods) can be applied.                                                                                           |
+|                             |                                                                                                                                                                       |
+|                             | An example of an object class can be an ImageCollection or an Array.                                                                                                  |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function                    | An action or method that can be applied to an object, such as map() used for ImageCollections.                                                                        |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Image & ImageCollection     | Raster image or a stack of Raster images                                                                                                                              |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Feature & FeatureCollection | Vector dataset like a point, polygon or line, a collection is simply multiple vector datasets.                                                                        |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Scale                       | Pixel resolution, the resolution is set by the output not the input of the data. This means things like the zoom scale of your map will affect the scale used by GEE. |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Client side                 | Frontend side, the user facing side of your application i.e. in the browser.                                                                                          |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Server side                 | Backend side, processes the query. In GEE anything starting with ee in our script will be on the server side.                                                         |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+### Joining data 
+
+Joining data is another functionality of GEE, allowing users to combine spatial datasets. This can be especially useful when dealing with large spatial datasets such as raster ImageCollections, and you can bring in images from different satellites together.
+
+### Reducer functionality 
+
+[Reducers in GEE](https://developers.google.com/earth-engine/guides/reducers_intro) help users aggregate data, this can be over time, over space, bands or other. It enables researchers to extract statistics from data such as averages for neighbourhoods.
+
+### Machine Learning
+
+GEE makes use of various machine learning and classification algorithms which can be applied to satellite data.
+
+## Applications
+
+@Cardille2023
+
+Human and environmental applications
+
+-   one research example
+
+Practical - India texture example
+
+PCA
+
+## Reflections 
+
+-   Javascript easier than anticipated
+
+-   Pulling in private data
+
+-   limitations of GEE
+
+-   possibilities for Machine Learning
+
+-   possibilities of interactive applications

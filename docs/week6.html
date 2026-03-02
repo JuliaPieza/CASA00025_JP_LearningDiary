@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Week 4 &amp; 5: Policy – Remote Sensing Learning Diary</title>
+<title>6&nbsp; Week 6: Introduction to Google Earth Engine – Remote Sensing Learning Diary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -50,8 +50,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week_6.html" rel="next">
-<link href="./week_3.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./week_4.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -103,7 +103,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week_4.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 4 &amp; 5: Policy</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week6.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6: Introduction to Google Earth Engine</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -160,14 +160,14 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_4.html" class="sidebar-item-text sidebar-link active">
+  <a href="./week_4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 4 &amp; 5: Policy</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 4: Policy</span></span></a>
+  <a href="./week6.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6: Introduction to Google Earth Engine</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -186,13 +186,17 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">5.1</span> Summary</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">6.1</span> Summary</a>
   <ul class="collapse">
-  <li><a href="#green-city-policies" id="toc-green-city-policies" class="nav-link" data-scroll-target="#green-city-policies"><span class="header-section-number">5.1.1</span> Green City policies</a></li>
-  <li><a href="#link-to-un-sustainable-development-goals" id="toc-link-to-un-sustainable-development-goals" class="nav-link" data-scroll-target="#link-to-un-sustainable-development-goals"><span class="header-section-number">5.1.2</span> Link to UN Sustainable Development Goals</a></li>
+  <li><a href="#gee-data-catalog" id="toc-gee-data-catalog" class="nav-link" data-scroll-target="#gee-data-catalog"><span class="header-section-number">6.1.1</span> GEE Data catalog</a></li>
+  <li><a href="#how-does-gee-work" id="toc-how-does-gee-work" class="nav-link" data-scroll-target="#how-does-gee-work"><span class="header-section-number">6.1.2</span> How does GEE work?</a></li>
+  <li><a href="#data-in-gee" id="toc-data-in-gee" class="nav-link" data-scroll-target="#data-in-gee"><span class="header-section-number">6.1.3</span> Data in GEE</a></li>
+  <li><a href="#joining-data" id="toc-joining-data" class="nav-link" data-scroll-target="#joining-data"><span class="header-section-number">6.1.4</span> Joining data</a></li>
+  <li><a href="#reducer-functionality" id="toc-reducer-functionality" class="nav-link" data-scroll-target="#reducer-functionality"><span class="header-section-number">6.1.5</span> Reducer functionality</a></li>
+  <li><a href="#machine-learning" id="toc-machine-learning" class="nav-link" data-scroll-target="#machine-learning"><span class="header-section-number">6.1.6</span> Machine Learning</a></li>
   </ul></li>
-  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">5.2</span> Applications:</a></li>
-  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">5.3</span> Reflections:</a></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">6.2</span> Applications</a></li>
+  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">6.3</span> Reflections</a></li>
   </ul>
 </nav>
     </div>
@@ -201,7 +205,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 4 &amp; 5: Policy</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6: Introduction to Google Earth Engine</span></h1>
 </div>
 
 
@@ -218,87 +222,122 @@ div.csl-indent {
 </header>
 
 
-<p>In week 4 we looked at how remotely sensed data has been used in policymaking. For example using NDVI to look at the benefits of greenspace on both mental and physical health, or the impact of urban heat such as the Urban Heat Island effect.</p>
-<p>We were asked to imagine how a remotely sensed dataset may be incorporated into policymaking at a city, national or international level.</p>
-<p>In this week I’ll focus on Gdansk and the Gdansk 2030 Plus City Development Strategy, specifically the Green City objective which aims to improve the biodiversity of the city and provide more green spaces to residents.</p>
-<section id="summary" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.1</span> Summary</h2>
-<p>Although Poland does not have nation wide climate law it is bound by EU legislation to reduce greenhouse gas emissions.</p>
-<p>Nevertheless cities in Poland have increasingly chosen to implement their own strategies to ensure preparedness for the effects fo climate change. However the institutions responsible for maintaining the natural environment are often uncoordinated due to different responsibilities sitting with Regional Directors of environmental protection or being the responsibility of Voivodeship-level government.</p>
-<p>The <a href="https://download.cloudgdansk.pl/gdansk-pl/d/202302203632/gdansk-2030-plus-city-development-strategy.pdf">City Development Strategy Gdansk 2030 Plus</a> aims to help mitigate the climate-related risks due to it’s coastal position and continued development of the city’s infrastructure, by coordinating the policies of several environmental bodies towards key strategic priorities.</p>
-<p>To begin the process of drafting this strategy over 3 thousand people, and institutions such as universities and businesses were surveyed about their priorities for the City’s development.</p>
-<p>Around 63% of those surveyed identified greenery and biodiversity as their key priority for the city, with policies such as adding 100 hectares of new parks, and 50,000 new trees being some of the most popular. <span class="citation" data-cites="GdanskCityHall2024">Piotr Krzyszewski (<a href="references.html#ref-GdanskCityHall2024" role="doc-biblioref">2024</a>)</span></p>
-<section id="green-city-policies" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="green-city-policies"><span class="header-section-number">5.1.1</span> Green City policies</h3>
+<section id="summary" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">6.1</span> Summary</h2>
+<p>This week we started working with Google Earth Engine (GEE), first getting a general understanding of how the software works and what makes it so useful for geospatial analysts.</p>
+<p>I’ll briefly summarise the way GEE works before looking at the many applications it has had in geospatial research, and my personal reflection from the first week of using it.</p>
+<section id="gee-data-catalog" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="gee-data-catalog"><span class="header-section-number">6.1.1</span> GEE Data catalog</h3>
+<p>Arguably one of the most impressive things about GEE is the extensive data catalog of satellite imagery that users can pull into their workspaces and see visualised within seconds.</p>
+<p>The GEE catalog of satellite data makes over 40 years of historical imagery and scientific datasets such as climate models available for its users. The key satellites available for users to browse are:</p>
 <ul>
-<li><p>Planting 50,000 trees</p></li>
-<li><p>Reduction of greenhouse gas CO2 emissions by 30%</p></li>
-<li><p>Establishing a network of green belts along water courses</p></li>
-<li><p>Implementation of a Southern Park</p></li>
+<li><p>Landsat 1-9 (data from 1982-Present)</p></li>
+<li><p>Sentinel 1(A/B), 2(A/B), 3 &amp; 5P (data from 2014-Present)</p></li>
+<li><p>US National Agriculture Imagery Program (NAIP) (data from 2003-Present)</p></li>
+<li><p>Moderate Resolution Imaging Spectroradiometer (MODIS) (data from 1999-present)</p></li>
 </ul>
+<p>In addition to this satellite data, GEE brings together environmental and scientific datasets such as climate projections available alongside terrain and land cover data.</p>
+<p>Having this one-stop-shop for satellite and environmental data has proven to be invaluable to researchers across the world which is evident given GEE’s exponential growth in academia, despite only being published in 2015. Unlike click and point software like QGIS, GEE enables fully reproducible analysis as users can create spatial applications using open-source code which can be easily shared.</p>
+<p><img src="https://oballinger.github.io/CASA0025/images/WoS%20Articles.png" class="img-fluid"></p>
 </section>
-<section id="link-to-un-sustainable-development-goals" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="link-to-un-sustainable-development-goals"><span class="header-section-number">5.1.2</span> Link to UN Sustainable Development Goals</h3>
-<p>The greening policies backed by a majority of those surveyed also align with broader international climate strategies such as the Sustainable Development Goals.</p>
-<p>In particular the Gdansk Development Strategy aligns with Goal 15 to “protect, restore and promote use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt reverse land degredation and halt biodiversity loss”. (<span class="citation" data-cites="UNSDG2024">DESA (<a href="references.html#ref-UNSDG2024" role="doc-biblioref">2024</a>)</span>)</p>
-<p>Focusing on maintaining the health and biodiversity of existing forests such as Lasy Oliwskie, in addition to planting 50,000 trees, and adding a new Southern Park will help to preserve existing biodiversity and create new protected spaces for natural habitats to develop and thrive. An interesting proposal is to also create a network of green areas and water and increase 15 minute access zones to forests and green areas.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Images/gdansk_2030_1.png" class="img-fluid figure-img"></p>
-<figcaption>Gdansk Land Use, Source: Gdansk Plus City Development Strategy</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Images/gdansk_natural_env.png" class="img-fluid figure-img"></p>
-<figcaption>Gdansk Natural Environment, Source: Gdansk Plus City Development Strategy</figcaption>
-</figure>
-</div>
+<section id="how-does-gee-work" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="how-does-gee-work"><span class="header-section-number">6.1.2</span> How does GEE work?</h3>
+<p>In terms of how GEE works, it’s essentially hosted on Google’s cloud servers which allows for more efficient querying of data.</p>
+<p>As a user you access Earth Engine through an API, you have a library of over 800 functions to run on the datasets available from the GEE catalog or private datasets which you can import. (<span class="citation" data-cites="Gorelick2017">Gorelick et al. (<a href="references.html#ref-Gorelick2017" role="doc-biblioref">2017</a>)</span>) What would normally take hours in other software can be achieved in minutes and seconds in GEE simply because of the computational infrastructure that shifts the intensive queries across servers.</p>
+<p>To write queries in GEE you use JavaScript which again works well because there is no requirement to install Java on your personal machine. Only basic Java language is required to write the queries which can apply mathematical, geospatial or machine learning to satellite imagery and other datasets.</p>
+</section>
+<section id="data-in-gee" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="data-in-gee"><span class="header-section-number">6.1.3</span> Data in GEE</h3>
+<p>There are some things to get used to when using GEE to explore satellite data, and a couple of key terms to define.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 84%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Object</td>
+<td><p>The basic building block of GEE, it can be a raster, vector, string, number.</p>
+<p>Each object has a class</p></td>
+</tr>
+<tr class="even">
+<td>Class</td>
+<td><p>A group of objects to which specific functions (or methods) can be applied.</p>
+<p>An example of an object class can be an ImageCollection or an Array.</p></td>
+</tr>
+<tr class="odd">
+<td>Function</td>
+<td>An action or method that can be applied to an object, such as map() used for ImageCollections.</td>
+</tr>
+<tr class="even">
+<td>Image &amp; ImageCollection</td>
+<td>Raster image or a stack of Raster images</td>
+</tr>
+<tr class="odd">
+<td>Feature &amp; FeatureCollection</td>
+<td>Vector dataset like a point, polygon or line, a collection is simply multiple vector datasets.</td>
+</tr>
+<tr class="even">
+<td>Scale</td>
+<td>Pixel resolution, the resolution is set by the output not the input of the data. This means things like the zoom scale of your map will affect the scale used by GEE.</td>
+</tr>
+<tr class="odd">
+<td>Client side</td>
+<td>Frontend side, the user facing side of your application i.e.&nbsp;in the browser.</td>
+</tr>
+<tr class="even">
+<td>Server side</td>
+<td>Backend side, processes the query. In GEE anything starting with ee in our script will be on the server side.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="joining-data" class="level3" data-number="6.1.4">
+<h3 data-number="6.1.4" class="anchored" data-anchor-id="joining-data"><span class="header-section-number">6.1.4</span> Joining data</h3>
+<p>Joining data is another functionality of GEE, allowing users to combine spatial datasets. This can be especially useful when dealing with large spatial datasets such as raster ImageCollections, and you can bring in images from different satellites together.</p>
+</section>
+<section id="reducer-functionality" class="level3" data-number="6.1.5">
+<h3 data-number="6.1.5" class="anchored" data-anchor-id="reducer-functionality"><span class="header-section-number">6.1.5</span> Reducer functionality</h3>
+<p><a href="https://developers.google.com/earth-engine/guides/reducers_intro">Reducers in GEE</a> help users aggregate data, this can be over time, over space, bands or other. It enables researchers to extract statistics from data such as averages for neighbourhoods.</p>
+</section>
+<section id="machine-learning" class="level3" data-number="6.1.6">
+<h3 data-number="6.1.6" class="anchored" data-anchor-id="machine-learning"><span class="header-section-number">6.1.6</span> Machine Learning</h3>
+<p>GEE makes use of various machine learning and classification algorithms which can be applied to satellite data.</p>
 </section>
 </section>
-<section id="applications" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">5.2</span> Applications:</h2>
-<p>There are many opportunities for using remotely sensed data in relation to greening policies, whether its through identifying sites suitable for additional trees, new parks or green corridors, or monitoring progress of such policies in increasing green land cover. I will outline potential applications of NDVI and LULC with references to how these have been used in other studies.</p>
-<p>As shown above Gdansk has a diverse natural environment, as a coastal city with large forested areas made accessible for residents, a key part of using remotely sensed data would be first to measure the existing health and extent of these green areas.</p>
-<p>This can be primarily achieved by using the Normalised Difference Vegetation Index (NDVI) which measures the spatial distribution of vegetation. I measured the NDVI for Gdansk in August 2025 based on Landsat 8 data which had a 15-30m resolution in Week 3. This was useful for identifying the presence of green areas but as explored by <span class="citation" data-cites="Martinez2023">Iglesia Martinez and Labib (<a href="references.html#ref-Martinez2023" role="doc-biblioref">2023</a>)</span> NDVI can be more sensitive to certain types of vegetation such as trees at various buffer levels in their case study of Greater Manchester. Using Sentinel 2 data instead could create a slightly more high resolution picture of this index.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Images/gdansk_nvdi_02.png" class="img-fluid figure-img"></p>
-<figcaption>Gdansk NVDI, Source: Landsat 8</figcaption>
-</figure>
-</div>
-<p>Looking at NDVI alongside Land Use-Land Cover data from Sentinel 2 could be useful in this exercise, as it was also used by <span class="citation" data-cites="Martinez2023">Iglesia Martinez and Labib (<a href="references.html#ref-Martinez2023" role="doc-biblioref">2023</a>)</span>, who obtained the data from <span class="citation" data-cites="Dennis2018">Dennis et al. (<a href="references.html#ref-Dennis2018" role="doc-biblioref">2018</a>)</span> at 10m resolution. Using this approach with Gdansk could support monitoring change over time to understand the progress of greening activities. This has been done by looking and LULC data with time-series methods by <span class="citation" data-cites="Du2010">DU et al. (<a href="references.html#ref-Du2010" role="doc-biblioref">2010</a>)</span> looking at Landsat images to assess land cover and vegetation change in Xuzhou over 20 years.</p>
-<p>Or as a start it could help to create an even more detailed picture of green spaces within urban environments at a 10m resolution.</p>
-<p>However it is important to understand some limitations, even at 10m resolution dense urban settings become harder to distinguish at this pixel size. To look at neighbourhood level greening policies where open space may be scarce we may need to opt for even higher resolutions of 1-5m, but the trade-off here is between the temporal availability and price of this data.</p>
-<p>-studies on the impact of greening policies</p>
+<section id="applications" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">6.2</span> Applications</h2>
+<p><span class="citation" data-cites="Cardille2023">Jeffrey A. Cardille (<a href="references.html#ref-Cardille2023" role="doc-biblioref">2023</a>)</span></p>
+<p>Human and environmental applications</p>
+<ul>
+<li>one research example</li>
+</ul>
+<p>Practical - India texture example</p>
+<p>PCA</p>
 </section>
-<section id="reflections" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">5.3</span> Reflections:</h2>
-<p>I found it interesting to look at the City of Gdansk and it’s Development Strategy, knowing that most residents prioritised increasing green spaces in the city led me to think about the possible uses of remotely sensed data to identify areas for greening, or monitor progress in the future.</p>
-<p>I think the combination of NDVI and LULC measures at a high resolution of 10m can provide a good level of detail, and methods like time series can be used to monitor change.</p>
-<p>Reading about the advancements in using remotely sensed data for evidence-based policy making was really interesting. I think the summary presented in <span class="citation" data-cites="Kadhim2016">Kadhim, Mourshed, and Bray (<a href="references.html#ref-Kadhim2016" role="doc-biblioref">2016</a>)</span> was extremely useful for understanding what is available, the tradeoffs between spatial and temporal resolutions, and the large number of studies cited as examples.</p>
-<p>I used this article as a starting point for understanding the current challenges for working with remotely sensed data to visualise and model dense urban landscapes. As this is an emerging area, most open source satellite data goes up to 10m resolution, but for these urban settings even higher resolutions may be needed.</p>
-<p>I would like to learn more about how to incorporate more machine learning algorithms, time series and regression analysis on remote sensed data so I am looking forward to exploring this more with Google Earth Engine.</p>
+<section id="reflections" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">6.3</span> Reflections</h2>
+<ul>
+<li><p>Javascript easier than anticipated</p></li>
+<li><p>Pulling in private data</p></li>
+<li><p>limitations of GEE</p></li>
+<li><p>possibilities for Machine Learning</p></li>
+<li><p>possibilities of interactive applications</p></li>
+</ul>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-Dennis2018" class="csl-entry" role="listitem">
-Dennis, Matthew, David Barlow, Gina Cavan, Penny A. Cook, Anna Gilchrist, John Handley, Philip James, et al. 2018. <span>“Mapping Urban Green Infrastructure: A Novel Landscape-Based Approach to Incorporating Land Use and Land Cover in the Mapping of Human-Dominated Systems.”</span> <em>Land</em> 7 (17). <a href="https://doi.org/10.3390/land7010017">https://doi.org/10.3390/land7010017</a>.
+<div id="ref-Gorelick2017" class="csl-entry" role="listitem">
+Gorelick, Noel, Matt Hancher, Mike Dixon, Simon Ilyushchenko, David Thau, and Rebecca Moore. 2017. <span>“Google Earth Engine: Planetary-Scale Geospatial Analysis for Everyone.”</span> <em>Remote Sensing of Environment</em> 202: 18–27. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2017.06.031">https://doi.org/10.1016/j.rse.2017.06.031</a>.
 </div>
-<div id="ref-UNSDG2024" class="csl-entry" role="listitem">
-DESA, UN. 2024. <span>“The Sustainable Development Goals Report 2024 – June 2024.”</span> United Nations. <a href="https://unstats.un.org/sdgs/report/2024/">https://unstats.un.org/sdgs/report/2024/</a>.
-</div>
-<div id="ref-Du2010" class="csl-entry" role="listitem">
-DU, Peijun, Xingli LI, Wen CAO, Yan LUO, and Huapeng ZHANG. 2010. <span>“Monitoring Urban Land Cover and Vegetation Change by Multi-Temporal Remote Sensing Information.”</span> <em>Mining Science and Technology (China)</em> 20 (6): 922–32. <a href="https://doi.org/10.1016/S1674-5264(09)60308-2">https://doi.org/10.1016/S1674-5264(09)60308-2</a>.
-</div>
-<div id="ref-Martinez2023" class="csl-entry" role="listitem">
-Iglesia Martinez, Alex de la, and S. M. Labib. 2023. <span>“Demystifying Normalized Difference Vegetation Index (NDVI) for Greenness Exposure Assessments and Policy Interventions in Urban Greening.”</span> <em>Environmental Research</em> 220: 115155. https://doi.org/<a href="https://doi.org/10.1016/j.envres.2022.115155">https://doi.org/10.1016/j.envres.2022.115155</a>.
-</div>
-<div id="ref-Kadhim2016" class="csl-entry" role="listitem">
-Kadhim, Nada, Monjur Mourshed, and Michaela Bray. 2016. <span>“Advances in Remote Sensing Applications for Urban Sustainability.”</span> <em>Euro-Mediterranean Journal for Environmental Integration</em> 1 (1): 7. <a href="https://doi.org/10.1007/s41207-016-0007-4">https://doi.org/10.1007/s41207-016-0007-4</a>.
-</div>
-<div id="ref-GdanskCityHall2024" class="csl-entry" role="listitem">
-Piotr Krzyszewski, Piotr Borawski, Monika Chabior. 2024. <span>“Gdansk Development Programmes 2030.”</span> Gdansk City Hall. <a href="https://download.cloudgdansk.pl/gdansk-pl/d/202403227429/gdansk-development-programmes-2030.pdf">https://download.cloudgdansk.pl/gdansk-pl/d/202403227429/gdansk-development-programmes-2030.pdf</a>.
+<div id="ref-Cardille2023" class="csl-entry" role="listitem">
+Jeffrey A. Cardille, David Saah, Morgan A. Crowley. 2023. <em>Cloud-Based Remote Sensing with Google Earth Engine</em>. Springer Cham.
 </div>
 </div>
 </section>
@@ -706,13 +745,13 @@ Piotr Krzyszewski, Piotr Borawski, Monika Chabior. 2024. <span>“Gdansk Develop
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./week_3.html" class="pagination-link" aria-label="Week 3: Corrections">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week 3: Corrections</span></span>
+      <a href="./week_4.html" class="pagination-link" aria-label="Week 4 &amp; 5: Policy">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 4 &amp; 5: Policy</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./week_6.html" class="pagination-link" aria-label="Week 4: Policy">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 4: Policy</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

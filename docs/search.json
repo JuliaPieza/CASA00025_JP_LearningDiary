@@ -132,21 +132,21 @@
   {
     "objectID": "week_4.html",
     "href": "week_4.html",
-    "title": "5  Week 4: Policy",
+    "title": "5  Week 4 & 5: Policy",
     "section": "",
     "text": "5.1 Summary\nIn week 4 we looked at how remotely sensed data has been used in policymaking. For example using NDVI to look at the benefits of greenspace on both mental and physical health, or the impact of urban heat such as the Urban Heat Island effect.\nWe were asked to imagine how a remotely sensed dataset may be incorporated into policymaking at a city, national or international level.\nIn this week I’ll focus on Gdansk and the Gdansk 2030 Plus City Development Strategy, specifically the Green City objective which aims to improve the biodiversity of the city and provide more green spaces to residents.\nAlthough Poland does not have nation wide climate law it is bound by EU legislation to reduce greenhouse gas emissions.\nNevertheless cities in Poland have increasingly chosen to implement their own strategies to ensure preparedness for the effects fo climate change. However the institutions responsible for maintaining the natural environment are often uncoordinated due to different responsibilities sitting with Regional Directors of environmental protection or being the responsibility of Voivodeship-level government.\nThe City Development Strategy Gdansk 2030 Plus aims to help mitigate the climate-related risks due to it’s coastal position and continued development of the city’s infrastructure, by coordinating the policies of several environmental bodies towards key strategic priorities.\nTo begin the process of drafting this strategy over 3 thousand people, and institutions such as universities and businesses were surveyed about their priorities for the City’s development.\nAround 63% of those surveyed identified greenery and biodiversity as their key priority for the city, with policies such as adding 100 hectares of new parks, and 50,000 new trees being some of the most popular. Piotr Krzyszewski (2024)",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4: Policy</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4 & 5: Policy</span>"
     ]
   },
   {
     "objectID": "week_4.html#summary",
     "href": "week_4.html#summary",
-    "title": "5  Week 4: Policy",
+    "title": "5  Week 4 & 5: Policy",
     "section": "",
     "text": "5.1.1 Green City policies\n\nPlanting 50,000 trees\nReduction of greenhouse gas CO2 emissions by 30%\nEstablishing a network of green belts along water courses\nImplementation of a Southern Park\n\n\n\n5.1.2 Link to UN Sustainable Development Goals\nThe greening policies backed by a majority of those surveyed also align with broader international climate strategies such as the Sustainable Development Goals.\nIn particular the Gdansk Development Strategy aligns with Goal 15 to “protect, restore and promote use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt reverse land degredation and halt biodiversity loss”. (DESA (2024))\nFocusing on maintaining the health and biodiversity of existing forests such as Lasy Oliwskie, in addition to planting 50,000 trees, and adding a new Southern Park will help to preserve existing biodiversity and create new protected spaces for natural habitats to develop and thrive. An interesting proposal is to also create a network of green areas and water and increase 15 minute access zones to forests and green areas.\n\n\n\nGdansk Land Use, Source: Gdansk Plus City Development Strategy\n\n\n\n\n\nGdansk Natural Environment, Source: Gdansk Plus City Development Strategy",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4: Policy</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4 & 5: Policy</span>"
     ]
   },
   {
@@ -162,21 +162,101 @@
   {
     "objectID": "week_4.html#applications",
     "href": "week_4.html#applications",
-    "title": "5  Week 4: Policy",
+    "title": "5  Week 4 & 5: Policy",
     "section": "5.2 Applications:",
     "text": "5.2 Applications:\nThere are many opportunities for using remotely sensed data in relation to greening policies, whether its through identifying sites suitable for additional trees, new parks or green corridors, or monitoring progress of such policies in increasing green land cover. I will outline potential applications of NDVI and LULC with references to how these have been used in other studies.\nAs shown above Gdansk has a diverse natural environment, as a coastal city with large forested areas made accessible for residents, a key part of using remotely sensed data would be first to measure the existing health and extent of these green areas.\nThis can be primarily achieved by using the Normalised Difference Vegetation Index (NDVI) which measures the spatial distribution of vegetation. I measured the NDVI for Gdansk in August 2025 based on Landsat 8 data which had a 15-30m resolution in Week 3. This was useful for identifying the presence of green areas but as explored by Iglesia Martinez and Labib (2023) NDVI can be more sensitive to certain types of vegetation such as trees at various buffer levels in their case study of Greater Manchester. Using Sentinel 2 data instead could create a slightly more high resolution picture of this index.\n\n\n\nGdansk NVDI, Source: Landsat 8\n\n\nLooking at NDVI alongside Land Use-Land Cover data from Sentinel 2 could be useful in this exercise, as it was also used by Iglesia Martinez and Labib (2023), who obtained the data from Dennis et al. (2018) at 10m resolution. Using this approach with Gdansk could support monitoring change over time to understand the progress of greening activities. This has been done by looking and LULC data with time-series methods by DU et al. (2010) looking at Landsat images to assess land cover and vegetation change in Xuzhou over 20 years.\nOr as a start it could help to create an even more detailed picture of green spaces within urban environments at a 10m resolution.\nHowever it is important to understand some limitations, even at 10m resolution dense urban settings become harder to distinguish at this pixel size. To look at neighbourhood level greening policies where open space may be scarce we may need to opt for even higher resolutions of 1-5m, but the trade-off here is between the temporal availability and price of this data.\n-studies on the impact of greening policies",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4: Policy</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4 & 5: Policy</span>"
     ]
   },
   {
     "objectID": "week_4.html#reflections",
     "href": "week_4.html#reflections",
-    "title": "5  Week 4: Policy",
+    "title": "5  Week 4 & 5: Policy",
     "section": "5.3 Reflections:",
     "text": "5.3 Reflections:\nI found it interesting to look at the City of Gdansk and it’s Development Strategy, knowing that most residents prioritised increasing green spaces in the city led me to think about the possible uses of remotely sensed data to identify areas for greening, or monitor progress in the future.\nI think the combination of NDVI and LULC measures at a high resolution of 10m can provide a good level of detail, and methods like time series can be used to monitor change.\nReading about the advancements in using remotely sensed data for evidence-based policy making was really interesting. I think the summary presented in Kadhim, Mourshed, and Bray (2016) was extremely useful for understanding what is available, the tradeoffs between spatial and temporal resolutions, and the large number of studies cited as examples.\nI used this article as a starting point for understanding the current challenges for working with remotely sensed data to visualise and model dense urban landscapes. As this is an emerging area, most open source satellite data goes up to 10m resolution, but for these urban settings even higher resolutions may be needed.\nI would like to learn more about how to incorporate more machine learning algorithms, time series and regression analysis on remote sensed data so I am looking forward to exploring this more with Google Earth Engine.\n\n\n\n\nDennis, Matthew, David Barlow, Gina Cavan, Penny A. Cook, Anna Gilchrist, John Handley, Philip James, et al. 2018. “Mapping Urban Green Infrastructure: A Novel Landscape-Based Approach to Incorporating Land Use and Land Cover in the Mapping of Human-Dominated Systems.” Land 7 (17). https://doi.org/10.3390/land7010017.\n\n\nDESA, UN. 2024. “The Sustainable Development Goals Report 2024 – June 2024.” United Nations. https://unstats.un.org/sdgs/report/2024/.\n\n\nDU, Peijun, Xingli LI, Wen CAO, Yan LUO, and Huapeng ZHANG. 2010. “Monitoring Urban Land Cover and Vegetation Change by Multi-Temporal Remote Sensing Information.” Mining Science and Technology (China) 20 (6): 922–32. https://doi.org/10.1016/S1674-5264(09)60308-2.\n\n\nIglesia Martinez, Alex de la, and S. M. Labib. 2023. “Demystifying Normalized Difference Vegetation Index (NDVI) for Greenness Exposure Assessments and Policy Interventions in Urban Greening.” Environmental Research 220: 115155. https://doi.org/https://doi.org/10.1016/j.envres.2022.115155.\n\n\nKadhim, Nada, Monjur Mourshed, and Michaela Bray. 2016. “Advances in Remote Sensing Applications for Urban Sustainability.” Euro-Mediterranean Journal for Environmental Integration 1 (1): 7. https://doi.org/10.1007/s41207-016-0007-4.\n\n\nPiotr Krzyszewski, Piotr Borawski, Monika Chabior. 2024. “Gdansk Development Programmes 2030.” Gdansk City Hall. https://download.cloudgdansk.pl/gdansk-pl/d/202403227429/gdansk-development-programmes-2030.pdf.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4: Policy</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4 & 5: Policy</span>"
+    ]
+  },
+  {
+    "objectID": "week_6.html",
+    "href": "week_6.html",
+    "title": "6  Week 4: Policy",
+    "section": "",
+    "text": "6.1 Summary\nIn week 4 we looked at how remotely sensed data has been used in policymaking. For example using NDVI to look at the benefits of greenspace on both mental and physical health, or the impact of urban heat such as the Urban Heat Island effect.\nWe were asked to imagine how a remotely sensed dataset may be incorporated into policymaking at a city, national or international level.\nIn this week I’ll focus on Gdansk and the Gdansk 2030 Plus City Development Strategy, specifically the Green City objective which aims to improve the biodiversity of the city and provide more green spaces to residents.\nAlthough Poland does not have nation wide climate law it is bound by EU legislation to reduce greenhouse gas emissions.\nNevertheless cities in Poland have increasingly chosen to implement their own strategies to ensure preparedness for the effects fo climate change. However the institutions responsible for maintaining the natural environment are often uncoordinated due to different responsibilities sitting with Regional Directors of environmental protection or being the responsibility of Voivodeship-level government.\nThe City Development Strategy Gdansk 2030 Plus aims to help mitigate the climate-related risks due to it’s coastal position and continued development of the city’s infrastructure, by coordinating the policies of several environmental bodies towards key strategic priorities.\nTo begin the process of drafting this strategy over 3 thousand people, and institutions such as universities and businesses were surveyed about their priorities for the City’s development.\nAround 63% of those surveyed identified greenery and biodiversity as their key priority for the city, with policies such as adding 100 hectares of new parks, and 50,000 new trees being some of the most popular. Piotr Krzyszewski (2024)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 4: Policy</span>"
+    ]
+  },
+  {
+    "objectID": "week_6.html#summary",
+    "href": "week_6.html#summary",
+    "title": "6  Week 4: Policy",
+    "section": "",
+    "text": "6.1.1 Green City policies\n\nPlanting 50,000 trees\nReduction of greenhouse gas CO2 emissions by 30%\nEstablishing a network of green belts along water courses\nImplementation of a Southern Park\n\n\n\n6.1.2 Link to UN Sustainable Development Goals\nThe greening policies backed by a majority of those surveyed also align with broader international climate strategies such as the Sustainable Development Goals.\nIn particular the Gdansk Development Strategy aligns with Goal 15 to “protect, restore and promote use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt reverse land degredation and halt biodiversity loss”. (DESA (2024))\nFocusing on maintaining the health and biodiversity of existing forests such as Lasy Oliwskie, in addition to planting 50,000 trees, and adding a new Southern Park will help to preserve existing biodiversity and create new protected spaces for natural habitats to develop and thrive. An interesting proposal is to also create a network of green areas and water and increase 15 minute access zones to forests and green areas.\n\n\n\nGdansk Land Use, Source: Gdansk Plus City Development Strategy\n\n\n\n\n\nGdansk Natural Environment, Source: Gdansk Plus City Development Strategy",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 4: Policy</span>"
+    ]
+  },
+  {
+    "objectID": "week_6.html#applications",
+    "href": "week_6.html#applications",
+    "title": "6  Week 4: Policy",
+    "section": "6.2 Applications:",
+    "text": "6.2 Applications:\nThere are many opportunities for using remotely sensed data in relation to greening policies, whether its through identifying sites suitable for additional trees, new parks or green corridors, or monitoring progress of such policies in increasing green land cover. I will outline potential applications of NDVI and LULC with references to how these have been used in other studies.\nAs shown above Gdansk has a diverse natural environment, as a coastal city with large forested areas made accessible for residents, a key part of using remotely sensed data would be first to measure the existing health and extent of these green areas.\nThis can be primarily achieved by using the Normalised Difference Vegetation Index (NDVI) which measures the spatial distribution of vegetation. I measured the NDVI for Gdansk in August 2025 based on Landsat 8 data which had a 15-30m resolution in Week 3. This was useful for identifying the presence of green areas but as explored by Iglesia Martinez and Labib (2023) NDVI can be more sensitive to certain types of vegetation such as trees at various buffer levels in their case study of Greater Manchester. Using Sentinel 2 data instead could create a slightly more high resolution picture of this index.\n\n\n\nGdansk NVDI, Source: Landsat 8\n\n\nLooking at NDVI alongside Land Use-Land Cover data from Sentinel 2 could be useful in this exercise, as it was also used by Iglesia Martinez and Labib (2023), who obtained the data from Dennis et al. (2018) at 10m resolution. Using this approach with Gdansk could support monitoring change over time to understand the progress of greening activities. This has been done by looking and LULC data with time-series methods by DU et al. (2010) looking at Landsat images to assess land cover and vegetation change in Xuzhou over 20 years.\nOr as a start it could help to create an even more detailed picture of green spaces within urban environments at a 10m resolution.\nHowever it is important to understand some limitations, even at 10m resolution dense urban settings become harder to distinguish at this pixel size. To look at neighbourhood level greening policies where open space may be scarce we may need to opt for even higher resolutions of 1-5m, but the trade-off here is between the temporal availability and price of this data.\n-studies on the impact of greening policies",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 4: Policy</span>"
+    ]
+  },
+  {
+    "objectID": "week_6.html#reflections",
+    "href": "week_6.html#reflections",
+    "title": "6  Week 4: Policy",
+    "section": "6.3 Reflections:",
+    "text": "6.3 Reflections:\nI found it interesting to look at the City of Gdansk and it’s Development Strategy, knowing that most residents prioritised increasing green spaces in the city led me to think about the possible uses of remotely sensed data to identify areas for greening, or monitor progress in the future.\nI think the combination of NDVI and LULC measures at a high resolution of 10m can provide a good level of detail, and methods like time series can be used to monitor change.\nReading about the advancements in using remotely sensed data for evidence-based policy making was really interesting. I think the summary presented in Kadhim, Mourshed, and Bray (2016) was extremely useful for understanding what is available, the tradeoffs between spatial and temporal resolutions, and the large number of studies cited as examples.\nI used this article as a starting point for understanding the current challenges for working with remotely sensed data to visualise and model dense urban landscapes. As this is an emerging area, most open source satellite data goes up to 10m resolution, but for these urban settings even higher resolutions may be needed.\nI would like to learn more about how to incorporate more machine learning algorithms, time series and regression analysis on remote sensed data so I am looking forward to exploring this more with Google Earth Engine.\n\n\n\n\nDennis, Matthew, David Barlow, Gina Cavan, Penny A. Cook, Anna Gilchrist, John Handley, Philip James, et al. 2018. “Mapping Urban Green Infrastructure: A Novel Landscape-Based Approach to Incorporating Land Use and Land Cover in the Mapping of Human-Dominated Systems.” Land 7 (17). https://doi.org/10.3390/land7010017.\n\n\nDESA, UN. 2024. “The Sustainable Development Goals Report 2024 – June 2024.” United Nations. https://unstats.un.org/sdgs/report/2024/.\n\n\nDU, Peijun, Xingli LI, Wen CAO, Yan LUO, and Huapeng ZHANG. 2010. “Monitoring Urban Land Cover and Vegetation Change by Multi-Temporal Remote Sensing Information.” Mining Science and Technology (China) 20 (6): 922–32. https://doi.org/10.1016/S1674-5264(09)60308-2.\n\n\nIglesia Martinez, Alex de la, and S. M. Labib. 2023. “Demystifying Normalized Difference Vegetation Index (NDVI) for Greenness Exposure Assessments and Policy Interventions in Urban Greening.” Environmental Research 220: 115155. https://doi.org/https://doi.org/10.1016/j.envres.2022.115155.\n\n\nKadhim, Nada, Monjur Mourshed, and Michaela Bray. 2016. “Advances in Remote Sensing Applications for Urban Sustainability.” Euro-Mediterranean Journal for Environmental Integration 1 (1): 7. https://doi.org/10.1007/s41207-016-0007-4.\n\n\nPiotr Krzyszewski, Piotr Borawski, Monika Chabior. 2024. “Gdansk Development Programmes 2030.” Gdansk City Hall. https://download.cloudgdansk.pl/gdansk-pl/d/202403227429/gdansk-development-programmes-2030.pdf.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 4: Policy</span>"
+    ]
+  },
+  {
+    "objectID": "week6.html",
+    "href": "week6.html",
+    "title": "6  Week 6: Introduction to Google Earth Engine",
+    "section": "",
+    "text": "6.1 Summary\nThis week we started working with Google Earth Engine (GEE), first getting a general understanding of how the software works and what makes it so useful for geospatial analysts.\nI’ll briefly summarise the way GEE works before looking at the many applications it has had in geospatial research, and my personal reflection from the first week of using it.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 6: Introduction to Google Earth Engine</span>"
+    ]
+  },
+  {
+    "objectID": "week6.html#summary",
+    "href": "week6.html#summary",
+    "title": "6  Week 6: Introduction to Google Earth Engine",
+    "section": "",
+    "text": "6.1.1 GEE Data catalog\nArguably one of the most impressive things about GEE is the extensive data catalog of satellite imagery that users can pull into their workspaces and see visualised within seconds.\nThe GEE catalog of satellite data makes over 40 years of historical imagery and scientific datasets such as climate models available for its users. The key satellites available for users to browse are:\n\nLandsat 1-9 (data from 1982-Present)\nSentinel 1(A/B), 2(A/B), 3 & 5P (data from 2014-Present)\nUS National Agriculture Imagery Program (NAIP) (data from 2003-Present)\nModerate Resolution Imaging Spectroradiometer (MODIS) (data from 1999-present)\n\nIn addition to this satellite data, GEE brings together environmental and scientific datasets such as climate projections available alongside terrain and land cover data.\nHaving this one-stop-shop for satellite and environmental data has proven to be invaluable to researchers across the world which is evident given GEE’s exponential growth in academia, despite only being published in 2015. Unlike click and point software like QGIS, GEE enables fully reproducible analysis as users can create spatial applications using open-source code which can be easily shared.\n\n\n\n6.1.2 How does GEE work?\nIn terms of how GEE works, it’s essentially hosted on Google’s cloud servers which allows for more efficient querying of data.\nAs a user you access Earth Engine through an API, you have a library of over 800 functions to run on the datasets available from the GEE catalog or private datasets which you can import. (Gorelick et al. (2017)) What would normally take hours in other software can be achieved in minutes and seconds in GEE simply because of the computational infrastructure that shifts the intensive queries across servers.\nTo write queries in GEE you use JavaScript which again works well because there is no requirement to install Java on your personal machine. Only basic Java language is required to write the queries which can apply mathematical, geospatial or machine learning to satellite imagery and other datasets.\n\n\n6.1.3 Data in GEE\nThere are some things to get used to when using GEE to explore satellite data, and a couple of key terms to define.\n\n\n\n\n\n\n\nTerm\nDefinition\n\n\n\n\nObject\nThe basic building block of GEE, it can be a raster, vector, string, number.\nEach object has a class\n\n\nClass\nA group of objects to which specific functions (or methods) can be applied.\nAn example of an object class can be an ImageCollection or an Array.\n\n\nFunction\nAn action or method that can be applied to an object, such as map() used for ImageCollections.\n\n\nImage & ImageCollection\nRaster image or a stack of Raster images\n\n\nFeature & FeatureCollection\nVector dataset like a point, polygon or line, a collection is simply multiple vector datasets.\n\n\nScale\nPixel resolution, the resolution is set by the output not the input of the data. This means things like the zoom scale of your map will affect the scale used by GEE.\n\n\nClient side\nFrontend side, the user facing side of your application i.e. in the browser.\n\n\nServer side\nBackend side, processes the query. In GEE anything starting with ee in our script will be on the server side.\n\n\n\n\n\n6.1.4 Joining data\nJoining data is another functionality of GEE, allowing users to combine spatial datasets. This can be especially useful when dealing with large spatial datasets such as raster ImageCollections, and you can bring in images from different satellites together.\n\n\n6.1.5 Reducer functionality\nReducers in GEE help users aggregate data, this can be over time, over space, bands or other. It enables researchers to extract statistics from data such as averages for neighbourhoods.\n\n\n6.1.6 Machine Learning\nGEE makes use of various machine learning and classification algorithms which can be applied to satellite data.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 6: Introduction to Google Earth Engine</span>"
+    ]
+  },
+  {
+    "objectID": "week6.html#applications",
+    "href": "week6.html#applications",
+    "title": "6  Week 6: Introduction to Google Earth Engine",
+    "section": "6.2 Applications",
+    "text": "6.2 Applications\nJeffrey A. Cardille (2023)\nHuman and environmental applications\n\none research example\n\nPractical - India texture example\nPCA",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 6: Introduction to Google Earth Engine</span>"
+    ]
+  },
+  {
+    "objectID": "week6.html#reflections",
+    "href": "week6.html#reflections",
+    "title": "6  Week 6: Introduction to Google Earth Engine",
+    "section": "6.3 Reflections",
+    "text": "6.3 Reflections\n\nJavascript easier than anticipated\nPulling in private data\nlimitations of GEE\npossibilities for Machine Learning\npossibilities of interactive applications\n\n\n\n\n\nGorelick, Noel, Matt Hancher, Mike Dixon, Simon Ilyushchenko, David Thau, and Rebecca Moore. 2017. “Google Earth Engine: Planetary-Scale Geospatial Analysis for Everyone.” Remote Sensing of Environment 202: 18–27. https://doi.org/https://doi.org/10.1016/j.rse.2017.06.031.\n\n\nJeffrey A. Cardille, David Saah, Morgan A. Crowley. 2023. Cloud-Based Remote Sensing with Google Earth Engine. Springer Cham.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 6: Introduction to Google Earth Engine</span>"
     ]
   }
 ]

@@ -1,5 +1,5 @@
 ---
-title: "Week 4 & 5: Policy"
+title: "Week 4: Policy"
 ---
 
 In week 4 we looked at how remotely sensed data has been used in policymaking. For example using NDVI to look at the benefits of greenspace on both mental and physical health, or the impact of urban heat such as the Urban Heat Island effect.
