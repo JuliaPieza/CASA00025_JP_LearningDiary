@@ -64,11 +64,11 @@ There are some things to get used to when using GEE to explore satellite data, a
 | Server side                 | Backend side, processes the query. In GEE anything starting with ee in our script will be on the server side.                                                         |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-### Joining data 
+### Joining data
 
 Joining data is another functionality of GEE, allowing users to combine spatial datasets. This can be especially useful when dealing with large spatial datasets such as raster ImageCollections, and you can bring in images from different satellites together.
 
-### Reducer functionality 
+### Reducer functionality
 
 [Reducers in GEE](https://developers.google.com/earth-engine/guides/reducers_intro) help users aggregate data, this can be over time, over space, bands or other. It enables researchers to extract statistics from data such as averages for neighbourhoods.
 
@@ -88,7 +88,7 @@ Practical - India texture example
 
 PCA
 
-## Reflections 
+## Reflections
 
 -   Javascript easier than anticipated
 
