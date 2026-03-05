@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -50,7 +85,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./week_7.html" rel="next">
 <link href="./week_4.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -172,6 +207,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./week_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 7: GEE Classificaiton 1</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -193,7 +234,7 @@ div.csl-indent {
   <li><a href="#data-in-gee" id="toc-data-in-gee" class="nav-link" data-scroll-target="#data-in-gee"><span class="header-section-number">6.1.3</span> Data in GEE</a></li>
   <li><a href="#joining-data" id="toc-joining-data" class="nav-link" data-scroll-target="#joining-data"><span class="header-section-number">6.1.4</span> Joining data</a></li>
   <li><a href="#reducer-functionality" id="toc-reducer-functionality" class="nav-link" data-scroll-target="#reducer-functionality"><span class="header-section-number">6.1.5</span> Reducer functionality</a></li>
-  <li><a href="#machine-learning" id="toc-machine-learning" class="nav-link" data-scroll-target="#machine-learning"><span class="header-section-number">6.1.6</span> Machine Learning</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations"><span class="header-section-number">6.1.6</span> Limitations</a></li>
   </ul></li>
   <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">6.2</span> Applications</a></li>
   <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">6.3</span> Reflections</a></li>
@@ -224,8 +265,7 @@ div.csl-indent {
 
 <section id="summary" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">6.1</span> Summary</h2>
-<p>This week we started working with Google Earth Engine (GEE), first getting a general understanding of how the software works and what makes it so useful for geospatial analysts.</p>
-<p>I’ll briefly summarise the way GEE works before looking at the many applications it has had in geospatial research, and my personal reflection from the first week of using it.</p>
+<p>This week we started working with Google Earth Engine (GEE), first getting a general understanding of how it works and what makes it so useful for geospatial analysts.</p>
 <section id="gee-data-catalog" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="gee-data-catalog"><span class="header-section-number">6.1.1</span> GEE Data catalog</h3>
 <p>Arguably one of the most impressive things about GEE is the extensive data catalog of satellite imagery that users can pull into their workspaces and see visualised within seconds.</p>
@@ -237,22 +277,22 @@ div.csl-indent {
 <li><p>Moderate Resolution Imaging Spectroradiometer (MODIS) (data from 1999-present)</p></li>
 </ul>
 <p>In addition to this satellite data, GEE brings together environmental and scientific datasets such as climate projections available alongside terrain and land cover data.</p>
-<p>Having this one-stop-shop for satellite and environmental data has proven to be invaluable to researchers across the world which is evident given GEE’s exponential growth in academia, despite only being published in 2015. Unlike click and point software like QGIS, GEE enables fully reproducible analysis as users can create spatial applications using open-source code which can be easily shared.</p>
+<p>Having this one-stop-shop for satellite and environmental data has proven to be invaluable to researchers across the world which is evident given GEE’s exponential growth in academia, despite only being published in 2015. Unlike software like QGIS, GEE enables fully reproducible analysis as users can create spatial applications using open-source code which can be easily shared.</p>
 <p><img src="https://oballinger.github.io/CASA0025/images/WoS%20Articles.png" class="img-fluid"></p>
 </section>
 <section id="how-does-gee-work" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="how-does-gee-work"><span class="header-section-number">6.1.2</span> How does GEE work?</h3>
 <p>In terms of how GEE works, it’s essentially hosted on Google’s cloud servers which allows for more efficient querying of data.</p>
-<p>As a user you access Earth Engine through an API, you have a library of over 800 functions to run on the datasets available from the GEE catalog or private datasets which you can import. (<span class="citation" data-cites="Gorelick2017">Gorelick et al. (<a href="references.html#ref-Gorelick2017" role="doc-biblioref">2017</a>)</span>) What would normally take hours in other software can be achieved in minutes and seconds in GEE simply because of the computational infrastructure that shifts the intensive queries across servers.</p>
-<p>To write queries in GEE you use JavaScript which again works well because there is no requirement to install Java on your personal machine. Only basic Java language is required to write the queries which can apply mathematical, geospatial or machine learning to satellite imagery and other datasets.</p>
+<p>As a user you access Earth Engine through an API, you have a library of over 800 functions to run on the datasets available from the GEE catalog or private datasets which you can import (<span class="citation" data-cites="Gorelick2017">Gorelick et al. (<a href="references.html#ref-Gorelick2017" role="doc-biblioref">2017</a>)</span>). What would normally take hours in other software can be achieved in minutes and seconds in GEE simply because of the computational infrastructure that shifts the intensive queries across servers.</p>
+<p>To write queries in GEE you use JavaScript which again works well because there is no requirement to install Java on your personal machine. Only basic JavaScript is required to write the queries which can apply mathematical, geospatial or machine learning to satellite imagery and other datasets.</p>
 </section>
 <section id="data-in-gee" class="level3" data-number="6.1.3">
 <h3 data-number="6.1.3" class="anchored" data-anchor-id="data-in-gee"><span class="header-section-number">6.1.3</span> Data in GEE</h3>
 <p>There are some things to get used to when using GEE to explore satellite data, and a couple of key terms to define.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 84%">
+<col style="width: 18%">
+<col style="width: 81%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -264,7 +304,7 @@ div.csl-indent {
 <tr class="odd">
 <td>Object</td>
 <td><p>The basic building block of GEE, it can be a raster, vector, string, number.</p>
-<p>Each object has a class</p></td>
+<p>Each object has a class.</p></td>
 </tr>
 <tr class="even">
 <td>Class</td>
@@ -277,7 +317,7 @@ div.csl-indent {
 </tr>
 <tr class="even">
 <td>Image &amp; ImageCollection</td>
-<td>Raster image or a stack of Raster images</td>
+<td>Raster image or a stack of Raster images.</td>
 </tr>
 <tr class="odd">
 <td>Feature &amp; FeatureCollection</td>
@@ -301,43 +341,96 @@ div.csl-indent {
 <section id="joining-data" class="level3" data-number="6.1.4">
 <h3 data-number="6.1.4" class="anchored" data-anchor-id="joining-data"><span class="header-section-number">6.1.4</span> Joining data</h3>
 <p>Joining data is another functionality of GEE, allowing users to combine spatial datasets. This can be especially useful when dealing with large spatial datasets such as raster ImageCollections, and you can bring in images from different satellites together.</p>
+<p>I can imagine this can be really useful when trying to do longitundal studies using both Landsat and Sentinel data could be a useful way to get more time coverage (as long as both are resampled to match resolutions).</p>
 </section>
 <section id="reducer-functionality" class="level3" data-number="6.1.5">
 <h3 data-number="6.1.5" class="anchored" data-anchor-id="reducer-functionality"><span class="header-section-number">6.1.5</span> Reducer functionality</h3>
 <p><a href="https://developers.google.com/earth-engine/guides/reducers_intro">Reducers in GEE</a> help users aggregate data, this can be over time, over space, bands or other. It enables researchers to extract statistics from data such as averages for neighbourhoods.</p>
+<p>I found these functions most interesting to play around with during the practical, and it was also interesting to explore the glcmTexture function which we were briefly working with in R a few weeks before, but it was much nicer to be able to interact with the map in GEE.</p>
+<p>Here I was able to take the GLCM around each pixel of every band in the satellite image, turn each of these pixel values into integer pixel values, for the image below we kept all SR bands with Contrast and Dissimilarity to get a better idea of land cover helping to identify areas of high contrast like urban settings. As the size for GLCM texture was 1 (a 3x3 grid i.e.&nbsp;the size of a neighbourhood) this will focus more on fine texture differences most useful for identifying urban areas, but may not be as useful for computing agriculture or greenery.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> glcm <span class="op">=</span> clip<span class="op">.</span><span class="fu">select</span>([<span class="st">'SR_B1'</span><span class="op">,</span> <span class="st">'SR_B2'</span><span class="op">,</span> <span class="st">'SR_B3'</span><span class="op">,</span> <span class="st">'SR_B4'</span><span class="op">,</span> <span class="st">'SR_B5'</span><span class="op">,</span> <span class="st">'SR_B6'</span><span class="op">,</span> <span class="st">'SR_B7'</span>])</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">multiply</span>(<span class="dv">1000</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">toUint16</span>()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">glcmTexture</span>({<span class="dt">size</span><span class="op">:</span> <span class="dv">1</span>})</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">select</span>(<span class="st">'SR_.._contrast|SR_.._diss'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">addBands</span>(clip)<span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(glcm<span class="op">,</span> {<span class="dt">min</span><span class="op">:</span><span class="dv">14</span><span class="op">,</span> <span class="dt">max</span><span class="op">:</span> <span class="dv">650</span>}<span class="op">,</span> <span class="st">'glcm'</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/glcm_delhi.png" class="img-fluid figure-img"></p>
+<figcaption>GLCM texture Delhi</figcaption>
+</figure>
+</div>
+<p>Nevertheless, computing the PCA to show variance really helps to give more detail to the map in terms of being able to see water features, as well as roads and buildings. Although at a 30m scale due to the Landsat data this could be improved with running this analysis on 10m Sentinel data.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/delhi_pc1_pc2.png" class="img-fluid figure-img"></p>
+<figcaption>PCA Delhi</figcaption>
+</figure>
+</div>
+<p>I think it will be interesting to see how PCA and texture analysis can be used alongside machine learning algorithms which will be covered in the upcoming weeks. In particular looking at classifying and forecasting change, such as looking at urban expansion.</p>
 </section>
-<section id="machine-learning" class="level3" data-number="6.1.6">
-<h3 data-number="6.1.6" class="anchored" data-anchor-id="machine-learning"><span class="header-section-number">6.1.6</span> Machine Learning</h3>
-<p>GEE makes use of various machine learning and classification algorithms which can be applied to satellite data.</p>
+<section id="limitations" class="level3" data-number="6.1.6">
+<h3 data-number="6.1.6" class="anchored" data-anchor-id="limitations"><span class="header-section-number">6.1.6</span> Limitations</h3>
+<p>Although this analysis came together really quickly in GEE I have noticed that when re-running the script it was a little slower taking a few minutes to load, but there were a lot of PCA layers that needed to load and I wonder if there are also ways to streamline scripts so they run quicker after initial analysis is done.</p>
+<p>Other general limitations of GEE are:</p>
+<ul>
+<li><p>Limits data uploads to 250GB per data upload.</p></li>
+<li><p>The user is still limited by the client side functions which run on the user’s browser that could be limited by the specifications of their system.</p></li>
+<li><p>Satellite data which needs to be pre-processed takes around a month so GEE is unable to create close to Live monitoring applications.</p></li>
+<li><p>Using it in a local government setting may not be possible as data is stored on Google’s servers, some may find this a security risk.</p></li>
+</ul>
 </section>
 </section>
 <section id="applications" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">6.2</span> Applications</h2>
-<p><span class="citation" data-cites="Cardille2023">Jeffrey A. Cardille (<a href="references.html#ref-Cardille2023" role="doc-biblioref">2023</a>)</span></p>
-<p>Human and environmental applications</p>
-<ul>
-<li>one research example</li>
-</ul>
-<p>Practical - India texture example</p>
-<p>PCA</p>
+<p>There are many applications of GEE, this week I enjoyed reading <span class="citation" data-cites="Duan2019">Duan et al. (<a href="references.html#ref-Duan2019" role="doc-biblioref">2019</a>)</span> which gave a really useful outline of the applications of GEE across vegetation, urban settings, atmosphere and even archaeology.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=9184118"><img src="Images/Duan2019.png" class="img-fluid figure-img"></a></p>
+<figcaption><span class="citation" data-cites="Duan2019">Duan et al. (<a href="references.html#ref-Duan2019" role="doc-biblioref">2019</a>)</span> p.5336</figcaption>
+</figure>
+</div>
+<p>In terms of applications for my work I was interested to read a bit more about the urban applications of GEE. I decided to look at a tutorial from the ‘Fundamentals and Applications’ chapter of the <span class="citation" data-cites="Cardille2023">Jeffrey A. Cardille (<a href="references.html#ref-Cardille2023" role="doc-biblioref">2023</a>)</span> Cloud-Based Remote Sensing with Google Earth Engine book.</p>
+<p>In this particular tutorial I used the land cover classifications from the Copernicus CORINE Land Cover dataset for urban classes to look at urban classification change across time In London between 2000 and 2018.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/london_landcover_GEE.png" class="img-fluid figure-img"></p>
+<figcaption>London urban land cover change 2000-2018</figcaption>
+</figure>
+</div>
+<p>Following the code from <span class="citation" data-cites="Stuhlmacher2026">Stuhlmacher and Goldblatt (<a href="references.html#ref-Stuhlmacher2026" role="doc-biblioref">n.d.</a>)</span> the gray areas in the map above show the urban extent in 2000, while the red show the urban expansion as of 2018.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/brent_landcover_change.png" class="img-fluid figure-img"></p>
+<figcaption>Areas of Urban Exansion Brent 2000-2018</figcaption>
+</figure>
+</div>
+<p>Zooming more closely into some areas of Brent you can see the increase urban areas near Fryent Park, this is likely due to the building of JFS School, which opened in 2002 and expansion of some neighbourhoods in the surrounding area. You can see this below with the 2000 urban extent in Gray and the 2026 Google Earth basemap which shows the school.</p>
+<p><img src="Images/brent_landcover_zoom.png" class="img-fluid"></p>
+<p>To take this analysis further I could compute some zonal statistics zonal statistics like the percentage of urban expansion per Ward or LSOA might be something to explore in the future. Identifying which areas of a borough are experiencing more construction might be a good way of further analysing gentrification or potentially looking at biodiversity loss.</p>
+<p>However, I also think where regeneration takes place on already built up urban areas, those changes would need alternative methods to help identify who they’ve changed. This is where aerial photography might offer more value in terms of comparison, or some kind of SAR data potentially.</p>
 </section>
 <section id="reflections" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">6.3</span> Reflections</h2>
-<ul>
-<li><p>Javascript easier than anticipated</p></li>
-<li><p>Pulling in private data</p></li>
-<li><p>limitations of GEE</p></li>
-<li><p>possibilities for Machine Learning</p></li>
-<li><p>possibilities of interactive applications</p></li>
-</ul>
+<p>My main takeaways from this week were thinking about how I could use GEE for my work in Local Government. There is definitely a debate having data stored in Google’s servers but using publicly available satellite data to create useful spatial application or run analysis for London Boroughs should not be a problem as long as no Council data is used.</p>
+<p>I think it would be really interesting to see whether there are use cases that can be developed for local authorities to purchase higher resolution data e.g.&nbsp;from SPOT or Airbus satellites and be able to perform analysis around urban vegetation density for environmental monitoring purposes. I think 30m resolution per pixel is definitely not as useful when looking at London Borough level, and even 10m can sometimes cause too much pixel generalisation to be able to identify features in more dense urban settings. However the cost limitations with purchasing higher resolution imagery is a limitation here as budgets in Local Authorities are quite tight.</p>
+<p>I can see how using GEE would be useful alongside machine learning algorithms for example to identify things like illegal fly tipping as was recently reported in <a href="https://www.bbc.co.uk/news/articles/c5y3n2m05mjo">Oxfordshire</a>, the scale of this incident was so large that it could have been identified earlier using remotely sensed data. On the whole however, we currently rely on reports of fly tipping through applications like Fix My Street so any kind of monitoring through remote sensed satellite data would need to have both high temporal and spatial resolution to identify smaller sites of fly tipping.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Duan2019" class="csl-entry" role="listitem">
+Duan, Qianwen, Minghong Tan, Yuxuan Guo, Xue Wang, and Liangjie Xin. 2019. <span>“Understanding the Spatial Distribution of Urban Forests in China Using Sentinel-2 Images with Google Earth Engine.”</span> <em>Forests</em> 10 (9). <a href="https://doi.org/10.3390/f10090729">https://doi.org/10.3390/f10090729</a>.
+</div>
 <div id="ref-Gorelick2017" class="csl-entry" role="listitem">
 Gorelick, Noel, Matt Hancher, Mike Dixon, Simon Ilyushchenko, David Thau, and Rebecca Moore. 2017. <span>“Google Earth Engine: Planetary-Scale Geospatial Analysis for Everyone.”</span> <em>Remote Sensing of Environment</em> 202: 18–27. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2017.06.031">https://doi.org/10.1016/j.rse.2017.06.031</a>.
 </div>
 <div id="ref-Cardille2023" class="csl-entry" role="listitem">
 Jeffrey A. Cardille, David Saah, Morgan A. Crowley. 2023. <em>Cloud-Based Remote Sensing with Google Earth Engine</em>. Springer Cham.
+</div>
+<div id="ref-Stuhlmacher2026" class="csl-entry" role="listitem">
+Stuhlmacher, Michelle, and Ran Goldblatt. n.d. <span>“Cloud-Based Remote Sensing with Google Earth Engine.”</span> In. https://docs.google.com/document/d/1MIPIFMJakC6eNGOhlkXLcwjUKFyY6QJLHElzBCOfyn4/edit?usp=embed_facebook.
 </div>
 </div>
 </section>
@@ -750,8 +843,8 @@ Jeffrey A. Cardille, David Saah, Morgan A. Crowley. 2023. <em>Cloud-Based Remote
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./week_7.html" class="pagination-link" aria-label="Week 7: GEE Classificaiton 1">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 7: GEE Classificaiton 1</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

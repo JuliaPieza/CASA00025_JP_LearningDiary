@@ -1,0 +1,33 @@
+---
+title: "Week 7: GEE Classificaiton 1"
+---
+
+## Summary
+
+-   Classification summary
+
+    -   supervised v unsupervised
+
+    -   parametric non parametric
+
+    -   types of methods
+
+-   Hard and soft differences for classification regimes - difficulty in choosing one based on homogeneity/gradual differences interesting for various research topics
+
+-   Limitations of Predictive algorithms for forecasting into the future
+
+## Applications
+
+-   Urban forests in china
+
+-   Practical training and classificaiton for Gdansk
+
+-   compare with something
+
+## Reflections
+
+-   use in Local govt, dense urban london spaces
+
+-   even higher resolution data than 10m
+
+-   GEE data import slow?
