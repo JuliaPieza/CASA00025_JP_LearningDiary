@@ -4,15 +4,29 @@ title: "Week 7: GEE Classificaiton 1"
 
 ## Summary
 
--   Classification summary
+This week we spent more time in GEE covering ways of working with classification algorithms, dealing with cloud coverage and using the GAUL dataset of administrative boundaries.
 
-    -   supervised v unsupervised
+### Supervised v Unsupervised Classification
+
+-   supervised v unsupervised
 
     -   parametric non parametric
 
     -   types of methods
 
 -   Hard and soft differences for classification regimes - difficulty in choosing one based on homogeneity/gradual differences interesting for various research topics
+
+### Methods 
+
+-   CART
+
+    -   regression
+
+    -   decision trees
+
+-   SVM
+
+### Limitations
 
 -   Limitations of Predictive algorithms for forecasting into the future
 
@@ -29,5 +43,3 @@ title: "Week 7: GEE Classificaiton 1"
 -   use in Local govt, dense urban london spaces
 
 -   even higher resolution data than 10m
-
--   GEE data import slow?

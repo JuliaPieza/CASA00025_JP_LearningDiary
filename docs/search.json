@@ -214,7 +214,7 @@
     "href": "week_7.html",
     "title": "7  Week 7: GEE Classificaiton 1",
     "section": "",
-    "text": "7.1 Summary",
+    "text": "7.1 Summary\nThis week we spent more time in GEE covering ways of working with classification algorithms, dealing with cloud coverage and using the GAUL dataset of administrative boundaries.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 7: GEE Classificaiton 1</span>"
     ]
@@ -224,7 +224,7 @@
     "href": "week_7.html#summary",
     "title": "7  Week 7: GEE Classificaiton 1",
     "section": "",
-    "text": "Classification summary\n\nsupervised v unsupervised\nparametric non parametric\ntypes of methods\n\nHard and soft differences for classification regimes - difficulty in choosing one based on homogeneity/gradual differences interesting for various research topics\nLimitations of Predictive algorithms for forecasting into the future",
+    "text": "7.1.1 Supervised v Unsupervised Classification\n\nsupervised v unsupervised\n\nparametric non parametric\ntypes of methods\n\nHard and soft differences for classification regimes - difficulty in choosing one based on homogeneity/gradual differences interesting for various research topics\n\n\n\n7.1.2 Methods\n\nCART\n\nregression\ndecision trees\n\nSVM\n\n\n\n7.1.3 Limitations\n\nLimitations of Predictive algorithms for forecasting into the future",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 7: GEE Classificaiton 1</span>"
     ]
@@ -244,7 +244,7 @@
     "href": "week_7.html#reflections",
     "title": "7  Week 7: GEE Classificaiton 1",
     "section": "7.3 Reflections",
-    "text": "7.3 Reflections\n\nuse in Local govt, dense urban london spaces\neven higher resolution data than 10m\nGEE data import slow?",
+    "text": "7.3 Reflections\n\nuse in Local govt, dense urban london spaces\neven higher resolution data than 10m",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 7: GEE Classificaiton 1</span>"
     ]
