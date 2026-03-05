@@ -38,29 +38,29 @@ To write queries in GEE you use JavaScript which again works well because there 
 
 There are some things to get used to when using GEE to explore satellite data, and a couple of key terms to define.
 
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Term                                 | Definition                                                                                                                                                            |
-+======================================+=======================================================================================================================================================================+
-| Object                               | The basic building block of GEE, it can be a raster, vector, string, number.                                                                                          |
-|                                      |                                                                                                                                                                       |
-|                                      | Each object has a class.                                                                                                                                              |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Class                                | A group of objects to which specific functions (or methods) can be applied.                                                                                           |
-|                                      |                                                                                                                                                                       |
-|                                      | An example of an object class can be an ImageCollection or an Array.                                                                                                  |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Function                             | An action or method that can be applied to an object, such as map() used for ImageCollections.                                                                        |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Image & ImageCollection              | Raster image or a stack of Raster images.                                                                                                                             |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Feature & FeatureCollection          | Vector dataset like a point, polygon or line, a collection is simply multiple vector datasets.                                                                        |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Scale                                | Pixel resolution, the resolution is set by the output not the input of the data. This means things like the zoom scale of your map will affect the scale used by GEE. |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Client side                          | Frontend side, the user facing side of your application i.e. in the browser.                                                                                          |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Server side                          | Backend side, processes the query. In GEE anything starting with ee in our script will be on the server side.                                                         |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Term                        | Definition                                                                                                                                                            |
++=============================+=======================================================================================================================================================================+
+| Object                      | The basic building block of GEE, it can be a raster, vector, string, number.                                                                                          |
+|                             |                                                                                                                                                                       |
+|                             | Each object has a class.                                                                                                                                              |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Class                       | A group of objects to which specific functions (or methods) can be applied.                                                                                           |
+|                             |                                                                                                                                                                       |
+|                             | An example of an object class can be an ImageCollection or an Array.                                                                                                  |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function                    | An action or method that can be applied to an object, such as map() used for ImageCollections.                                                                        |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Image & ImageCollection     | Raster image or a stack of Raster images.                                                                                                                             |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Feature & FeatureCollection | Vector dataset like a point, polygon or line, a collection is simply multiple vector datasets.                                                                        |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Scale                       | Pixel resolution, the resolution is set by the output not the input of the data. This means things like the zoom scale of your map will affect the scale used by GEE. |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Client side                 | Frontend side, the user facing side of your application i.e. in the browser.                                                                                          |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Server side                 | Backend side, processes the query. In GEE anything starting with ee in our script will be on the server side.                                                         |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ### Joining data
 
@@ -76,7 +76,7 @@ I found these functions most interesting to play around with during the practica
 
 Here I was able to take the GLCM around each pixel of every band in the satellite image, turn each of these pixel values into integer pixel values, for the image below we kept all SR bands with Contrast and Dissimilarity to get a better idea of land cover helping to identify areas of high contrast like urban settings. As the size for GLCM texture was 1 (a 3x3 grid i.e. the size of a neighbourhood) this will focus more on fine texture differences most useful for identifying urban areas, but may not be as useful for computing agriculture or greenery.
 
-``` Javascript
+``` javascript
 var glcm = clip.select(['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'SR_B7'])
   .multiply(1000)
   .toUint16()
@@ -113,7 +113,7 @@ Other general limitations of GEE are:
 
 There are many applications of GEE, this week I enjoyed reading @Duan2019 which gave a really useful outline of the applications of GEE across vegetation, urban settings, atmosphere and even archaeology.
 
-[![@Duan2019 p.5336](Images/Duan2019.png)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9184118)
+[![ p.5336](Images/Duan2019.png)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9184118)
 
 In terms of applications for my work I was interested to read a bit more about the urban applications of GEE. I decided to look at a tutorial from the 'Fundamentals and Applications' chapter of the @Cardille2023 Cloud-Based Remote Sensing with Google Earth Engine book.
 
