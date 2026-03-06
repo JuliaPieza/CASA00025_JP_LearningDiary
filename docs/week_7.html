@@ -237,9 +237,9 @@ div.csl-indent {
 <h3 data-number="7.1.1" class="anchored" data-anchor-id="supervised-unsupervised-and-object-based-classification"><span class="header-section-number">7.1.1</span> Supervised, Unsupervised and Object-based Classification</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 34%">
-<col style="width: 47%">
-<col style="width: 17%">
+<col style="width: 31%">
+<col style="width: 44%">
+<col style="width: 23%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -303,16 +303,30 @@ div.csl-indent {
 <p>Classification and Regression Trees (CART) is a common way of classifying data. Classification trees are a good way of classifying data into discrete categories, while regression trees can work with continuous variables.</p>
 <p>The way both of these work is by reducing the ‘impurity’ of our classes, this is also called Gini impurity.</p>
 <p>Imagining a tree, starting at the root with all of our data, the classification takes place when data is split based on whether it belongs to one class or another.</p>
-<p>(find an image)</p>
 <p>When running tree algorithms for classification it is important to prevent overfitting i.e.&nbsp;creating to many branches and nodes that learn the existing dataset and fail to be generalisable to unseen data. We can do this by ‘pruning’ which is limiting the number of branches.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20251204154727037531/root_node.webp" class="img-fluid figure-img"></p>
+<figcaption>CART trees (Source: <a href="https://www.geeksforgeeks.org/machine-learning/cart-classification-and-regression-tree-in-machine-learning/#google_vignette">GeeksForGeeks)</a></figcaption>
+</figure>
+</div>
 </section>
 <section id="svm" class="level3" data-number="7.1.3">
 <h3 data-number="7.1.3" class="anchored" data-anchor-id="svm"><span class="header-section-number">7.1.3</span> SVM</h3>
-<p>Suppor Vector Machine algorithm is a way of classifying the data by creating a maximum margin between two groups of training data (maximum margin classifier).</p>
+<p>Suppor Vector Machine algorithm is a way of classifying the data by creating a maximum margin between two groups of training data (maximum margin classifier). It works by finding the best split boundary across a ‘hyperplane’ that separates categories of data.</p>
+<p>Personally the best way of understanding this was with visual aids such as the ones below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20250805115844223142/SVM.webp" class="img-fluid figure-img"></p>
+<figcaption>SVM hyperplane (Source: <a href="https://www.geeksforgeeks.org/machine-learning/support-vector-machine-algorithm/">GeeksForGeeks</a>)</figcaption>
+</figure>
+</div>
+<p>Although there may be some overlap between the classes it will depend on the tolerance for mis-classification that is allowed within the context we’re working with.</p>
+<p>Therefore there are some limitations with using SVM for noisy datasets where largely overlapping classes can cause issues. Thinking about this in the context of my work at Brent Council I think the interpretability of SVM suffers somewhat compared to CART where the tree visual can be a really helpful aid for non-technical stakeholders.</p>
 </section>
 <section id="limitations" class="level3" data-number="7.1.4">
 <h3 data-number="7.1.4" class="anchored" data-anchor-id="limitations"><span class="header-section-number">7.1.4</span> Limitations</h3>
-<p>Using classification for forecasting into the future can have its pitfalls, there is definitely a risk if the training data provided is not accurate.</p>
+<p>Using classification for forecasting into the future can have its pitfalls, there is definitely a risk if the training data provided is not accurate. If the classes we’re working with are not easily separable it can be difficult to apply algorithms like SVM.</p>
 </section>
 </section>
 <section id="applications" class="level2" data-number="7.2">
@@ -340,26 +354,32 @@ div.csl-indent {
 </figure>
 </div>
 <p>This is because unlike CART, the Random Forest algorithm works with many decision trees, and uses <strong>bootstrap sampling</strong> (i.e.&nbsp;taking the same data and using it multiple times to find the best split of data by minimising Gini impurity). This can also be explained using the concept of <em>bagging</em>, which is taking 70% of training data (70% of the 70% we initially use for training) and testing each random forest tree with the 30% of unseen training data (out of the bag data) to validate the results of the trees and minimise error.</p>
-<p>This is like the algorithm learning from itself and its mistakes to squeeze out an output that is more accurate.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://www.sciencedirect.com/topics/engineering/random-forest"><img src="Images/science_direct_random_forest.jpg" class="img-fluid figure-img"></a></p>
-<figcaption>Random Forest (Source: Science Direct)</figcaption>
+<p><img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*shuhXAwaGaJV9FWQaLMikw.png" class="img-fluid figure-img"></p>
+<figcaption>Bootstrap Sampling Source: <a href="https://medium.com/@pingsubhak/bagging-random-forest-811cd8b4df38">Medium</a></figcaption>
 </figure>
 </div>
-<p>I</p>
+<p>I thought it was interesting to compare this initial attempt at classification with a more well developed project which I read about relating to mapping urban forests across China.</p>
+<p>This paper by <span class="citation" data-cites="Duan2019">Duan et al. (<a href="references.html#ref-Duan2019" role="doc-biblioref">2019</a>)</span> used GEE and Random Forests to classify urban forest distribution across China. I think the main benefit of a study like this is the ability to include both ground point data as well as high resolution images from Google Earth and over 5482 images from Sentinel. There were 75 ground sample points collected as well as over 3000 samples of urban forests used to train the algorithm. However, they also found the 10m resolution of Sentinel data was too coarse for accurately classifying urban forests near densely built up areas.</p>
+<p>Although I think the paper also has a somewhat loose definition of ‘urban forest’ which can include “all woodlands, groups of trees and individual trees” (<span class="citation" data-cites="Duan2019">Duan et al. (<a href="references.html#ref-Duan2019" role="doc-biblioref">2019</a>)</span>) it is still an impressive demonstration of a classification algorithm working across a large national scale.</p>
 </section>
 <section id="reflections" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">7.3</span> Reflections</h2>
-<ul>
-<li><p>use in Local govt, dense urban london spaces</p></li>
-<li><p>even higher resolution data than 10m</p></li>
-</ul>
+<p>Over the last few weeks of learning and reading it seems like there are still challenges to accurately classifying dense urban areas, and especially identifying green spaces within these. As explored by <span class="citation" data-cites="Kadhim2016">Kadhim, Mourshed, and Bray (<a href="references.html#ref-Kadhim2016" role="doc-biblioref">2016</a>)</span> the spectral complexity of urban spaces, due to their variance and mixed materials used is still difficult to classify without higher resolution data. Pixel generalisation can be problematic when working with lower resolution data. The research on urban forests also states that “the most common mis-classification is between buildings and urban forests” where in cities trees grown next to rows of buildings and can be really important as urban forest spaces they may not be fully captured.</p>
+<p>However for a study that was able to capture the extent of most of the urban forests across urban settings in China, the speed and scale at which GEE can work remains impressive.</p>
+<p>Taking the limitations on board, I would be really interested to work with more high resolution imagery to see how it could improve the classification of cities like Gdansk or even at a lower London Borough level, would high resolution imagery make a substantial difference in the accuracy of an algorithm like RF. This is something we’ve been discussing at Brent, and whether one-off purhcases of high resolution imagery that could be used for various purposes across service areas would help spread out the cost. First however, it would be key for me to create a business case and proof of concept, which I can see GEE being really helpful with.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Duan2019" class="csl-entry" role="listitem">
+Duan, Qianwen, Minghong Tan, Yuxuan Guo, Xue Wang, and Liangjie Xin. 2019. <span>“Understanding the Spatial Distribution of Urban Forests in China Using Sentinel-2 Images with Google Earth Engine.”</span> <em>Forests</em> 10 (9). <a href="https://doi.org/10.3390/f10090729">https://doi.org/10.3390/f10090729</a>.
+</div>
 <div id="ref-Jensen2015" class="csl-entry" role="listitem">
 Jensen, John R. 2015. <em>Introductory Digital Image Processing : A Remote Sensing Perspective</em>. Pearson Education.
+</div>
+<div id="ref-Kadhim2016" class="csl-entry" role="listitem">
+Kadhim, Nada, Monjur Mourshed, and Michaela Bray. 2016. <span>“Advances in Remote Sensing Applications for Urban Sustainability.”</span> <em>Euro-Mediterranean Journal for Environmental Integration</em> 1 (1): 7. <a href="https://doi.org/10.1007/s41207-016-0007-4">https://doi.org/10.1007/s41207-016-0007-4</a>.
 </div>
 </div>
 </section>

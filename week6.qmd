@@ -113,7 +113,7 @@ Other general limitations of GEE are:
 
 There are many applications of GEE, this week I enjoyed reading @Duan2019 which gave a really useful outline of the applications of GEE across vegetation, urban settings, atmosphere and even archaeology.
 
-[![ p.5336](Images/Duan2019.png)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9184118)
+[![p.5336](Images/Duan2019.png)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9184118)
 
 In terms of applications for my work I was interested to read a bit more about the urban applications of GEE. I decided to look at a tutorial from the 'Fundamentals and Applications' chapter of the @Cardille2023 Cloud-Based Remote Sensing with Google Earth Engine book.
 
