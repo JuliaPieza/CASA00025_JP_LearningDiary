@@ -1,0 +1,79 @@
+---
+title: "Week 8: GEE Classification II"
+---
+
+## Summary
+
+This week we continued exploring classification, focusing specifically on evaluating models, dealing with unbalanced data and spatial autocorrelation.
+
+### Object based image analysis and sub pixel analysis
+
+Revisiting some of the reading from last week and building on my understanding of OBIA was useful, I think it helped me think of the 'object' as a group of similar pixels, based on their spectral properties like size, colour, shape and texture.
+
+However this can be applied at various scales to extract meaningful information about a landscape, identifying larger 'objects' and smaller ones, whereas with pixel level analysis there is a limitation to the pixel resolution provided in the RS data.
+
+[![OBIA vs Pixel analysis (Source: Nowosad 2021)](https://jakubnowosad.com/ogh2021/figs/blaschke.png)](https://jakubnowosad.com/ogh2021/#3)
+
+The advantage of using OBIA is that it can provide a more fuzzy perspective, i.e. it accounts for the gradual changes from e.g. one land cover type to the next, whereas pixel analysis can be quite rigid.
+
+OBIA can be broken down into two key steps:
+
+-   **Segmentation** - dividing of the image to identify similar objects
+
+-   **Classification** - classifying the obtained objects e.g. into land cover
+
+The shapes we see in OBIA are classified based on the similarity (homogeneity) or difference (heterogeneity) of the cells. These are also referred to as **superpixels**.
+
+To create these superpixels, various algorithms can be used, here I'll summarise Simple Linear Iterative Clustering (SLIC), and Spectral Mixture Analysis (SMA).
+
+#### SLIC
+
+This algorithm simplifies an image into clusters of superpixels. You can define several parameters such as:
+
+-   k - the number of super pixels
+
+-   compactness - balance between physical distance and colour similarity (larger values create more regularly shaped superpixels, smaller values create more irregularly shaped superpixels)
+
+By splitting an into regularly spaced out points and calculating the homegeneity of colours it divides the image into similar polygons of superpixels.
+
+[![SLIC image (Source: Nowosad 2021)](https://jakubnowosad.com/ogh2021/figs/slic5.png)](https://jakubnowosad.com/ogh2021/#12)
+
+However a limitation of SLIC is that it uses Euclidean distance to calculate colour distance, so it works well with aerial photography but not necessarily spatial raster data? (DOUBLE CHECK UNDERSTANDING)
+
+it is also possible to cluster the superpixels above and dissolve some of the borders to make the difference between different types of objects clearer.
+
+[![Clustered superpixels (Source: Nowosad 2021)](https://jakubnowosad.com/ogh2021/index_files/figure-html/unnamed-chunk-25-1.png)](https://jakubnowosad.com/ogh2021/#42)
+
+#### SMA
+
+To identify the composition of materials within a single pixel we can use SMA (also referred to as sub-pixel classification or linear spectromixing) to "decompose the measured reflectance within the instantaneous field of view (IFOV) of a single pixel as a mixture of a fixed set of endmembers" @Jensen2015.
+
+This helps us identify the proportion of various land cover classes within a pixel.
+
+### Evaluating accuracy
+
+Classification algorithms are not perfect and knowing how to evaluate their accuracy is a key part of the research process.
+
+Using an error matrix/confusion matrix can be a useful way of looking at accuracy for binary classification models.
+
+-   error matrix/confusion matrix (recall & precision)
+
+-   Kappa
+
+Unbalanced data
+
+-   F1 score
+
+-   ROC Curve AUC
+
+Validation
+
+-   sampling strategies
+
+-   cross validation LOOVC
+
+Spatial Autocorrelation
+
+## Applications
+
+## Reflections
