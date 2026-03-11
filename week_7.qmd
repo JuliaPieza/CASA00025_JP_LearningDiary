@@ -17,7 +17,7 @@ Both of these can be applied to various supervised and unsupervised classificati
 ### Supervised, Unsupervised and Object-based Classification
 
 | Classification | Definition | Methods |
-|-----------------------|-------------------------------|------------------|
+|----|----|----|
 | Supervised | Assumes a priori (before) knowledge of the type of land, though fieldwork, aerial photography or map analysis. Pattern recognition from the training data provided for the algorithm to learn and classify an area. | Parallelpiped, CART, SVM, Random Forest |
 | Unsupervised | Identities of the land are unknown before, an algorithm takes the remotely sensed data and clusters areas, for example based on band information. The algorithm also labels the classes provided. | DBSCAN, K-means clustering, ISODATA, |
 | Object-based classification | Used to extract homogenous polygons of information from RS data instead of thematic information in pixel format. It does this by segmentation of the image, breaking it into objects. Then it classifies these objects using their shape, size, spatial and spectral properties. | GEOBIA |

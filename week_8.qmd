@@ -6,7 +6,7 @@ title: "Week 8: GEE Classification II"
 
 This week we continued exploring classification, focusing specifically on evaluating models, dealing with unbalanced data and spatial autocorrelation.
 
-### Object based image analysis and sub pixel analysis
+### Object based image analysis
 
 Revisiting some of the reading from last week and building on my understanding of OBIA was useful, I think it helped me think of the 'object' as a group of similar pixels, based on their spectral properties like size, colour, shape and texture.
 
@@ -36,35 +36,59 @@ This algorithm simplifies an image into clusters of superpixels. You can define 
 
 By splitting an into regularly spaced out points and calculating the homegeneity of colours it divides the image into similar polygons of superpixels.
 
-[![SLIC image (Source: Nowosad 2021)](https://jakubnowosad.com/ogh2021/figs/slic5.png)](https://jakubnowosad.com/ogh2021/#12)
+[![SLIC image (Source: [Nowosad 2021](https://jakubnowosad.com/ogh2021/#10))](https://jakubnowosad.com/ogh2021/figs/slic5.png)](https://jakubnowosad.com/ogh2021/#12)
 
-However a limitation of SLIC is that it uses Euclidean distance to calculate colour distance, so it works well with aerial photography but not necessarily spatial raster data? (DOUBLE CHECK UNDERSTANDING)
+A limitation of SLIC is that it relies on Euclidean distance to measure similarity between pixel feature vectors. This works well for continuous spectral data such as aerial or multispectral imagery, but may be inappropriate for other types of spatial raster data, for example, categorical rasters or high-dimensional temporal data, where Euclidean distance does not represent meaningful similarity.
 
-it is also possible to cluster the superpixels above and dissolve some of the borders to make the difference between different types of objects clearer.
+It is also possible to cluster the superpixels above and dissolve some of the borders to make the difference between different types of objects clearer. An advantage of this method is that by looking at the spectral information in the image alongside colour and size it can perform classification better than pixel based methods.
 
-[![Clustered superpixels (Source: Nowosad 2021)](https://jakubnowosad.com/ogh2021/index_files/figure-html/unnamed-chunk-25-1.png)](https://jakubnowosad.com/ogh2021/#42)
+[![Clustered superpixels (Source: [Nowosad 2021](https://jakubnowosad.com/ogh2021/#10))](https://jakubnowosad.com/ogh2021/index_files/figure-html/unnamed-chunk-25-1.png)](https://jakubnowosad.com/ogh2021/#42)
 
-#### SMA
+#### Sub-pixel analysis
 
-To identify the composition of materials within a single pixel we can use SMA (also referred to as sub-pixel classification or linear spectromixing) to "decompose the measured reflectance within the instantaneous field of view (IFOV) of a single pixel as a mixture of a fixed set of endmembers" @Jensen2015.
+Looking again at pixel based analysis we learnt more about using sub-pixel analysis or SMA to identify the composition of materials within a single pixel. This is done to "decompose the measured reflectance within the instantaneous field of view (IFOV) of a single pixel as a mixture of a fixed set of endmembers" @Jensen2015, p.480
 
 This helps us identify the proportion of various land cover classes within a pixel.
 
+However a limitation with this method is that it can be difficult to find all of the pure endmembers within an area (@Jensen2015, p.484), if the spatial resolution of the data we're working with is lower resolution it can become difficult without collecting some ground data to identify endmembers.
+
+There are some R packages ([RStoolbox](https://jakob.schwalb-willmann.de/blog/spectral-unmixing-using-rstoolbox/)) and algorithms like Multiple Endmember Spectral Mixture Analysis which improves on SMA by allowing the number of endmembers to vary per pixel. This is something I'd be interested to look at in R and reading about it in the context of identifying habitat diversity in the Cantabrian Mountains was interesting @Fernández-garcía2021.
+
 ### Evaluating accuracy
 
-Classification algorithms are not perfect and knowing how to evaluate their accuracy is a key part of the research process.
+Classification algorithms are not perfect and knowing how to evaluate their accuracy is a key part of the research process. Using an error matrix/confusion matrix can be a useful way of looking at accuracy for binary classification models.
 
-Using an error matrix/confusion matrix can be a useful way of looking at accuracy for binary classification models.
++---------------------------------------------------------------+---------------------------------------------------------------+
+| **True Positive**                                             | **False Negative**                                            |
+|                                                               |                                                               |
+| Correctly predicted positive result                           | Incorrectly predicted negative result (was actually positive) |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| **False positive**                                            | **True Negative**                                             |
+|                                                               |                                                               |
+| Incorrectly predicted positive result (was actually negative) | Correctly predicted negative result                           |
++---------------------------------------------------------------+---------------------------------------------------------------+
 
--   error matrix/confusion matrix (recall & precision)
++----------------------------+---------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Term                       | Definition                                                                                                                | Application                                                                                                                                                        |
++============================+===========================================================================================================================+====================================================================================================================================================================+
+| Recall (Producer Accuracy) | Assesses how well the model predicts positive results. Proportion of true positives detected from all positive instances. | High recall is needed when the cost of missing positive cases has significant consequences. For example, cancer detection.                                         |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Precision (User Accuracy)  | Measures how many of the positive predictions were actually correct.                                                      | Important when minimising false positives is the goal, e.g. detecting spam emails.                                                                                 |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Overall accuracy -F1 score | The F1 score combines both precision and recall into a single metric to balance their trade off.                          | Useful for judging the overall accuracy of a model but may not be suited to all instances, sometimes higher precision or recall may be more important to focus on. |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
--   Kappa
+You can also use a confusion matrix to evaluate multi class data by changing it into a fuzzy matrix which can evaluate the accuracy of predicting various classes e.g. urban, forest or water.
 
-Unbalanced data
+### Unbalanced data
 
--   F1 score
+This is a problem I have personally come across before with my initial work with machine learning to identify residents at risk of homelessness or council tax arrears. Given that both instances are fairly rare as a proportion of the Borough's population, my initial models were showing high accuracy simply because it was predicting everyone as not in arrears or not having made a homeless application. And because my positives were around 1-3% it was difficult to strike a balance between recall and precision, even when changing the thresholds I struggled to make a convincing case about the accuracy of my model and its applicability.
 
--   ROC Curve AUC
+The ROC Curve (Receiver Operating Characteristic Curve) was another helpful way to determine how well the model was predicting outcomes based on the classification thresholds we set in a model (to either maximise recall or precision).
+
+The ROC curve is plotted using the True Positive Rate vs the False Positive Rate. Broadly a value of 0.5 means the model is as good as making a random guess, while a value of 1 is a perfectly accurate model.
+
+![ROC Curve (Source:[MLU-EXPLAIN](https://mlu-explain.github.io/roc-auc/))](https://andrewmaclachlan.github.io/CASA0023-lecture-7/img/ROC.png)
 
 Validation
 
@@ -76,4 +100,42 @@ Spatial Autocorrelation
 
 ## Applications
 
+One application of these classification methods that has been really interesting to learn about is the [Dynamic World](https://dynamicworld.app/explore) Land Cover data which is a near real time collection of land cover across the world. It has a 10m resolution and uses the Fully Convolutional Neural Network (FCNN) algorithm to map land cover based on the probability that a pixel belongs to a single class. It provides 9 possible classes of Land Cover which are:
+
+-   Water
+
+-   Trees
+
+-   Grass
+
+-   Flooded Vegetation
+
+-   Crops
+
+-   Shrub and scrub
+
+-   Built
+
+-   Bare
+
+-   Snow and ice
+
+It is interesting to me that this algorithm is semi-supervised i.e. it involves both human and machine learning input, with experts labeling nearly 4000 image tiles.
+
+The fact it works with new images fairly quickly classifying them within 20 minutes to an hour is also impressive. It is also possible to recreate the model in GEE and look at things like change detection and time series modelling which I am keen to explore at work. I think at a 10m resolution it would be useful for identifying areas which have become more green with trees, as this model can differentiate fairly well between trees and grass. It could definitely have monitoring uses for urban greening policies. For example, when looking at Fryent Park in Brent the model is able to distinguish well between trees and grass.
+
+![Dynamic world looking at Fryent Park in Brent](Images/dynamic_world_brent.png)
+
+To compare this to an OBIA study of land cover I found an interesting paper about monitoring tree cover in Seattle using freely available aerial photography and comparing it to a satellite based OBIA approach. They note that OBIA approaches outperformed the pixel-based classification when looking at hyperspatial imagery in urban settings @Moskal2011.
+
+![OBIA classification of urban Seattle, a.2002 b.2009 (Source: @Moskal2011)](https://www.mdpi.com/remotesensing/remotesensing-03-02243/article_deploy/html/images/remotesensing-03-02243-g003-1024.png)
+
+I think this approach while more resource intensive, due to the need to collect ground points, and computationally intensive (not sure if it is possible to recreate OBIA on a global scale) does have its advantages in being more accurate in classifying impervious surfaces such as roads and buildings separately. However replicating similar analysis for change detection and green cover monitoring could be feasible at a borough or city wide level.
+
 ## Reflections
+
+I think being familiar with some of the ways to evaluate machine learning models through recall, precision, F1 and ROC was helpful and I can see how these fit with the classification algorithms we've been using on remotely sensed data. There is definitely more I need to revisit to better understand evaluating algorithms via things like Kappa and paying more attention to the sampling and cross validation methods such as LOOVC.
+
+In the context of my day-to-day work at a local authority I think it can be challenging to convey the caveats with predictive models and to non-technical stakeholders. I think this may be possibly easier to explain with satellite data given the visual outputs of classifications, and this is something I have started showing to various teams at the Council to try to come up with useful applications of RS classification.
+
+There was a lot of additional content this week which I ran out of space to summarise relating to cross validation and spatial autocorrelation, which are both also important to take into account when carrying out classification analysis. I need to spend more time with both to understand how to integrate them into future GEE projects.
