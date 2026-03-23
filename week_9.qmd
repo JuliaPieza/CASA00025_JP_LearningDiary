@@ -1,0 +1,29 @@
+---
+title: "Week 9: Temperature"
+---
+
+## Summary 
+
+This week we looked closely at SAR data and ways to analyse temperature data using GEE during our practical.
+
+### SAR data and polarisation
+
+-   SAR data and polarisation
+
+    -   discuss limitations
+
+-   amplitude and phase
+
+    -   useful for change
+
+-   using Landsat and MODIS for temperature
+
+## Applications
+
+-   compare 2 articles
+
+## Reflections
+
+-   Image fusion interest
+
+-   insar data limitations
