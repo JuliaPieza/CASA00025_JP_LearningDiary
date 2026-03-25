@@ -1,12 +1,26 @@
 ---
-title: "Week 9: Temperature"
+title: "Week 9: SAR & Temperature"
 ---
 
-## Summary 
+## Summary
 
 This week we looked closely at SAR data and ways to analyse temperature data using GEE during our practical.
 
 ### SAR data and polarisation
+
+SAR data is requires active sensors which emit waves and get 'backscatter' information which can be used to capture things like surface texture.
+
+Commonly Band C SAR is used which has a frequency of 4-8GHz. It can be used in many ways, for example in CASA0025 we've looked at SAR used in building damage detection.
+
+Other bands such as band X which has a frequency of 8-12GHz are higher resolution and can be used for monitoring urban areas, looking at things like change detection.
+
+The electromagnetic waves transmitted can also come in two directions: vertical or horizontal. This is also called polarisaiton.
+
+[![SAR Polarisation (Source: [University of Alaska](https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/))](https://hyp3-docs.asf.alaska.edu/images/polarizations_ASF_dashed.png)](https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/)
+
+When using SAR data the surface it is emitting EM waves to makes a large difference in how much backscatter will be returned. When sending EM waves over a smooth surface there is limited backscatter return, which can be useful for capturing information for smooth surfaces like water or ice.
+
+![Source: [University of Alaska](https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/)](https://hyp3-docs.asf.alaska.edu/images/wavelength_vs_roughness.png)
 
 -   SAR data and polarisation
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; Week 9: Temperature – Remote Sensing Learning Diary</title>
+<title>9&nbsp; Week 9: SAR &amp; Temperature – Remote Sensing Learning Diary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week_9.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 9: Temperature</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week_9.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 9: SAR &amp; Temperature</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -165,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week_9.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 9: Temperature</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 9: SAR &amp; Temperature</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -198,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 9: Temperature</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 9: SAR &amp; Temperature</span></h1>
 </div>
 
 
@@ -220,6 +220,23 @@ ul.task-list li input[type="checkbox"] {
 <p>This week we looked closely at SAR data and ways to analyse temperature data using GEE during our practical.</p>
 <section id="sar-data-and-polarisation" class="level3" data-number="9.1.1">
 <h3 data-number="9.1.1" class="anchored" data-anchor-id="sar-data-and-polarisation"><span class="header-section-number">9.1.1</span> SAR data and polarisation</h3>
+<p>SAR data is requires active sensors which emit waves and get ‘backscatter’ information which can be used to capture things like surface texture.</p>
+<p>Commonly Band C SAR is used which has a frequency of 4-8GHz. It can be used in many ways, for example in CASA0025 we’ve looked at SAR used in building damage detection.</p>
+<p>Other bands such as band X which has a frequency of 8-12GHz are higher resolution and can be used for monitoring urban areas, looking at things like change detection.</p>
+<p>The electromagnetic waves transmitted can also come in two directions: vertical or horizontal. This is also called polarisaiton.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/"><img src="https://hyp3-docs.asf.alaska.edu/images/polarizations_ASF_dashed.png" class="img-fluid figure-img"></a></p>
+<figcaption>SAR Polarisation (Source: [University of Alaska](https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/))</figcaption>
+</figure>
+</div>
+<p>When using SAR data the surface it is emitting EM waves to makes a large difference in how much backscatter will be returned. When sending EM waves over a smooth surface there is limited backscatter return, which can be useful for capturing information for smooth surfaces like water or ice.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://hyp3-docs.asf.alaska.edu/images/wavelength_vs_roughness.png" class="img-fluid figure-img"></p>
+<figcaption>Source: <a href="https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/">University of Alaska</a></figcaption>
+</figure>
+</div>
 <ul>
 <li><p>SAR data and polarisation</p>
 <ul>

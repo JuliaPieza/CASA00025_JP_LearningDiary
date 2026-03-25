@@ -292,41 +292,41 @@
   {
     "objectID": "week_9.html",
     "href": "week_9.html",
-    "title": "9  Week 9: Temperature",
+    "title": "9  Week 9: SAR & Temperature",
     "section": "",
     "text": "9.1 Summary\nThis week we looked closely at SAR data and ways to analyse temperature data using GEE during our practical.",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Week 9: Temperature</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Week 9: SAR & Temperature</span>"
     ]
   },
   {
     "objectID": "week_9.html#summary",
     "href": "week_9.html#summary",
-    "title": "9  Week 9: Temperature",
+    "title": "9  Week 9: SAR & Temperature",
     "section": "",
-    "text": "9.1.1 SAR data and polarisation\n\nSAR data and polarisation\n\ndiscuss limitations\n\namplitude and phase\n\nuseful for change\n\nusing Landsat and MODIS for temperature",
+    "text": "9.1.1 SAR data and polarisation\nSAR data is requires active sensors which emit waves and get ‘backscatter’ information which can be used to capture things like surface texture.\nCommonly Band C SAR is used which has a frequency of 4-8GHz. It can be used in many ways, for example in CASA0025 we’ve looked at SAR used in building damage detection.\nOther bands such as band X which has a frequency of 8-12GHz are higher resolution and can be used for monitoring urban areas, looking at things like change detection.\nThe electromagnetic waves transmitted can also come in two directions: vertical or horizontal. This is also called polarisaiton.\n\n\n\nSAR Polarisation (Source: [University of Alaska](https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/))\n\n\nWhen using SAR data the surface it is emitting EM waves to makes a large difference in how much backscatter will be returned. When sending EM waves over a smooth surface there is limited backscatter return, which can be useful for capturing information for smooth surfaces like water or ice.\n\n\n\nSource: University of Alaska\n\n\n\nSAR data and polarisation\n\ndiscuss limitations\n\namplitude and phase\n\nuseful for change\n\nusing Landsat and MODIS for temperature",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Week 9: Temperature</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Week 9: SAR & Temperature</span>"
     ]
   },
   {
     "objectID": "week_9.html#applications",
     "href": "week_9.html#applications",
-    "title": "9  Week 9: Temperature",
+    "title": "9  Week 9: SAR & Temperature",
     "section": "9.2 Applications",
     "text": "9.2 Applications\n\ncompare 2 articles",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Week 9: Temperature</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Week 9: SAR & Temperature</span>"
     ]
   },
   {
     "objectID": "week_9.html#reflections",
     "href": "week_9.html#reflections",
-    "title": "9  Week 9: Temperature",
+    "title": "9  Week 9: SAR & Temperature",
     "section": "9.3 Reflections",
     "text": "9.3 Reflections\n\nImage fusion interest\ninsar data limitations",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Week 9: Temperature</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Week 9: SAR & Temperature</span>"
     ]
   },
   {
