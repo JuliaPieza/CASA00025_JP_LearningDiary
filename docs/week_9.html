@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -187,6 +207,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">9.1</span> Summary</a>
   <ul class="collapse">
   <li><a href="#sar-data-and-polarisation" id="toc-sar-data-and-polarisation" class="nav-link" data-scroll-target="#sar-data-and-polarisation"><span class="header-section-number">9.1.1</span> SAR data and polarisation</a></li>
+  <li><a href="#phase" id="toc-phase" class="nav-link" data-scroll-target="#phase"><span class="header-section-number">9.1.2</span> Phase</a></li>
+  <li><a href="#dinsar" id="toc-dinsar" class="nav-link" data-scroll-target="#dinsar"><span class="header-section-number">9.1.3</span> DInSAR</a></li>
+  <li><a href="#benefits" id="toc-benefits" class="nav-link" data-scroll-target="#benefits"><span class="header-section-number">9.1.4</span> Benefits</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations"><span class="header-section-number">9.1.5</span> Limitations</a></li>
   </ul></li>
   <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">9.2</span> Applications</a></li>
   <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">9.3</span> Reflections</a></li>
@@ -220,50 +244,91 @@ ul.task-list li input[type="checkbox"] {
 <p>This week we looked closely at SAR data and ways to analyse temperature data using GEE during our practical.</p>
 <section id="sar-data-and-polarisation" class="level3" data-number="9.1.1">
 <h3 data-number="9.1.1" class="anchored" data-anchor-id="sar-data-and-polarisation"><span class="header-section-number">9.1.1</span> SAR data and polarisation</h3>
-<p>SAR data is requires active sensors which emit waves and get ‘backscatter’ information which can be used to capture things like surface texture.</p>
-<p>Commonly Band C SAR is used which has a frequency of 4-8GHz. It can be used in many ways, for example in CASA0025 we’ve looked at SAR used in building damage detection.</p>
-<p>Other bands such as band X which has a frequency of 8-12GHz are higher resolution and can be used for monitoring urban areas, looking at things like change detection.</p>
-<p>The electromagnetic waves transmitted can also come in two directions: vertical or horizontal. This is also called polarisaiton.</p>
+<p>SAR data requires active sensors which emit waves and get ‘backscatter’ information which can be used to capture things like surface texture. Measuring the strength of this backscatter signal is what is also called the <strong>amplitude.</strong></p>
+<p>Commonly Band C SAR is used which has a frequency of 4-8GHz. In CASA0025 we’ve been learning about how SAR can be used in building damage detection.</p>
+<p>Other bands such as band X which has a frequency of 8-12GHz are higher resolution and can be used for things like change detection in urban areas.</p>
+<p>When working with SAR the electromagnetic waves transmitted can also come in two directions: vertical or horizontal. This is referred to as polarisation and helpfully shown below.</p>
+<p>The vertical polarisation is referred to as V while horizontal polarisation is indicated by H. Some SAR satellites mix these to provide dual or even quad polarisation (although this is a more novel capability of satellites like RADARSAT-2 explored more by <span class="citation" data-cites="Zhao2024">Zhao et al. (<a href="references.html#ref-Zhao2024" role="doc-biblioref">2024</a>)</span> in it’s function to detect sea ice).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/"><img src="https://hyp3-docs.asf.alaska.edu/images/polarizations_ASF_dashed.png" class="img-fluid figure-img"></a></p>
 <figcaption>SAR Polarisation (Source: [University of Alaska](https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/))</figcaption>
 </figure>
 </div>
-<p>When using SAR data the surface it is emitting EM waves to makes a large difference in how much backscatter will be returned. When sending EM waves over a smooth surface there is limited backscatter return, which can be useful for capturing information for smooth surfaces like water or ice.</p>
+<p>When using SAR data the nature of the surface can affect how much backscatter is returned to the satellite. For example, a smooth surface like water will have limited backscatter return. This can be useful for understanding SAR images, but can also be influenced by weather such as wind which can make water ripple giving it a ‘rougher’ texture and making the image less reliable for identifying water.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://hyp3-docs.asf.alaska.edu/images/wavelength_vs_roughness.png" class="img-fluid figure-img"></p>
 <figcaption>Source: <a href="https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/">University of Alaska</a></figcaption>
 </figure>
 </div>
+</section>
+<section id="phase" class="level3" data-number="9.1.2">
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="phase"><span class="header-section-number">9.1.2</span> Phase</h3>
+<p>Beyond measuring the amplitude, SAR data also provides us with information about the cycle of the wave when the signal is returned from the ground, which is referred to as <strong>phase</strong> data. The study of phase data is also called InSAR or interferometry, it uses the phase information received to capture things like ground movement.</p>
+<p>It is largely used in detecting earth movement after landslides, earthquakes or volcanic eruption.</p>
+<p>However, currently GEE doesn’t offer capability to work with InSAR data so it can be done using software like SNAP. Or alternatively there are some open source options, for example NASA provides <a href="https://github.com/isce-framework/isce2">ISCE</a> (InSAR Scientific Computing Environment) which is a python package used for interferometric processing.</p>
+</section>
+<section id="dinsar" class="level3" data-number="9.1.3">
+<h3 data-number="9.1.3" class="anchored" data-anchor-id="dinsar"><span class="header-section-number">9.1.3</span> DInSAR</h3>
+<p>Another way of working with phase data is called Differential Interferometric Synthetic Aperture Radar (DInSAR), which is used to compare SAR images and detecting phase changes over time. It is largely used to monitor ground subsidence.</p>
+</section>
+<section id="benefits" class="level3" data-number="9.1.4">
+<h3 data-number="9.1.4" class="anchored" data-anchor-id="benefits"><span class="header-section-number">9.1.4</span> Benefits</h3>
+<p>One of the key benefits of SAR is how sensitive it is to changes at a cm level, allowing for really detailed surface characterisation and understanding ground movement in the case of earthquakes or landslides. InSAR is especially sensitive sometimes at millimeter level which can be especially useful for observing long term subsidence trends across urban areas, and planning for infrastructure adaptations.</p>
+<p>Another key benefit is the ability of SAR to penetrate through cloud making observations possible in difficult weather conditions, such as storms.</p>
+<p>Publicly available SAR data from Sentinel 1 is also available since 2014 which means longitudinal analysis can be possible with the data.</p>
+</section>
+<section id="limitations" class="level3" data-number="9.1.5">
+<h3 data-number="9.1.5" class="anchored" data-anchor-id="limitations"><span class="header-section-number">9.1.5</span> Limitations</h3>
+<p>One of the key limitations of working with SAR data is related to its biggest benefit, that being how sensitive it is to change.</p>
+<p>Dealing with a large volume of SAR data across an urban setting, it is key to understand all of the various factors which impact the image produced which can be:</p>
 <ul>
-<li><p>SAR data and polarisation</p>
-<ul>
-<li>discuss limitations</li>
-</ul></li>
-<li><p>amplitude and phase</p>
-<ul>
-<li>useful for change</li>
-</ul></li>
-<li><p>using Landsat and MODIS for temperature</p></li>
+<li><p>weather - especially wind when capturing water</p></li>
+<li><p>construction - can create a lot of backscatter, important to understand how this can affect image statistics</p></li>
+<li><p>sensor orientation - important to understand ascending and descending orbits match to capture the right data</p></li>
+<li><p>military interference - we covered this more in CASA0025 looking at interference from ground radar pulses which can appear as bright stripes on the image.</p></li>
 </ul>
 </section>
 </section>
 <section id="applications" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">9.2</span> Applications</h2>
-<ul>
-<li>compare 2 articles</li>
-</ul>
+<p>This week provided a useful introduction to working with temperature in GEE, using MODIS data and working on replicating a <a href="https://www.bbc.co.uk/news/uk-62243280">BBC heat index</a>.</p>
+<p>This is relevant to my work at Brent with our Climate team, who are interested in developing our capabilities to assess heat risk in areas such as Harlesden which lacks green spaces.</p>
+<p>I started with reading <span class="citation" data-cites="Wilson2020">Wilson (<a href="references.html#ref-Wilson2020" role="doc-biblioref">2020</a>)</span> and <span class="citation" data-cites="Nowak2022">Nowak, Ellis, and Greenfield (<a href="references.html#ref-Nowak2022" role="doc-biblioref">2022</a>)</span> both exploring the relationships between historic redlining policies and present urban heat risk in US cities. Using land surface temperature data, from satellites such as Landsat they show that formerly redlined areas tend to experience more heat risk through the UHI effect, associated with lower tree cover and higher proportions of impervious surfaces. Yet they also combine this data with socio-economic indicators to make the case for more equity-focused urban planning.</p>
+<p>However there are some limitations. <span class="citation" data-cites="Wilson2020">Wilson (<a href="references.html#ref-Wilson2020" role="doc-biblioref">2020</a>)</span> highlights the difficulty of linking heat exposure to health outcomes due to restricted access to health data and privacy concerns. This is also similar with my workplace although we have a Public Health team that is able to provide us with aggregated figures for certain health conditions that would make this kind of research interesting to replicate on a smaller scale of a borough, and perhaps look at data over time (although Covid makes this difficult).</p>
+<p>In addition, <span class="citation" data-cites="Nowak2022">Nowak, Ellis, and Greenfield (<a href="references.html#ref-Nowak2022" role="doc-biblioref">2022</a>)</span> places greater emphasis on the role of impervious land cover in limiting greening efforts, suggesting that land use may be a more immediate driver than redlining alone. This complicates the causal narrative which is also critiqued by <span class="citation" data-cites="Schwarz2015">Schwarz et al. (<a href="references.html#ref-Schwarz2015" role="doc-biblioref">2015</a>)</span> who find that in dense urban context such as New York City income has only a weak correlation with urban tree cover. Their research also considers spatial autocorrelation in combination with working with SAR data which was useful to keep in mind if I decide to carry out a similar project with Brent or London data.</p>
+<p>Overall, other datasets such as the Index of Multiple Deprivation that was released in October 2025 might be useful to apply in this context looking at correlation between impervious surface, lack of green space and deprivation as well as heat risk, and the health outcomes of populations across London.</p>
 </section>
 <section id="reflections" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">9.3</span> Reflections</h2>
+<p>Overall I have really enjoyed this module, it has given me a lot of ideas for research projects to try and implement at work and given me a lot of the tools to explore satellite data in GEE.</p>
+<p>This week was especially interesting for exploring SAR capabilities and looking at temperature data.</p>
+<p>Generally there remain trade offs to working with satellite data whether its temporal resolution, or the computation power required to work with large volumes of data.</p>
+<p>I did write a bit in week 1 about wanting to explore image fusion a bit more and have gained a basic understanding of this from <span class="citation" data-cites="Shulte2018">Schulte to Bühne and Pettorelli (<a href="references.html#ref-Shulte2018" role="doc-biblioref">2018</a>)</span> but I think implementing something like this at work feels just a bit out of reach at the moment, I am hoping to continue exploring image fusion</p>
 <ul>
 <li><p>Image fusion interest</p></li>
 <li><p>insar data limitations</p></li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Nowak2022" class="csl-entry" role="listitem">
+Nowak, David J., Alexis Ellis, and Eric J. Greenfield. 2022. <span>“The Disparity in Tree Cover and Ecosystem Service Values Among Redlining Classes in the United States.”</span> <em>Landscape and Urban Planning</em> 221: 104370. https://doi.org/<a href="https://doi.org/10.1016/j.landurbplan.2022.104370">https://doi.org/10.1016/j.landurbplan.2022.104370</a>.
+</div>
+<div id="ref-Shulte2018" class="csl-entry" role="listitem">
+Schulte to Bühne, Henrike, and Nathalie Pettorelli. 2018. <span>“Better Together: <span>Integrating</span> and Fusing Multispectral and Radar Satellite Imagery to Inform Biodiversity Monitoring, Ecological Research and Conservation Science.”</span> <em>Methods in Ecology and Evolution</em> 9 (4): 849–65. <a href="https://doi.org/10.1111/2041-210X.12942">https://doi.org/10.1111/2041-210X.12942</a>.
+</div>
+<div id="ref-Schwarz2015" class="csl-entry" role="listitem">
+Schwarz, Kirsten, Michail Fragkias, Christopher G. Boone, Weiqi Zhou, Melissa McHale, J. Morgan Grove, Jarlath O’Neil-Dunne, et al. 2015. <span>“Trees Grow on Money: Urban Tree Canopy Cover and Environmental Justice.”</span> <em>PLOS ONE</em> 10 (4): 1–17. <a href="https://doi.org/10.1371/journal.pone.0122051">https://doi.org/10.1371/journal.pone.0122051</a>.
+</div>
+<div id="ref-Wilson2020" class="csl-entry" role="listitem">
+Wilson, Bev. 2020. <span>“Urban Heat Management and the Legacy of Redlining.”</span> <em>Journal of the American Planning Association</em> 86 (4): 443457. <a href="https://doi.org/10.1080/01944363.2020.1759127">https://doi.org/10.1080/01944363.2020.1759127</a>.
+</div>
+<div id="ref-Zhao2024" class="csl-entry" role="listitem">
+Zhao, Li, Tao Xie, William Perrie, and Jingsong Yang. 2024. <span>“Sea Ice Detection from RADARSAT-2 Quad-Polarization SAR Imagery Based on Co- and Cross-Polarization Ratio.”</span> <em>Remote Sensing</em> 16 (3). <a href="https://doi.org/10.3390/rs16030515">https://doi.org/10.3390/rs16030515</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

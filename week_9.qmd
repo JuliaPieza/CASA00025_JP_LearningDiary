@@ -8,35 +8,79 @@ This week we looked closely at SAR data and ways to analyse temperature data usi
 
 ### SAR data and polarisation
 
-SAR data is requires active sensors which emit waves and get 'backscatter' information which can be used to capture things like surface texture.
+SAR data requires active sensors which emit waves and get 'backscatter' information which can be used to capture things like surface texture. Measuring the strength of this backscatter signal is what is also called the **amplitude.**
 
-Commonly Band C SAR is used which has a frequency of 4-8GHz. It can be used in many ways, for example in CASA0025 we've looked at SAR used in building damage detection.
+Commonly Band C SAR is used which has a frequency of 4-8GHz. In CASA0025 we've been learning about how SAR can be used in building damage detection.
 
-Other bands such as band X which has a frequency of 8-12GHz are higher resolution and can be used for monitoring urban areas, looking at things like change detection.
+Other bands such as band X which has a frequency of 8-12GHz are higher resolution and can be used for things like change detection in urban areas.
 
-The electromagnetic waves transmitted can also come in two directions: vertical or horizontal. This is also called polarisaiton.
+When working with SAR the electromagnetic waves transmitted can also come in two directions: vertical or horizontal. This is referred to as polarisation and helpfully shown below.
 
-[![SAR Polarisation (Source: [University of Alaska](https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/))](https://hyp3-docs.asf.alaska.edu/images/polarizations_ASF_dashed.png)](https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/)
+The vertical polarisation is referred to as V while horizontal polarisation is indicated by H. Some SAR satellites mix these to provide dual or even quad polarisation (although this is a more novel capability of satellites like RADARSAT-2 explored more by @Zhao2024 in it's function to detect sea ice).
 
-When using SAR data the surface it is emitting EM waves to makes a large difference in how much backscatter will be returned. When sending EM waves over a smooth surface there is limited backscatter return, which can be useful for capturing information for smooth surfaces like water or ice.
+[![SAR Polarisation (Source: \[University of Alaska\](https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/))](https://hyp3-docs.asf.alaska.edu/images/polarizations_ASF_dashed.png)](https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/)
+
+When using SAR data the nature of the surface can affect how much backscatter is returned to the satellite. For example, a smooth surface like water will have limited backscatter return. This can be useful for understanding SAR images, but can also be influenced by weather such as wind which can make water ripple giving it a 'rougher' texture and making the image less reliable for identifying water.
 
 ![Source: [University of Alaska](https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/)](https://hyp3-docs.asf.alaska.edu/images/wavelength_vs_roughness.png)
 
--   SAR data and polarisation
+### Phase 
 
-    -   discuss limitations
+Beyond measuring the amplitude, SAR data also provides us with information about the cycle of the wave when the signal is returned from the ground, which is referred to as **phase** data. The study of phase data is also called InSAR or interferometry, it uses the phase information received to capture things like ground movement.
 
--   amplitude and phase
+It is largely used in detecting earth movement after landslides, earthquakes or volcanic eruption.
 
-    -   useful for change
+However, currently GEE doesn't offer capability to work with InSAR data so it can be done using software like SNAP. Or alternatively there are some open source options, for example NASA provides [ISCE](https://github.com/isce-framework/isce2) (InSAR Scientific Computing Environment) which is a python package used for interferometric processing.
 
--   using Landsat and MODIS for temperature
+### DInSAR
+
+Another way of working with phase data is called Differential Interferometric Synthetic Aperture Radar (DInSAR), which is used to compare SAR images and detecting phase changes over time. It is largely used to monitor ground subsidence.
+
+### Benefits 
+
+One of the key benefits of SAR is how sensitive it is to changes at a cm level, allowing for really detailed surface characterisation and understanding ground movement in the case of earthquakes or landslides. InSAR is especially sensitive sometimes at millimeter level which can be especially useful for observing long term subsidence trends across urban areas, and planning for infrastructure adaptations.
+
+Another key benefit is the ability of SAR to penetrate through cloud making observations possible in difficult weather conditions, such as storms.
+
+Publicly available SAR data from Sentinel 1 is also available since 2014 which means longitudinal analysis can be possible with the data.
+
+### Limitations
+
+One of the key limitations of working with SAR data is related to its biggest benefit, that being how sensitive it is to change.
+
+Dealing with a large volume of SAR data across an urban setting, it is key to understand all of the various factors which impact the image produced which can be:
+
+-   weather - especially wind when capturing water
+
+-   construction - can create a lot of backscatter, important to understand how this can affect image statistics
+
+-   sensor orientation - important to understand ascending and descending orbits match to capture the right data
+
+-   military interference - we covered this more in CASA0025 looking at interference from ground radar pulses which can appear as bright stripes on the image.
 
 ## Applications
 
--   compare 2 articles
+This week provided a useful introduction to working with temperature in GEE, using MODIS data and working on replicating a [BBC heat index](https://www.bbc.co.uk/news/uk-62243280).
+
+This is relevant to my work at Brent with our Climate team, who are interested in developing our capabilities to assess heat risk in areas such as Harlesden which lacks green spaces.
+
+I started with reading @Wilson2020 and @Nowak2022 both exploring the relationships between historic redlining policies and present urban heat risk in US cities. Using land surface temperature data, from satellites such as Landsat they show that formerly redlined areas tend to experience more heat risk through the UHI effect, associated with lower tree cover and higher proportions of impervious surfaces. Yet they also combine this data with socio-economic indicators to make the case for more equity-focused urban planning.
+
+However there are some limitations. @Wilson2020 highlights the difficulty of linking heat exposure to health outcomes due to restricted access to health data and privacy concerns. This is also similar with my workplace although we have a Public Health team that is able to provide us with aggregated figures for certain health conditions that would make this kind of research interesting to replicate on a smaller scale of a borough, and perhaps look at data over time (although Covid makes this difficult).
+
+In addition, @Nowak2022 places greater emphasis on the role of impervious land cover in limiting greening efforts, suggesting that land use may be a more immediate driver than redlining alone. This complicates the causal narrative which is also critiqued by @Schwarz2015 who find that in dense urban context such as New York City income has only a weak correlation with urban tree cover. Their research also considers spatial autocorrelation in combination with working with SAR data which was useful to keep in mind if I decide to carry out a similar project with Brent or London data.
+
+Overall, other datasets such as the Index of Multiple Deprivation that was released in October 2025 might be useful to apply in this context looking at correlation between impervious surface, lack of green space and deprivation as well as heat risk, and the health outcomes of populations across London.
 
 ## Reflections
+
+Overall I have really enjoyed this module, it has given me a lot of ideas for research projects to try and implement at work and given me a lot of the tools to explore satellite data in GEE.
+
+This week was especially interesting for exploring SAR capabilities and looking at temperature data.
+
+Generally there remain trade offs to working with satellite data whether its temporal resolution, or the computation power required to work with large volumes of data.
+
+I did write a bit in week 1 about wanting to explore image fusion a bit more and have gained a basic understanding of this from @Shulte2018 but I think implementing something like this at work feels just a bit out of reach at the moment, I am hoping to continue exploring image fusion
 
 -   Image fusion interest
 
