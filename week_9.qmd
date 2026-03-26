@@ -32,10 +32,6 @@ It is largely used in detecting earth movement after landslides, earthquakes or 
 
 However, currently GEE doesn't offer capability to work with InSAR data so it can be done using software like SNAP. Or alternatively there are some open source options, for example NASA provides [ISCE](https://github.com/isce-framework/isce2) (InSAR Scientific Computing Environment) which is a python package used for interferometric processing.
 
-### DInSAR
-
-Another way of working with phase data is called Differential Interferometric Synthetic Aperture Radar (DInSAR), which is used to compare SAR images and detecting phase changes over time. It is largely used to monitor ground subsidence.
-
 ### Benefits 
 
 One of the key benefits of SAR is how sensitive it is to changes at a cm level, allowing for really detailed surface characterisation and understanding ground movement in the case of earthquakes or landslides. InSAR is especially sensitive sometimes at millimeter level which can be especially useful for observing long term subsidence trends across urban areas, and planning for infrastructure adaptations.
@@ -50,13 +46,13 @@ One of the key limitations of working with SAR data is related to its biggest be
 
 Dealing with a large volume of SAR data across an urban setting, it is key to understand all of the various factors which impact the image produced which can be:
 
--   weather - especially wind when capturing water
+-   Weather - especially wind when capturing water, but can be solved with looking at different polarisation combinations.
 
--   construction - can create a lot of backscatter, important to understand how this can affect image statistics
+-   Construction - can create a lot of backscatter, important to understand how this can affect image statistics. Although in some case this might be part of what we want to measure with urban change.
 
--   sensor orientation - important to understand ascending and descending orbits match to capture the right data
+-   Sensor orientation - important to understand ascending and descending orbits match to capture the right data.
 
--   military interference - we covered this more in CASA0025 looking at interference from ground radar pulses which can appear as bright stripes on the image.
+-   Military interference - we covered this more in CASA0025 looking at interference from ground radar pulses which can appear as bright stripes on the image.
 
 ## Applications
 
@@ -74,14 +70,8 @@ Overall, other datasets such as the Index of Multiple Deprivation that was relea
 
 ## Reflections
 
-Overall I have really enjoyed this module, it has given me a lot of ideas for research projects to try and implement at work and given me a lot of the tools to explore satellite data in GEE.
+Overall I have really enjoyed this module, it has given me a lot of ideas for research projects to try and implement at work and given me a lot of the tools to explore satellite data in GEE. This week was especially interesting for exploring SAR capabilities and looking at temperature data. The Urban Heat Island effect is likely to get worse across London due to more extreme weather events so it is important to look at areas where physical adaptations such as trees, or structures that provide more shade can be implemented. Looking at such areas by combining satellite data as well as demographic and socio-economic indicators is something I'm interested to explore more at work.
 
-This week was especially interesting for exploring SAR capabilities and looking at temperature data.
+Nevertheless, there remain trade offs to working with satellite data whether its temporal resolution, or the computation power required to work with large volumes of data. There are also uncertainties of whether GEE will remain as accessible to researchers as it has been so far. At the same time the RS academic field continues to produce a lot of innovative research and as mentioned at the start of this course it does feel like a lot of approaches blend the science and art aspects of this field.
 
-Generally there remain trade offs to working with satellite data whether its temporal resolution, or the computation power required to work with large volumes of data.
-
-I did write a bit in week 1 about wanting to explore image fusion a bit more and have gained a basic understanding of this from @Shulte2018 but I think implementing something like this at work feels just a bit out of reach at the moment, I am hoping to continue exploring image fusion
-
--   Image fusion interest
-
--   insar data limitations
+What I'm interested in doing a bit more reading on is image fusion which I got a basic understanding from @Shulte2018, and while I think implementing something like this at work feels just a bit out of reach at the moment, I am keen to keep reading about advancements made in RS.

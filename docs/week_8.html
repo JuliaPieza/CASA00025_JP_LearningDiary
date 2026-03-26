@@ -283,8 +283,7 @@ div.csl-indent {
 </section>
 <section id="sub-pixel-analysis" class="level4" data-number="8.1.1.2">
 <h4 data-number="8.1.1.2" class="anchored" data-anchor-id="sub-pixel-analysis"><span class="header-section-number">8.1.1.2</span> Sub-pixel analysis</h4>
-<p>Looking again at pixel based analysis we learnt more about using sub-pixel analysis or SMA to identify the composition of materials within a single pixel. This is done to “decompose the measured reflectance within the instantaneous field of view (IFOV) of a single pixel as a mixture of a fixed set of endmembers” <span class="citation" data-cites="Jensen2015">Jensen (<a href="references.html#ref-Jensen2015" role="doc-biblioref">2015</a>)</span>, p.480</p>
-<p>This helps us identify the proportion of various land cover classes within a pixel.</p>
+<p>Looking again at pixel based analysis we learnt more about using sub-pixel analysis or SMA to identify the composition of materials within a single pixel. This is done to “decompose the measured reflectance within the instantaneous field of view (IFOV) of a single pixel as a mixture of a fixed set of endmembers” (<span class="citation" data-cites="Jensen2015">Jensen (<a href="references.html#ref-Jensen2015" role="doc-biblioref">2015</a>)</span>, p.480). This helps us identify the proportion of various land cover classes within a pixel.</p>
 <p>However a limitation with this method is that it can be difficult to find all of the pure endmembers within an area (<span class="citation" data-cites="Jensen2015">Jensen (<a href="references.html#ref-Jensen2015" role="doc-biblioref">2015</a>)</span>, p.484), if the spatial resolution of the data we’re working with is lower resolution it can become difficult without collecting some ground data to identify endmembers.</p>
 <p>There are some R packages (<a href="https://jakob.schwalb-willmann.de/blog/spectral-unmixing-using-rstoolbox/">RStoolbox</a>) and algorithms like Multiple Endmember Spectral Mixture Analysis which improves on SMA by allowing the number of endmembers to vary per pixel. This is something I’d be interested to look at in R and reading about it in the context of identifying habitat diversity in the Cantabrian Mountains was interesting <span class="citation" data-cites="Fernández-garcía2021">Fernández-García et al. (<a href="references.html#ref-Fernández-garcía2021" role="doc-biblioref">2021</a>)</span>.</p>
 </section>
@@ -314,9 +313,9 @@ div.csl-indent {
 </table>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 12%">
+<col style="width: 37%">
+<col style="width: 49%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -337,7 +336,7 @@ div.csl-indent {
 <td>Important when minimising false positives is the goal, e.g.&nbsp;detecting spam emails.</td>
 </tr>
 <tr class="odd">
-<td>Overall accuracy -F1 score</td>
+<td>Overall accuracy - F1 score</td>
 <td>The F1 score combines both precision and recall into a single metric to balance their trade off.</td>
 <td>Useful for judging the overall accuracy of a model but may not be suited to all instances, sometimes higher precision or recall may be more important to focus on.</td>
 </tr>
@@ -398,7 +397,7 @@ div.csl-indent {
 <section id="reflections" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">8.3</span> Reflections</h2>
 <p>I think being familiar with some of the ways to evaluate machine learning models through recall, precision, F1 and ROC was helpful and I can see how these fit with the classification algorithms we’ve been using on remotely sensed data. There is definitely more I need to revisit to better understand evaluating algorithms via things like Kappa and paying more attention to the sampling and cross validation methods such as LOOVC.</p>
-<p>In the context of my day-to-day work at a local authority I think it can be challenging to convey the caveats with predictive models and to non-technical stakeholders. I think this may be possibly easier to explain with satellite data given the visual outputs of classifications, and this is something I have started showing to various teams at the Council to try to come up with useful applications of RS classification.</p>
+<p>In the context of my day-to-day work at a Local Authority I think it can be challenging to convey the caveats with predictive models and to non-technical stakeholders. I think this may be possibly easier to explain with satellite data given the visual outputs of classifications, and this is something I have started showing to various teams at the Council to try to come up with useful applications of RS classification.</p>
 <p>There was a lot of additional content this week which I ran out of space to summarise relating to cross validation and spatial autocorrelation, which are both also important to take into account when carrying out classification analysis. I need to spend more time with both to understand how to integrate them into future GEE projects.</p>
 
 

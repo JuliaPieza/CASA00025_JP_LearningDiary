@@ -19,11 +19,7 @@ Before moving onto the applications where I look at NVDI and Texture analysis in
 
 ### Radiative transfer and atmospheric correction
 
-Going back to concepts from Week 1 radiative transfer was helpful to recap in the context of understanding why atmospheric correction is needed for remotely sensed data.
-
-I enjoyed the video from [Karen Joyce](https://www.youtube.com/watch?v=qb4yFwzsnU8&t) explaining this concept in an accessible way using the example of emitted sunlight (Top of Atmosphere irradiance) which is reflected off of a surface and into a sensor (also referred to as At Sensor Radiance). However, some light from the sun will end up being scattered in the atmosphere (diffuse irradiance) and will also get recorded by the sensor.
-
-Whereas, ground scanners measure total radiance i.e. all light reflected off the sun, sensors in the atmosphere or in space will measure At Sensor Radiance. To get an accurate image of the ground the atmospheric component (additive path radiance) needs to be subtracted from the At Sensor Radiance i.e. the sensor produced image.
+Sunlight which is reflected off of a surface into a sensor is referred to as At Sensor Radiance. However due to some of the light scattering in the atmosphere (diffuse irradiance) this can also be recorded by the satellite sensor and produce a haze like effect pictured below.
 
 ![Atmospheric correction, Source: ESA](https://ars.els-cdn.com/content/image/3-s2.0-B9780128158265000040-f04-09-9780128158265.jpg)
 
@@ -32,7 +28,7 @@ There are several ways to correct for this haze-like effect, this is especially 
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | Correction                                       | Method                                                                                                                                                                                                                                                                                         | Pros & Cons                                                                                                                                |
 +==================================================+================================================================================================================================================================================================================================================================================================+============================================================================================================================================+
-| Dark Object Substraction                         | Find the darkest value from the image collected and subtract this value from each pixel. Works on the principle that some dark objects e.g. water bodies will have near zero reflectance, and these values can then be subtracted from all the pixels in the image to remove atmospheric haze. | **Pros:** relative normalisation to a reference image often not expensive                                                                  |
+| Dark Object Subtraction                          | Find the darkest value from the image collected and subtract this value from each pixel. Works on the principle that some dark objects e.g. water bodies will have near zero reflectance, and these values can then be subtracted from all the pixels in the image to remove atmospheric haze. | **Pros:** relative normalisation to a reference image often not expensive                                                                  |
 |                                                  |                                                                                                                                                                                                                                                                                                |                                                                                                                                            |
 |                                                  |                                                                                                                                                                                                                                                                                                | **Cons:** there may not be a dark object within an image to normalise to                                                                   |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -51,7 +47,7 @@ Apart from light there are other ways in which the way the sensor collects an im
 
 -   View angle - whether the sensor collects data straight down or at a Nadir or at an angle
 
--   Topography - hills vs flatlands
+-   Topography - hills vs flatland
 
 -   Rotation of the earth - from satellite data, depending on the path of flight of the satellite
 
@@ -69,17 +65,13 @@ Here we look for points that wouldn’t have changed, potentially natural featur
 
 ### Orthorectification /topographic correction
 
-Georectification refers to adding coordinates to an image and orthorectification refers to removing the distortions to make an image at a nadir angle i.e. straight down. 
-
-This is a subset of geometric correction.
+Georectification refers to adding coordinates to an image and orthorectification refers to removing the distortions to make an image at a nadir angle i.e. straight down. This is a subset of geometric correction.
 
 In order to make an orthorectified image the elevation needs to be known, as well as GCPs which then allow a correction algorithm to transform the raw data into an orthorectified image. There are various algorithms to do this often depending on the sensor, image resolution and the desired level of accuracy.
 
 ### Radiometric calibration
 
-This is the process of converting the image brightness captured as Digital Numbers by sensors into spectral radiance.
-
-Digital Numbers refer to the brightness captured in a remotely sensed image, but they have no units.
+This is the process of converting the image brightness captured as Digital Numbers by sensors into spectral radiance. Digital Numbers refer to the brightness captured in a remotely sensed image, but they have no units.
 
 Spectral radiance is the amount of light within a band from a sensor, measured in Watts, per metre squared, per steradian (angle of view), per nanometre (wavelenght).
 
@@ -105,6 +97,8 @@ I was also able to filter the image to show everything above NDVI 0.2, this can 
 
 ![Gdansk NVDI, Source: Landsat 8](Images/gdansk_nvdi_02.png)
 
+### Limitations
+
 As mentioned above there are some caveats with the NDVI index that I wanted to understand more, especially when filtering NDVI and making sense of what increasing by 0.1 meant and whether it was useful for reflecting the health of vegetation.
 
 I found reading @Martinez2023 helped to this into context, as they focus on Greater Manchester to identify how NDVI values can be "sensitive to certain vegetation types and quantities at different spatial scales". This means that an change between NDVI 0.2 to 0.3 may be associated with a greater increase in greenspace % compared to an increase from 0.5 to 0.6 and thus may tell us where greening policies can have the highest impact for communities.
@@ -113,9 +107,7 @@ However, this also varies depending on the area we're looking at so their result
 
 ### Texture analysis
 
-Next I wanted to look at potentially extracting more of the built up areas of the city using the Gray Level Co-occurence Matrix [GLCMTextures](https://cran.r-project.org/web/packages/GLCMTextures/vignettes/README.html) package to calculate the more 'jagged' texture of man-made materials like concrete by comparing variance to the adjacent pixels.
-
-I played around with the settings and looked at the GLCM_entropy metric to look at low entropy areas such as calm water or smooth surfaces and higher entropy for areas like urban settings.
+Next I wanted to look at potentially extracting more of the built up areas of the city using the Gray Level Co-occurence Matrix [GLCMTextures](https://cran.r-project.org/web/packages/GLCMTextures/vignettes/README.html) package to calculate the more 'jagged' texture of man-made materials like concrete by comparing variance to the adjacent pixels. I played around with the settings and looked at the GLCM_entropy metric to look at low entropy areas such as calm water or smooth surfaces and higher entropy for areas like urban settings.
 
 ![Gdansk GLCM_Textures, Source: Landsat 8](Images/gdansk_textures.png)
 
@@ -125,9 +117,7 @@ I think another way to improve on this would be to select a smaller neighbourhoo
 
 Data fusion was something I was really interested in after reading @Shulte2018 and here it is applied in a slightly simpler sense, by taking the texture produced above as a new Band effectively appending it to our original raster dataset. Using this we can better see the differences between built up and vegetation across Gdansk, although as mentioned in the lecture this where remote sensing becomes more of an art, as there is a lot of room to transform the data in many different ways.
 
-Following on from Week 1, PCA is used to reduce the dimensionality of remotely sensed data, in this week's practical I combined the texture data with the spectral reflectance Landsat 8 data for Gdansk.
-
-This was done to reduce the number of variables in my data helping to enhance my image whilst keeping the key patterns of the dataset e.g. my vegetation vs urban areas divide.
+Following on from Week 1, PCA is used to reduce the dimensionality of remotely sensed data, in this week's practical I combined the texture data with the spectral reflectance Landsat 8 data for Gdansk. This was done to reduce the number of variables in my data helping to enhance my image whilst keeping the key patterns of the dataset e.g. my vegetation vs urban areas divide.
 
 ![Gdansk PCA Source: Landsat 8](Images/gdansk_pca.png)
 
@@ -135,10 +125,8 @@ In the image above PCA1 captures most of the variance between the vegetation and
 
 ## Reflections
 
-I think the analysis I was able to produce could be better to show more distinction between the built-up areas and vegetation but for a first go with texture and raster PCA I am glad it generally worked.
+I think the analysis I was able to produce could be better to show more distinction between the built-up areas and vegetation but for a first go with texture and raster PCA I am glad it generally worked. Texture analysis also helped me separate some of the built and natural environments, and in the future working with a smaller area could be useful for my work at Brent, for example mapping neighbourhood level green spaces, or underutilised sites and see where in the borough there are opportunities for redevelopment.
 
-Working with texture analysis was useful for separating some of the natural environment from built environment, and I think in the future working with a smaller area could be really useful for my work, for example mapping neighbourhood level green spaces, or underutilised sites and see where in the borough there are opportunities for redevelopment.
-
-Additionally, as I was looking at various research which used satellite imagery around the Gdansk area I found an article [@Tysiac2026] which used multispectral imagery and LiDAR technology for heritage mapping purposes. It was interesting to see heritage uses of remote sensing technology to narrow down locations for potential digging sites. In this example the high resolution imagery (1m), historical maps and machine learning classification algorithms were used in Google Earth Engine to digitally locate the remnants of a fortification from the 17th century called Gdanska Glowa.
+Additionally, as I was looking at various research which used satellite imagery around the Gdansk area I found an article @Tysiac2026 which used multispectral imagery and LiDAR technology for heritage mapping purposes. It was interesting to see heritage uses of remote sensing technology to narrow down locations for potential digging sites. In this example the high resolution imagery (1m), historical maps and machine learning classification algorithms were used in Google Earth Engine to digitally locate the remnants of a fortification from the 17th century called Gdanska Glowa.
 
 I think there is a lot to be gained from mastering the 'art' of combining various methods and technologies together for these really specific purposes and I am looking forward to exploring this more with Google Earth Engine. This week also followed nicely on from Week 2 where I did a lot of reading about LiDAR and was excited to find how widely used it can be.

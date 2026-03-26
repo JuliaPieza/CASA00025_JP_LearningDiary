@@ -46,9 +46,7 @@ It is also possible to cluster the superpixels above and dissolve some of the bo
 
 #### Sub-pixel analysis
 
-Looking again at pixel based analysis we learnt more about using sub-pixel analysis or SMA to identify the composition of materials within a single pixel. This is done to "decompose the measured reflectance within the instantaneous field of view (IFOV) of a single pixel as a mixture of a fixed set of endmembers" @Jensen2015, p.480
-
-This helps us identify the proportion of various land cover classes within a pixel.
+Looking again at pixel based analysis we learnt more about using sub-pixel analysis or SMA to identify the composition of materials within a single pixel. This is done to "decompose the measured reflectance within the instantaneous field of view (IFOV) of a single pixel as a mixture of a fixed set of endmembers" (@Jensen2015, p.480). This helps us identify the proportion of various land cover classes within a pixel.
 
 However a limitation with this method is that it can be difficult to find all of the pure endmembers within an area (@Jensen2015, p.484), if the spatial resolution of the data we're working with is lower resolution it can become difficult without collecting some ground data to identify endmembers.
 
@@ -68,11 +66,15 @@ Classification algorithms are not perfect and knowing how to evaluate their accu
 | Incorrectly predicted positive result (was actually negative) | Correctly predicted negative result                           |
 +---------------------------------------------------------------+---------------------------------------------------------------+
 
-| Term | Definition | Application |
-|----|----|----|
-| Recall (Producer Accuracy) | Assesses how well the model predicts positive results. Proportion of true positives detected from all positive instances. | High recall is needed when the cost of missing positive cases has significant consequences. For example, cancer detection. |
-| Precision (User Accuracy) | Measures how many of the positive predictions were actually correct. | Important when minimising false positives is the goal, e.g. detecting spam emails. |
-| Overall accuracy -F1 score | The F1 score combines both precision and recall into a single metric to balance their trade off. | Useful for judging the overall accuracy of a model but may not be suited to all instances, sometimes higher precision or recall may be more important to focus on. |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Term                                   | Definition                                                                                                                | Application                                                                                                                                                        |
++========================================+===========================================================================================================================+====================================================================================================================================================================+
+| Recall (Producer Accuracy)             | Assesses how well the model predicts positive results. Proportion of true positives detected from all positive instances. | High recall is needed when the cost of missing positive cases has significant consequences. For example, cancer detection.                                         |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Precision (User Accuracy)              | Measures how many of the positive predictions were actually correct.                                                      | Important when minimising false positives is the goal, e.g. detecting spam emails.                                                                                 |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Overall accuracy - F1 score            | The F1 score combines both precision and recall into a single metric to balance their trade off.                          | Useful for judging the overall accuracy of a model but may not be suited to all instances, sometimes higher precision or recall may be more important to focus on. |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 You can also use a confusion matrix to evaluate multi class data by changing it into a fuzzy matrix which can evaluate the accuracy of predicting various classes e.g. urban, forest or water.
 
@@ -132,6 +134,6 @@ I think this approach while more resource intensive, due to the need to collect 
 
 I think being familiar with some of the ways to evaluate machine learning models through recall, precision, F1 and ROC was helpful and I can see how these fit with the classification algorithms we've been using on remotely sensed data. There is definitely more I need to revisit to better understand evaluating algorithms via things like Kappa and paying more attention to the sampling and cross validation methods such as LOOVC.
 
-In the context of my day-to-day work at a local authority I think it can be challenging to convey the caveats with predictive models and to non-technical stakeholders. I think this may be possibly easier to explain with satellite data given the visual outputs of classifications, and this is something I have started showing to various teams at the Council to try to come up with useful applications of RS classification.
+In the context of my day-to-day work at a Local Authority I think it can be challenging to convey the caveats with predictive models and to non-technical stakeholders. I think this may be possibly easier to explain with satellite data given the visual outputs of classifications, and this is something I have started showing to various teams at the Council to try to come up with useful applications of RS classification.
 
 There was a lot of additional content this week which I ran out of space to summarise relating to cross validation and spatial autocorrelation, which are both also important to take into account when carrying out classification analysis. I need to spend more time with both to understand how to integrate them into future GEE projects.
