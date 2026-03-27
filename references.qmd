@@ -1,6 +1,6 @@
 # References {.unnumbered}
 
-::: {#refs}
+:::: {#refs}
 ::: {#refs}
 :::
-:::
+::::

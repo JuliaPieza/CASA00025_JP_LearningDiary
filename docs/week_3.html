@@ -207,7 +207,7 @@ div.csl-indent {
   </ul></li>
   <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">3.2</span> <strong>Applications</strong></a>
   <ul class="collapse">
-  <li><a href="#image-enhancements-nvdi" id="toc-image-enhancements-nvdi" class="nav-link" data-scroll-target="#image-enhancements-nvdi"><span class="header-section-number">3.2.1</span> Image enhancements: NVDI</a></li>
+  <li><a href="#image-enhancements-ndvi" id="toc-image-enhancements-ndvi" class="nav-link" data-scroll-target="#image-enhancements-ndvi"><span class="header-section-number">3.2.1</span> Image enhancements: NDVI</a></li>
   <li><a href="#filtering" id="toc-filtering" class="nav-link" data-scroll-target="#filtering"><span class="header-section-number">3.2.2</span> Filtering</a></li>
   <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations"><span class="header-section-number">3.2.3</span> Limitations</a></li>
   <li><a href="#texture-analysis" id="toc-texture-analysis" class="nav-link" data-scroll-target="#texture-analysis"><span class="header-section-number">3.2.4</span> Texture analysis</a></li>
@@ -250,7 +250,7 @@ div.csl-indent {
 <li>Orthorectification/topographic correction</li>
 <li>Radiometric calibration</li>
 </ul>
-<p>Before moving onto the applications where I look at NVDI and Texture analysis in Gdansk and my reflections.</p>
+<p>Before moving onto the applications where I look at NDVI and Texture analysis in Gdansk and my reflections.</p>
 <section id="radiative-transfer-and-atmospheric-correction" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="radiative-transfer-and-atmospheric-correction"><span class="header-section-number">3.1.1</span> Radiative transfer and atmospheric correction</h3>
 <p>Sunlight which is reflected off of a surface into a sensor is referred to as At Sensor Radiance. However due to some of the light scattering in the atmosphere (diffuse irradiance) this can also be recorded by the satellite sensor and produce a haze like effect pictured below.</p>
@@ -328,21 +328,21 @@ div.csl-indent {
 </section>
 <section id="applications" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">3.2</span> <strong>Applications</strong></h2>
-<p>Remote sensing enables us to extract a lot of valuable information about the Earth’s surface, and through various techniques we can use this to focus on specific types of land surface, e.g.&nbsp;vegetation, built up areas, but also go into more depth focusing on specific species or crops. This week I focus on extracting information about the vegetation and urban areas of Gdansk through NVDI, PCA and texture analysis.</p>
-<section id="image-enhancements-nvdi" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="image-enhancements-nvdi"><span class="header-section-number">3.2.1</span> Image enhancements: NVDI</h3>
+<p>Remote sensing enables us to extract a lot of valuable information about the Earth’s surface, and through various techniques we can use this to focus on specific types of land surface, e.g.&nbsp;vegetation, built up areas, but also go into more depth focusing on specific species or crops. This week I focus on extracting information about the vegetation and urban areas of Gdansk through NDVI, PCA and texture analysis.</p>
+<section id="image-enhancements-ndvi" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="image-enhancements-ndvi"><span class="header-section-number">3.2.1</span> Image enhancements: NDVI</h3>
 <p>Using a technique called ratioing I was able to calculate the Normalised Difference Vegetation Index (NDVI) which works by comparing near-infrared bands to red light wavelengths to reflect healthy and less healthy vegetation.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://i0.wp.com/geopard.tech/wp-content/uploads/2022/07/74.3-min-1.jpg?resize=1536%2C832&amp;ssl=1" class="img-fluid figure-img"></p>
-<figcaption>NVDI, Source: <a href="https://geopard.tech/blog/what-is-ndvi-normalized-difference-vegetation-index/">GeoPard Agriculture</a></figcaption>
+<figcaption>NDVI, Source: <a href="https://geopard.tech/blog/what-is-ndvi-normalized-difference-vegetation-index/">GeoPard Agriculture</a></figcaption>
 </figure>
 </div>
 <p>I was able to calculate NDVI by using Landsat 8 images for Gdansk using the following formula and subtracting the near-infrared band (Band 5) from red light wavelength (Band 4), and then dividing by the sum of both.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Images/gdansk_nvdi1.png" class="img-fluid figure-img"></p>
-<figcaption>Gdansk NVDI, Source: Landsat 8</figcaption>
+<figcaption>Gdansk NDVI, Source: Landsat 8</figcaption>
 </figure>
 </div>
 <p>The image above reflects vegetation in August 2025, where we can see dense vegetation across the forest area of Lasy Oliwskie. Nevertheless it is actually more difficult to assess the health of vegetation without more comparison over time as the lower NDVI figures reflect water and built up areas of sparse vegetation, hence for future analysis it might make more sense to subset this area and compare the NDVI for more dense vegetation areas across time to look at plant health. As this imagery is from August 2025 there may be areas where plant health is worse due to heat which last year was between 25-31 degrees Celsius.</p>
@@ -353,14 +353,14 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Images/gdansk_nvdi_02.png" class="img-fluid figure-img"></p>
-<figcaption>Gdansk NVDI, Source: Landsat 8</figcaption>
+<figcaption>Gdansk NDVI, Source: Landsat 8</figcaption>
 </figure>
 </div>
 </section>
 <section id="limitations" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="limitations"><span class="header-section-number">3.2.3</span> Limitations</h3>
 <p>As mentioned above there are some caveats with the NDVI index that I wanted to understand more, especially when filtering NDVI and making sense of what increasing by 0.1 meant and whether it was useful for reflecting the health of vegetation.</p>
-<p>I found reading <span class="citation" data-cites="Martinez2023">Iglesia Martinez and Labib (<a href="references.html#ref-Martinez2023" role="doc-biblioref">2023</a>)</span> helped to this into context, as they focus on Greater Manchester to identify how NDVI values can be “sensitive to certain vegetation types and quantities at different spatial scales”. This means that an change between NDVI 0.2 to 0.3 may be associated with a greater increase in greenspace % compared to an increase from 0.5 to 0.6 and thus may tell us where greening policies can have the highest impact for communities.</p>
+<p>I found reading <span class="citation" data-cites="Martinez2023">Iglesia Martinez and Labib (<a href="references.html#ref-Martinez2023" role="doc-biblioref">2023</a>)</span> helped to this into context, as they focus on Greater Manchester to identify how NDVI values can be “sensitive to certain vegetation types and quantities at different spatial scales”. This means that an change between NDVI 0.2 to 0.3 may be associated with a greater increase in greenspace percentage compared to an increase of NDVI from 0.5 to 0.6 and thus may tell us where greening policies can have the highest impact for communities.</p>
 <p>However, this also varies depending on the area we’re looking at so their results aren’t necessarily replicable in different cities, so working with NDVI may require first understanding how vegetation types like trees, shurbs and grass affect the index.</p>
 </section>
 <section id="texture-analysis" class="level3" data-number="3.2.4">

@@ -15,7 +15,7 @@ In this chapter I’ll summarise:
 -   Orthorectification/topographic correction
 -   Radiometric calibration
 
-Before moving onto the applications where I look at NVDI and Texture analysis in Gdansk and my reflections.
+Before moving onto the applications where I look at NDVI and Texture analysis in Gdansk and my reflections.
 
 ### Radiative transfer and atmospheric correction
 
@@ -79,17 +79,17 @@ This is necessary when collecting images across time, which will be influenced b
 
 ## **Applications**
 
-Remote sensing enables us to extract a lot of valuable information about the Earth's surface, and through various techniques we can use this to focus on specific types of land surface, e.g. vegetation, built up areas, but also go into more depth focusing on specific species or crops. This week I focus on extracting information about the vegetation and urban areas of Gdansk through NVDI, PCA and texture analysis.
+Remote sensing enables us to extract a lot of valuable information about the Earth's surface, and through various techniques we can use this to focus on specific types of land surface, e.g. vegetation, built up areas, but also go into more depth focusing on specific species or crops. This week I focus on extracting information about the vegetation and urban areas of Gdansk through NDVI, PCA and texture analysis.
 
-### Image enhancements: NVDI
+### Image enhancements: NDVI
 
 Using a technique called ratioing I was able to calculate the Normalised Difference Vegetation Index (NDVI) which works by comparing near-infrared bands to red light wavelengths to reflect healthy and less healthy vegetation.
 
-![NVDI, Source: [GeoPard Agriculture](https://geopard.tech/blog/what-is-ndvi-normalized-difference-vegetation-index/)](https://i0.wp.com/geopard.tech/wp-content/uploads/2022/07/74.3-min-1.jpg?resize=1536%2C832&ssl=1)
+![NDVI, Source: [GeoPard Agriculture](https://geopard.tech/blog/what-is-ndvi-normalized-difference-vegetation-index/)](https://i0.wp.com/geopard.tech/wp-content/uploads/2022/07/74.3-min-1.jpg?resize=1536%2C832&ssl=1)
 
 I was able to calculate NDVI by using Landsat 8 images for Gdansk using the following formula and subtracting the near-infrared band (Band 5) from red light wavelength (Band 4), and then dividing by the sum of both.
 
-![Gdansk NVDI, Source: Landsat 8](Images/gdansk_nvdi1.png)
+![Gdansk NDVI, Source: Landsat 8](Images/gdansk_nvdi1.png)
 
 The image above reflects vegetation in August 2025, where we can see dense vegetation across the forest area of Lasy Oliwskie. Nevertheless it is actually more difficult to assess the health of vegetation without more comparison over time as the lower NDVI figures reflect water and built up areas of sparse vegetation, hence for future analysis it might make more sense to subset this area and compare the NDVI for more dense vegetation areas across time to look at plant health. As this imagery is from August 2025 there may be areas where plant health is worse due to heat which last year was between 25-31 degrees Celsius.
 
@@ -97,13 +97,13 @@ The image above reflects vegetation in August 2025, where we can see dense veget
 
 I was also able to filter the image to show everything above NDVI 0.2, this can be used to mask out vegetation from built up areas which can be useful for further monitoring.
 
-![Gdansk NVDI, Source: Landsat 8](Images/gdansk_nvdi_02.png)
+![Gdansk NDVI, Source: Landsat 8](Images/gdansk_nvdi_02.png)
 
 ### Limitations
 
 As mentioned above there are some caveats with the NDVI index that I wanted to understand more, especially when filtering NDVI and making sense of what increasing by 0.1 meant and whether it was useful for reflecting the health of vegetation.
 
-I found reading @Martinez2023 helped to this into context, as they focus on Greater Manchester to identify how NDVI values can be "sensitive to certain vegetation types and quantities at different spatial scales". This means that an change between NDVI 0.2 to 0.3 may be associated with a greater increase in greenspace % compared to an increase from 0.5 to 0.6 and thus may tell us where greening policies can have the highest impact for communities.
+I found reading @Martinez2023 helped to this into context, as they focus on Greater Manchester to identify how NDVI values can be "sensitive to certain vegetation types and quantities at different spatial scales". This means that an change between NDVI 0.2 to 0.3 may be associated with a greater increase in greenspace percentage compared to an increase of NDVI from 0.5 to 0.6 and thus may tell us where greening policies can have the highest impact for communities.
 
 However, this also varies depending on the area we're looking at so their results aren't necessarily replicable in different cities, so working with NDVI may require first understanding how vegetation types like trees, shurbs and grass affect the index.
 

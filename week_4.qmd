@@ -42,7 +42,7 @@ As shown above Gdansk has a diverse natural environment, as a coastal city with 
 
 This can be primarily achieved by using the Normalised Difference Vegetation Index (NDVI) which measures the spatial distribution of vegetation. I measured the NDVI for Gdansk in August 2025 based on Landsat 8 data which had a 15-30m resolution in Week 3. This was useful for identifying the presence of green areas but as explored by @Martinez2023 NDVI can be more sensitive to certain types of vegetation such as trees at various buffer levels in their case study of Greater Manchester. Using Sentinel 2 data instead could create a slightly more high resolution picture of this index.
 
-![Gdansk NVDI, Source: Landsat 8](Images/gdansk_nvdi_02.png)
+![Gdansk NDVI, Source: Landsat 8](Images/gdansk_nvdi_02.png)
 
 Looking at NDVI alongside Land Use-Land Cover data from Sentinel 2 could be useful in this exercise, as it was also used by @Martinez2023, who obtained the data from @Dennis2018 at 10m resolution. Using this approach with Gdansk could support monitoring change over time to understand the progress of greening activities. This has been done by looking and LULC data with time-series methods by @Du2010 looking at Landsat images to assess land cover and vegetation change in Xuzhou over 20 years. Or as a start it could help to create an even more detailed picture of green spaces within urban environments at a 10m resolution.
 
