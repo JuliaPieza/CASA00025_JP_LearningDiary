@@ -18,13 +18,13 @@ When working with SAR the electromagnetic waves transmitted can also come in two
 
 The vertical polarisation is referred to as V while horizontal polarisation is indicated by H. Some SAR satellites mix these to provide dual or even quad polarisation (although this is a more novel capability of satellites like RADARSAT-2 explored more by @Zhao2024 in it's function to detect sea ice).
 
-[![SAR Polarisation (Source: \[University of Alaska\](https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/))](https://hyp3-docs.asf.alaska.edu/images/polarizations_ASF_dashed.png)](https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/)
+[![SAR Polarisation (Source: [University of Alaska](https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/))](https://hyp3-docs.asf.alaska.edu/images/polarizations_ASF_dashed.png)](https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/)
 
 When using SAR data the nature of the surface can affect how much backscatter is returned to the satellite. For example, a smooth surface like water will have limited backscatter return. This can be useful for understanding SAR images, but can also be influenced by weather such as wind which can make water ripple giving it a 'rougher' texture and making the image less reliable for identifying water.
 
 ![Source: [University of Alaska](https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar/)](https://hyp3-docs.asf.alaska.edu/images/wavelength_vs_roughness.png)
 
-### Phase 
+### Phase
 
 Beyond measuring the amplitude, SAR data also provides us with information about the cycle of the wave when the signal is returned from the ground, which is referred to as **phase** data. The study of phase data is also called InSAR or interferometry, it uses the phase information received to capture things like ground movement.
 
@@ -32,7 +32,7 @@ It is largely used in detecting earth movement after landslides, earthquakes or 
 
 However, currently GEE doesn't offer capability to work with InSAR data so it can be done using software like SNAP. Or alternatively there are some open source options, for example NASA provides [ISCE](https://github.com/isce-framework/isce2) (InSAR Scientific Computing Environment) which is a python package used for interferometric processing.
 
-### Benefits 
+### Benefits
 
 One of the key benefits of SAR is how sensitive it is to changes at a cm level, allowing for really detailed surface characterisation and understanding ground movement in the case of earthquakes or landslides. InSAR is especially sensitive sometimes at millimeter level which can be especially useful for observing long term subsidence trends across urban areas, and planning for infrastructure adaptations.
 
@@ -42,9 +42,7 @@ Publicly available SAR data from Sentinel 1 is also available since 2014 which m
 
 ### Limitations
 
-One of the key limitations of working with SAR data is related to its biggest benefit, that being how sensitive it is to change.
-
-Dealing with a large volume of SAR data across an urban setting, it is key to understand all of the various factors which impact the image produced which can be:
+One of the key limitations of working with SAR data is related to its biggest benefit, that being how sensitive it is to change. Dealing with a large volume of SAR data across an urban setting, it is key to understand all of the various factors which impact the image produced which can be:
 
 -   Weather - especially wind when capturing water, but can be solved with looking at different polarisation combinations.
 
@@ -62,7 +60,7 @@ This is relevant to my work at Brent with our Climate team, who are interested i
 
 I started with reading @Wilson2020 and @Nowak2022 both exploring the relationships between historic redlining policies and present urban heat risk in US cities. Using land surface temperature data, from satellites such as Landsat they show that formerly redlined areas tend to experience more heat risk through the UHI effect, associated with lower tree cover and higher proportions of impervious surfaces. Yet they also combine this data with socio-economic indicators to make the case for more equity-focused urban planning.
 
-However there are some limitations. @Wilson2020 highlights the difficulty of linking heat exposure to health outcomes due to restricted access to health data and privacy concerns. This is also similar with my workplace although we have a Public Health team that is able to provide us with aggregated figures for certain health conditions that would make this kind of research interesting to replicate on a smaller scale of a borough, and perhaps look at data over time (although Covid makes this difficult).
+However there are some limitations. @Wilson2020 highlights the difficulty of linking heat exposure to health outcomes due to restricted access to health data and privacy concerns. This is also similar with my workplace although we have a Public Health team that is able to provide us with aggregated figures for certain health conditions that would make this kind of research interesting to replicate on a smaller scale of a borough, and perhaps look at data over time (although the impact of Covid on the data from 2020-2022 makes this kind of research more difficult).
 
 In addition, @Nowak2022 places greater emphasis on the role of impervious land cover in limiting greening efforts, suggesting that land use may be a more immediate driver than redlining alone. This complicates the causal narrative which is also critiqued by @Schwarz2015 who find that in dense urban context such as New York City income has only a weak correlation with urban tree cover. Their research also considers spatial autocorrelation in combination with working with SAR data which was useful to keep in mind if I decide to carry out a similar project with Brent or London data.
 

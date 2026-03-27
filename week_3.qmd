@@ -6,7 +6,7 @@ title: "Week 3: Corrections"
 
 In Week 3 we covered the corrections that are often necessary to make remotely sensed data usable for analysis.
 
-Although most remotely sensed data nowadays comes ‘analysis ready’ it was interesting and useful to understand these concepts in more detail.
+Although most remotely sensed data nowadays comes ‘analysis ready’ it was useful to understand these concepts in more detail.
 
 In this chapter I’ll summarise:
 
@@ -79,6 +79,8 @@ This is necessary when collecting images across time, which will be influenced b
 
 ## **Applications**
 
+Remote sensing enables us to extract a lot of valuable information about the Earth's surface, and through various techniques we can use this to focus on specific types of land surface, e.g. vegetation, built up areas, but also go into more depth focusing on specific species or crops. This week I focus on extracting information about the vegetation and urban areas of Gdansk through NVDI, PCA and texture analysis.
+
 ### Image enhancements: NVDI
 
 Using a technique called ratioing I was able to calculate the Normalised Difference Vegetation Index (NDVI) which works by comparing near-infrared bands to red light wavelengths to reflect healthy and less healthy vegetation.
@@ -111,7 +113,7 @@ Next I wanted to look at potentially extracting more of the built up areas of th
 
 ![Gdansk GLCM_Textures, Source: Landsat 8](Images/gdansk_textures.png)
 
-I think another way to improve on this would be to select a smaller neighbourhood to look at textures within the city centre urban area and see if we can identify differences between dense built up areas or industrial areas vs residential areas.
+I think another way to improve on this would be to select a smaller neighbourhood to look at textures within the city centre urban area and see if we can identify differences between dense built up areas or industrial areas vs residential areas. I also wonder how this would work with higher resolution SAR data and whether it could show more detail.
 
 ### Data fusion - PCA
 

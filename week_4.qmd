@@ -8,13 +8,11 @@ In week 4 we looked at how remotely sensed data has been used in policymaking. F
 
 We were asked to imagine how a remotely sensed dataset may be incorporated into policymaking at a city, national or international level. For this entry I'll focus on Gdansk and the Gdansk 2030 Plus City Development Strategy, specifically the Green City objective which aims to improve the biodiversity of the city and provide more green spaces to residents.
 
-Although Poland does not have nation wide climate law it is bound by EU legislation to reduce greenhouse gas emissions.
-
-Nevertheless cities in Poland have increasingly chosen to implement their own strategies to ensure preparedness for the effects fo climate change. However the institutions responsible for maintaining the natural environment are often uncoordinated due to different responsibilities sitting with Regional Directors of environmental protection or being the responsibility of Voivodeship-level government.
+Although Poland does not have nation wide climate law it is bound by EU legislation to reduce greenhouse gas emissions. Nevertheless cities in Poland have increasingly chosen to implement their own strategies to ensure preparedness for the effects fo climate change. However the institutions responsible for maintaining the natural environment are often uncoordinated due to different responsibilities sitting with Regional Directors of environmental protection or being the responsibility of Voivodeship-level government.
 
 The [City Development Strategy Gdansk 2030 Plus](https://download.cloudgdansk.pl/gdansk-pl/d/202302203632/gdansk-2030-plus-city-development-strategy.pdf) aims to help mitigate the climate-related risks due to it's coastal position and continued development of the city's infrastructure, by coordinating the policies of several environmental bodies towards key strategic priorities.
 
-To begin the process of drafting this strategy over 3 thousand people, and institutions such as universities and businesses were surveyed about their priorities for the City's development. Around 63% of those surveyed identified greenery and biodiversity as their key priority for the city, with policies such as adding 100 hectares of new parks, and 50,000 new trees being some of the most popular. @GdanskCityHall2024
+To begin the process of drafting this strategy over 3 thousand people, and institutions such as universities and businesses were surveyed about their priorities for the City's development. Around 63% of those surveyed identified greenery and biodiversity as their key priority for the city, with policies such as adding 100 hectares of new parks, and 50,000 new trees being some of the most popular @GdanskCityHall2024.
 
 ### Green City policies
 
@@ -28,7 +26,7 @@ To begin the process of drafting this strategy over 3 thousand people, and insti
 
 ### Link to UN Sustainable Development Goals
 
-The greening policies backed by a majority of those surveyed also align with broader international climate strategies such as the Sustainable Development Goals. In particular the Gdansk Development Strategy aligns with Goal 15 to "protect, restore and promote use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt reverse land degredation and halt biodiversity loss". (@UNSDG2024)
+The greening policies backed by a majority of those surveyed also align with broader international climate strategies such as the Sustainable Development Goals. In particular the Gdansk Development Strategy aligns with Goal 15 to "protect, restore and promote use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt reverse land degradation and halt biodiversity loss" (@UNSDG2024).
 
 Focusing on maintaining the health and biodiversity of existing forests such as Lasy Oliwskie, in addition to planting 50,000 trees, and adding a new Southern Park will help to preserve existing biodiversity and create new protected spaces for natural habitats to develop and thrive. An interesting proposal is to also create a network of green areas and water and increase 15 minute access zones to forests and green areas.
 
@@ -49,6 +47,8 @@ This can be primarily achieved by using the Normalised Difference Vegetation Ind
 Looking at NDVI alongside Land Use-Land Cover data from Sentinel 2 could be useful in this exercise, as it was also used by @Martinez2023, who obtained the data from @Dennis2018 at 10m resolution. Using this approach with Gdansk could support monitoring change over time to understand the progress of greening activities. This has been done by looking and LULC data with time-series methods by @Du2010 looking at Landsat images to assess land cover and vegetation change in Xuzhou over 20 years. Or as a start it could help to create an even more detailed picture of green spaces within urban environments at a 10m resolution.
 
 However it is important to understand some limitations, even at 10m resolution dense urban settings become harder to distinguish at this pixel size. To look at neighbourhood level greening policies where open space may be scarce we may need to opt for even higher resolutions of 1-5m, but the trade-off here is between the temporal availability and price of this data.
+
+The impact of greening policies can also be measured in many ways other than the benefits on health, for example @Nowak2022 looking at the impact on redlining and tree cover also considers the benefits of carbon sequestration and the value of trees removing air pollution, and preventing excess water runoff. These ecological services provided by trees and vegetation have monetary value, and they estimate cities like New York are losing out as much as \$100 million in foregone ecological services (@Nowak2022, p.4).
 
 ## Reflections:
 

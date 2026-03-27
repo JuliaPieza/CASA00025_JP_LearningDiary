@@ -135,7 +135,7 @@ However, I also think where regeneration takes place on already built up urban a
 
 ## Reflections
 
-My main takeaways from this week were thinking about how I could use GEE for my work in Local Government. There is definitely a debate having data stored in Google's servers but using publicly available satellite data to create useful spatial application or run analysis for London Boroughs should not be a problem as long as no Council data is used.
+My main takeaways from this week were thinking about how I could use GEE for my work in Local Government. There is definitely a debate having data stored in Google's servers but using publicly available satellite data to create useful spatial application or run analysis for London Boroughs should not be a problem as long as no personal information from Council data is used.
 
 I think it would be really interesting to see whether there are use cases that can be developed for Local Authorities to purchase higher resolution data e.g. from SPOT or Airbus satellites and be able to perform analysis around urban vegetation density for environmental monitoring purposes. I think 30m resolution per pixel is definitely not as useful when looking at London Borough level, and even 10m can sometimes cause too much pixel generalisation to be able to identify features in more dense urban settings. However the cost limitations with purchasing higher resolution imagery is a limitation here as budgets in Local Authorities are quite tight.
 
